@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disrupt Solutions | Website & Mobile App Development, Web App Solutions, Artificial Intelligence (AI) & Information Technology (IT) Consultancy</title>
+  <meta name="description" content="Disrupt Solutions delivers premium Website and Mobile App development, robust Web App solutions, and secure Artificial Intelligence (AI) & Information Technology (IT) consultancy services for enterprises.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Grid and Glows -->
+  <div class="glow-bg"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Primary Header & Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="logo.png" alt="Disrupt Solutions Logo" class="logo-img">
+        <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#about" class="nav-item">About Us</a>
+        <a href="#portfolio" class="nav-item">Portfolio</a>
+        <a href="#contact" class="nav-btn">Request Consultation</a>
+      </nav>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Dropdown -->
+  <div class="mobile-nav">
+    <a href="#services" class="mobile-nav-item">Services</a>
+    <a href="#about" class="mobile-nav-item">About Us</a>
+    <a href="#portfolio" class="mobile-nav-item">Portfolio</a>
+    <a href="#contact" class="mobile-nav-btn">Request Consultation</a>
+  </div>
+
+  <main>
+    <!-- Cinematic Hero Section -->
+    <section id="hero" class="hero-section active-section">
+      <!-- Particle Canvas -->
+      <canvas id="particle-canvas"></canvas>
+      
+      <div class="hero-content-wrapper">
+        <div class="hero-tag">
+          <span class="pulse-indicator"></span> ENTERPRISE-GRADE PRECISION
+        </div>
+        
+        <h1 class="hero-title">
+          Intelligent Enterprise Architectures.<br>
+          <span class="gradient-text">Engineered for Scale.</span>
+        </h1>
+        
+        <p class="hero-description">
+          We specialize in premium Website and Mobile App development, robust Web App solutions, and professional Artificial Intelligence (AI) and Information Technology (IT) consultancy services. De-risked engineering built for enterprise scale.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Request an Architectural Audit</a>
+          <a href="#portfolio" class="btn-secondary">Explore Our Portfolio</a>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section id="services" class="services-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">CAPABILITIES & STANDARDS</span>
+          <h2 class="section-title">Engineered to Handle Complexity</h2>
+          <p class="section-description">We build software that eliminates operational risk, integrates seamlessly with legacy environments, and scales securely.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>Website & Mobile App Development</h3>
+            <p>Design and deploy native, high-performance iOS and Android mobile applications alongside custom responsive websites. Built with modern, robust frameworks optimized for conversion and seamless User Experience (UX).</p>
+            <ul class="service-features">
+              <li>Native iOS & Android Apps</li>
+              <li>Responsive Performance Websites</li>
+              <li>Modern Interactive Layouts</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>Web App Solutions</h3>
+            <p>Custom Web App solutions engineered to unify business resource management, legacy system integrations, and business processes into high-performance, single-panel operating environments.</p>
+            <ul class="service-features">
+              <li>Cloud-Native Web Systems</li>
+              <li>Database & Application Programming Interface (API) Integrations</li>
+              <li>Tailored Workflow Automations</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 7.54 16.59l-1.39-1.39A8 8 0 1 0 5 12h2a6 6 0 1 1 11.23 2.83l-1.42-1.42A4 4 0 1 0 9 12h2a2 2 0 1 1 3.46 1.41l-1.42-1.42A1 1 0 1 0 12 12"/>
+              </svg>
+            </div>
+            <h3>Artificial Intelligence (AI) Consultancy</h3>
+            <p>High-level consultancy assisting companies in designing automated workflows, custom neural networks, and deploying secure, private machine learning systems.</p>
+            <ul class="service-features">
+              <li>AI Workflow Integration</li>
+              <li>IT System Roadmap Design</li>
+              <li>Database & Scale Architecture</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3>Business Intelligence (BI) Consultancy</h3>
+            <p>High-level consulting helping businesses automate reports using PowerQuery, PowerBI, and Tableau, and engineering Jasper Reports integrations for Java 2 Platform Enterprise Edition (J2EE) Enterprise Java applications.</p>
+            <ul class="service-features">
+              <li>Report Automation (PowerQuery/BI/Tableau)</li>
+              <li>Jasper Reports for J2EE Java Apps</li>
+              <li>Data Analytics & Scaling Roadmaps</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="about-grid">
+          <div class="about-content">
+            <span class="section-subtitle">THE PEDIGREE</span>
+            <h2 class="section-title">Robust Software Systems Built for Scale</h2>
+            <p class="about-para">
+              At Disrupt Solutions, we believe that modern websites, mobile apps, web solutions, and AI integrations should introduce operational efficiency and accelerate output. We provide expert AI and IT consultancy alongside robust tool and system development to streamline your operations at scale.
+            </p>
+            
+            <div class="advantage-box">
+              <h4>The Parent Company Proof</h4>
+              <p>
+                We do not test our software on our external clients. We test it on our own. As the core technology center for our parent conglomerate, **Disrupt Group**, we design and manage the operational infrastructure that processes millions of daily transactions and coordinates global business units. The exact same resilience, speed, and tooling we build for Disrupt Group is deployed directly into your custom solution.
+              </p>
+            </div>
+          </div>
+          
+          <div class="about-visual">
+            <div class="visual-card glass-card">
+              <div class="visual-header">
+                <span class="pulse-indicator green"></span>
+                <span class="title">Active Systems Topology</span>
+              </div>
+              <div class="visual-body">
+                <div class="system-stat">
+                  <span class="lbl">Consolidated Units</span>
+                  <span class="val">14 Business Systems</span>
+                </div>
+                <div class="system-stat">
+                  <span class="lbl">Daily Transaction Capacity</span>
+                  <span class="val">10M+ Queries</span>
+                </div>
+                <div class="system-stat">
+                  <span class="lbl">API System Speed</span>
+                  <span class="val">&lt; 120ms Latency</span>
+                </div>
+                <div class="system-stat">
+                  <span class="lbl">Active Database Sync</span>
+                  <span class="val">Multi-Region Real-time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">SYSTEMS & PLATFORMS</span>
+          <h2 class="section-title">Our Featured Portfolio</h2>
+          <p class="section-description">Explore custom-built applications and regional systems designed for the Disrupt Group ecosystem and external partners.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Portfolio Card 1: SLU Eats -->
+          <div class="portfolio-card glass-card" onclick="openPortfolio('slu-eats')">
+            <div class="card-image-placeholder">
+              <span class="portfolio-badge">On-Demand Logistics</span>
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>SLU Eats: On-Demand Food Delivery</h3>
+              <p>A high-performance logistics and delivery engine built to coordinate thousands of orders, drivers, and partners under the Disrupt Group umbrella.</p>
+              <div class="card-metrics">
+                <div class="metric">
+                  <span class="metric-val">50K+</span>
+                  <span class="metric-lbl">Monthly Deliveries</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">&lt; 1.2s</span>
+                  <span class="metric-lbl">Dispatch Coordination</span>
+                </div>
+              </div>
+              <span class="card-link">View Technical Summary &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Portfolio Card 2: Disrupt Marketplace -->
+          <div class="portfolio-card glass-card" onclick="openPortfolio('disrupt-marketplace')">
+            <div class="card-image-placeholder">
+              <span class="portfolio-badge">E-Commerce & Payments</span>
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Disrupt Marketplace: Caribbean E-Commerce</h3>
+              <p>A regional multi-territory online marketplace integrated with our custom secure payment gateway for merchant checkouts.</p>
+              <div class="card-metrics">
+                <div class="metric">
+                  <span class="metric-val">8 States</span>
+                  <span class="metric-lbl">Payment Coverage</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">99.99%</span>
+                  <span class="metric-lbl">Gateway Uptime</span>
+                </div>
+              </div>
+              <span class="card-link">View Technical Summary &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Engagements by Sector -->
+        <div class="sectors-wrapper">
+          <h3 class="sectors-title">Proven Tool Solutions Across Key Sectors</h3>
+          <div class="sectors-grid">
+            <div class="sector-card glass-card">
+              <div class="sector-icon">🚗</div>
+              <h4>Automotive</h4>
+              <p>Custom parts databases, local dealer networks, and logistics tracking tools.</p>
+            </div>
+            <div class="sector-card glass-card">
+              <div class="sector-icon">📦</div>
+              <h4>Warehousing</h4>
+              <p>Stock coordinators, automated pick paths, and package fulfillment utilities.</p>
+            </div>
+            <div class="sector-card glass-card">
+              <div class="sector-icon">🏥</div>
+              <h4>Health Sector</h4>
+              <p>Staff schedule managers, patient booking panels, and record-keeping utilities.</p>
+            </div>
+            <div class="sector-card glass-card">
+              <div class="sector-icon">📈</div>
+              <h4>Marketing</h4>
+              <p>Analytics reporting dashboards, API lead trackers, and notification engines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Contact & Consultation Section -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-subtitle">CONVERSION GATEWAY</span>
+            <h2 class="section-title">Request a Custom Solution Consultation</h2>
+            <p class="contact-para">
+              Get in touch with our team to discuss your website, mobile app, web solution, or consultancy requirements.
+            </p>
+            <div class="contact-details">
+              <div class="detail-item">
+                <span class="icon">✓</span>
+                <span>Expert Website & Mobile App consultation</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">✓</span>
+                <span>Robust Web App systems roadmap</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">✓</span>
+                <span>Professional AI & IT consultancy analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container glass-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Work Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="john@company.com">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Contact Number *</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Project Description & Requirements *</label>
+                <textarea id="description" name="description" required placeholder="Describe your website, app, web systems, or consultancy objectives."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <span>Submit Request</span>
+                <span class="loader hidden"></span>
+              </button>
+            </form>
+
+            <div id="form-feedback" class="form-feedback hidden"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo-wrapper">
+          <img src="logo.png" alt="Disrupt Solutions Logo" class="logo-img-footer">
+          <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+        </div>
+        <p class="brand-desc">Premium Website & Mobile App development, robust Web App solutions, and secure AI & IT consultancy services.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Disrupt Solutions. All rights reserved. Technology Center for Disrupt Group.</p>
+        <div class="footer-status">
+          <span class="pulse-indicator green"></span> Infrastructure Status: Online
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Portfolio Lightbox Modals -->
+  <div id="portfolio-modal" class="modal">
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closePortfolio()">&times;</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Custom Logic Script -->
+  <script src="app.js"></script>
+</body>
+</html>
