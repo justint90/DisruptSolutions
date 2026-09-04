@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Disrupt Media - Frontend Core Application Script
+   Disrupt Media - Frontend Core Application Script (Tailwind Architecture)
    Contains: Media Particle Canvas, Navigation Routing, Lightbox Modals & Form
    ========================================================================== */
 
@@ -177,7 +177,7 @@ function initServicePills() {
 }
 
 /* ==========================================================================
-   4. Production Modal / Lightbox Deep Dives
+   4. Production Modal / Lightbox Deep Dives (Tailwind Component Layout)
    ========================================================================== */
 const productionsData = {
   sovereign: {
@@ -214,45 +214,49 @@ function openProductionModal(id) {
   if (!modal || !body || !data) return;
 
   body.innerHTML = `
-    <div style="margin-bottom: 20px;">
-      <span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--accent-rose); letter-spacing: 0.16em; text-transform: uppercase;">
+    <div class="mb-6">
+      <span class="inline-block font-mono text-[10px] font-bold text-rose-400 tracking-[0.16em] uppercase px-2.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 mb-2">
         ${data.badge}
       </span>
-      <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #ffffff; margin-top: 6px; margin-bottom: 12px;">
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mt-1 mb-3">
         ${data.title}
       </h2>
-      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+      <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
         ${data.overview}
       </p>
     </div>
 
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px; margin-bottom: 20px;">
-      <h3 style="font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; color: var(--accent-rose-light); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;">
+    <div class="bg-[#120e1a]/80 border border-rose-500/20 rounded-xl p-5 mb-6 backdrop-blur-md">
+      <h3 class="font-mono text-xs font-bold text-rose-300 tracking-wider uppercase mb-3">
         Key Production Deliverables
       </h3>
-      <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        ${data.deliverables.map(d => `<li style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px;"><span style="color: var(--accent-rose);">▹</span> ${d}</li>`).join('')}
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300">
+        ${data.deliverables.map(d => `<li class="flex items-center gap-2"><span class="text-rose-500 font-bold">▹</span> ${d}</li>`).join('')}
       </ul>
     </div>
 
-    <div style="border-left: 3px solid var(--accent-rose); padding-left: 16px; margin-bottom: 24px;">
-      <span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 4px;">Director's Point of View</span>
-      <p style="font-size: 0.90rem; color: #ffffff; font-style: italic; line-height: 1.55;">"${data.directorNote}"</p>
+    <div class="border-l-2 border-rose-500 pl-4 py-1 mb-6">
+      <span class="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Director's Point of View</span>
+      <p class="text-xs sm:text-sm text-white italic leading-relaxed">"${data.directorNote}"</p>
     </div>
 
-    <div style="display: flex; gap: 12px; justify-content: flex-end;">
-      <a href="#contact" class="btn-primary" onclick="closeProductionModal()">Commission Similar Project ➔</a>
+    <div class="flex items-center justify-end gap-3 pt-4 border-t border-white/5">
+      <a href="#contact" class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-rose-btn transition-all duration-200" onclick="closeProductionModal()">
+        Commission Similar Project ➔
+      </a>
     </div>
   `;
 
-  modal.classList.add('active');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
   document.body.style.overflow = 'hidden';
 }
 
 function closeProductionModal() {
   const modal = document.getElementById('production-modal');
   if (modal) {
-    modal.classList.remove('active');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
     document.body.style.overflow = '';
   }
 }
@@ -283,11 +287,11 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    feedback.className = 'form-feedback hidden';
+    feedback.className = 'hidden mt-4 p-3 rounded-lg text-sm text-center';
     feedback.innerText = '';
 
     const submitBtn = form.querySelector('.btn-submit');
-    const btnText = submitBtn.querySelector('span');
+    const btnText = submitBtn.querySelector('span:first-child');
     const loader = submitBtn.querySelector('.loader');
 
     submitBtn.disabled = true;
@@ -316,19 +320,16 @@ function initContactForm() {
 
       if (response.ok && result.success) {
         feedback.innerText = result.message;
-        feedback.className = 'form-feedback success';
-        feedback.classList.remove('hidden');
+        feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 block';
         form.reset();
       } else {
         feedback.innerText = result.message || 'Submission failed. Please verify your details.';
-        feedback.className = 'form-feedback error';
-        feedback.classList.remove('hidden');
+        feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-red-500/15 border border-red-500/40 text-red-300 block';
       }
     } catch (error) {
       console.error('[Disrupt Media Form Error]', error);
       feedback.innerText = 'Network error: Connection to media server failed. Please check your connection.';
-      feedback.className = 'form-feedback error';
-      feedback.classList.remove('hidden');
+      feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-red-500/15 border border-red-500/40 text-red-300 block';
     } finally {
       submitBtn.disabled = false;
       loader.classList.add('hidden');
