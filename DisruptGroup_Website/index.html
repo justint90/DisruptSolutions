@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Disrupt Solutions | Website & Mobile App Development, Web App Solutions, Artificial Intelligence (AI) & Information Technology (IT) Consultancy</title>
-  <meta name="description" content="Disrupt Solutions delivers premium Website and Mobile App development, robust Web App solutions, and secure Artificial Intelligence (AI) & Information Technology (IT) consultancy services for enterprises.">
+  <title>Disrupt Solutions — Intelligence, then infrastructure. In that order.</title>
+  <meta name="description" content="A Disrupt Group Company. We build autonomous AI agents, enterprise web applications, and distributed software systems engineered to hold a position.">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="Disrupt Solutions — Intelligence, then infrastructure. In that order.">
+  <meta property="og:description" content="A Disrupt Group Company. We build autonomous AI agents, enterprise web applications, and distributed software systems engineered to hold a position.">
+  <meta property="og:url" content="https://solutions.disruptgrp.com">
+  <meta property="og:site_name" content="Disrupt Solutions">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom Styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Decorative Grid and Glows -->
+  <!-- Background Decorative Grid and Ambient Backlights -->
   <div class="glow-bg"></div>
   <div class="grid-overlay"></div>
 
@@ -25,14 +37,20 @@
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
         <img src="logo.png" alt="Disrupt Solutions Logo" class="logo-img">
-        <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+        <div class="logo-text-group">
+          <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+          <span class="logo-subline">A DISRUPT GROUP COMPANY</span>
+        </div>
       </a>
       
       <nav class="nav-links">
-        <a href="#services" class="nav-item">Services</a>
-        <a href="#about" class="nav-item">About Us</a>
-        <a href="#portfolio" class="nav-item">Portfolio</a>
-        <a href="#contact" class="nav-btn">Request Consultation</a>
+        <a href="#hero" class="nav-item">Overview</a>
+        <a href="#capabilities" class="nav-item">Capabilities</a>
+        <a href="#receipts" class="nav-item">Receipts</a>
+        <a href="#proof" class="nav-item">Proof</a>
+        <a href="#principles" class="nav-item">Principles</a>
+        <a href="https://www.disruptgrp.com" target="_blank" rel="noopener" class="nav-parent-link">Parent Group ↗</a>
+        <a href="#contact" class="nav-btn">Book Consultation</a>
       </nav>
       
       <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
@@ -45,318 +63,492 @@
 
   <!-- Mobile Navigation Dropdown -->
   <div class="mobile-nav">
-    <a href="#services" class="mobile-nav-item">Services</a>
-    <a href="#about" class="mobile-nav-item">About Us</a>
-    <a href="#portfolio" class="mobile-nav-item">Portfolio</a>
-    <a href="#contact" class="mobile-nav-btn">Request Consultation</a>
+    <a href="#hero" class="mobile-nav-item">Overview</a>
+    <a href="#capabilities" class="mobile-nav-item">Capabilities</a>
+    <a href="#receipts" class="mobile-nav-item">Receipts</a>
+    <a href="#proof" class="mobile-nav-item">Proof</a>
+    <a href="#principles" class="mobile-nav-item">Principles</a>
+    <a href="https://www.disruptgrp.com" target="_blank" rel="noopener" class="mobile-nav-item">Parent Group ↗</a>
+    <a href="#contact" class="mobile-nav-btn">Book Consultation</a>
   </div>
 
   <main>
-    <!-- Cinematic Hero Section -->
-    <section id="hero" class="hero-section active-section">
-      <!-- Particle Canvas -->
-      <canvas id="particle-canvas"></canvas>
-      
-      <div class="hero-content-wrapper">
-        <div class="hero-tag">
-          <span class="pulse-indicator"></span> ENTERPRISE-GRADE PRECISION
-        </div>
-        
-        <h1 class="hero-title">
-          Intelligent Enterprise Architectures.<br>
-          <span class="gradient-text">Engineered for Scale.</span>
-        </h1>
-        
-        <p class="hero-description">
-          We specialize in premium Website and Mobile App development, robust Web App solutions, and professional Artificial Intelligence (AI) and Information Technology (IT) consultancy services. De-risked engineering built for enterprise scale.
-        </p>
-        
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Request an Architectural Audit</a>
-          <a href="#portfolio" class="btn-secondary">Explore Our Portfolio</a>
+    <!-- Cinematic Scroll Hero Section (Remotion Engine) -->
+    <section id="hero" class="cinematic-scroll-section hero-section">
+      <div class="cinematic-sticky-wrapper">
+        <!-- Background Video Canvas / Video Player -->
+        <div class="cinematic-media-container">
+          <video id="cinematic-video" class="cinematic-video" src="videos/disrupt-cinematic.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <div class="cinematic-vignette"></div>
+          <div class="cinematic-scanlines"></div>
         </div>
 
+        <!-- Top HUD Telemetry Bar -->
+        <div class="cinematic-hud-top">
+          <div class="hud-item hud-engine">
+            <span class="hud-dot"></span>
+            <span>DISRUPT SOLUTIONS // AI & INFRASTRUCTURE</span>
+          </div>
+          <div class="hud-item hud-phase-badge" id="hud-phase-label">
+            PHASE 01: INTELLIGENCE FIRST
+          </div>
+          <div class="hud-item hud-telemetry">
+            <span id="hud-progress-text">SCROLL: 0%</span>
+            <span class="hud-separator">|</span>
+            <span id="hud-frame-text">FRAME: 0 / 240</span>
+          </div>
+        </div>
 
+        <!-- Dynamic Editorial Narrative Overlay (Option 1: Pure Kinetic Video + HTML Typography) -->
+        <div class="cinematic-story-overlay">
+          <!-- Narrative Phase 1: Intelligence First -->
+          <div class="narrative-layer active" data-phase="1">
+            <div class="narrative-tag">
+              <span class="pulse-indicator"></span> DISRUPT SOLUTIONS · A DISRUPT GROUP COMPANY
+            </div>
+            <h1 class="narrative-headline">
+              Intelligence, then infrastructure.<br>
+              <span class="gradient-text">In that order.</span>
+            </h1>
+            <p class="narrative-description">
+              We engineer autonomous AI agents, enterprise web applications, and distributed software systems built to hold a market position for years.
+            </p>
+            <div class="narrative-actions">
+              <a href="#contact" class="btn-primary">Book a Consultation ➔</a>
+              <a href="#capabilities" class="btn-secondary">Explore Capabilities</a>
+            </div>
+          </div>
+
+          <!-- Narrative Phase 2: Capabilities Architecture -->
+          <div class="narrative-layer" data-phase="2">
+            <div class="narrative-tag">CAPABILITIES ARCHITECTURE</div>
+            <h2 class="narrative-headline">
+              Autonomous Agents &amp;<br>
+              <span class="gradient-text">Distributed Systems.</span>
+            </h2>
+            <p class="narrative-description">
+              From deterministic quantitative engines to zero-trust API meshes, our software is engineered for zero-drift execution under live production workloads.
+            </p>
+            <div class="narrative-actions">
+              <a href="#capabilities" class="btn-primary">View Engineering Stack ➔</a>
+              <a href="#contact" class="btn-secondary">Discuss Your Pipeline</a>
+            </div>
+          </div>
+
+          <!-- Narrative Phase 3: Verified Benchmarks -->
+          <div class="narrative-layer" data-phase="3">
+            <div class="narrative-tag">ENGINEERING RECEIPTS</div>
+            <h2 class="narrative-headline">
+              Benchmarks Behind<br>
+              <span class="gradient-text">The Software.</span>
+            </h2>
+            <p class="narrative-description">
+              99.99% system uptime, &lt; 15ms execution latency, and 50,000+ monthly deliveries scaled across live production networks.
+            </p>
+            <div class="narrative-actions">
+              <a href="#receipts" class="btn-primary">Inspect Verified Receipts ➔</a>
+              <a href="#proof" class="btn-secondary">View Live Systems</a>
+            </div>
+          </div>
+
+          <!-- Narrative Phase 4: Deploy & Scale -->
+          <div class="narrative-layer" data-phase="4">
+            <div class="narrative-tag">DEPLOY &amp; SCALE</div>
+            <h2 class="narrative-headline">
+              Tell us what you're building.<br>
+              <span class="gradient-text">We'll architect the engine.</span>
+            </h2>
+            <p class="narrative-description">
+              We reply with a detailed technical point of view within one business day. Most agencies build sites — we build infrastructure that compounds.
+            </p>
+            <div class="narrative-actions">
+              <a href="#contact" class="btn-primary pulse-btn">Book a Consultation ➔</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom HUD Controls & Timeline Scrubber -->
+        <div class="cinematic-hud-bottom">
+          <!-- Timeline Track with Phase Nodes -->
+          <div class="cinematic-timeline-container">
+            <div class="timeline-bar-bg">
+              <div class="timeline-bar-fill" id="timeline-fill"></div>
+            </div>
+            <div class="timeline-nodes">
+              <button class="timeline-node active" data-target-progress="0.0" title="Phase 1: Intelligence">
+                <span class="node-marker"></span>
+                <span class="node-label">Intelligence</span>
+              </button>
+              <button class="timeline-node" data-target-progress="0.33" title="Phase 2: Capabilities">
+                <span class="node-marker"></span>
+                <span class="node-label">Capabilities</span>
+              </button>
+              <button class="timeline-node" data-target-progress="0.66" title="Phase 3: Receipts">
+                <span class="node-marker"></span>
+                <span class="node-label">Receipts</span>
+              </button>
+              <button class="timeline-node" data-target-progress="1.0" title="Phase 4: Deploy">
+                <span class="node-marker"></span>
+                <span class="node-label">Deploy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Playback Controls -->
+          <div class="cinematic-controls">
+            <button id="cinematic-play-toggle" class="control-btn" title="Toggle Auto-Play vs Scroll Scrub">
+              <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span id="play-btn-text">Autoplay Video</span>
+            </button>
+            <div class="scroll-scrub-indicator">
+              <span>Scroll to Animate</span>
+              <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Services / Solutions Section -->
-    <section id="services" class="services-section">
+    <!-- Capabilities Bento Section -->
+    <section id="capabilities" class="services-section">
       <div class="section-container">
         <div class="section-header">
-          <span class="section-subtitle">CAPABILITIES & STANDARDS</span>
-          <h2 class="section-title">Engineered to Handle Complexity</h2>
-          <p class="section-description">We build software that eliminates operational risk, integrates seamlessly with legacy environments, and scales securely.</p>
+          <span class="section-subtitle">ENGINEERING CAPABILITIES</span>
+          <h2 class="section-title">Built for Production. <span class="gradient-text">Engineered to Hold.</span></h2>
+          <p class="section-description">We deploy high-performance software infrastructure, autonomous intelligence, and scalable web platforms for category leaders.</p>
         </div>
 
         <div class="services-grid">
-          <!-- Service Card 1 -->
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3>Website & Mobile App Development</h3>
-            <p>Design and deploy native, high-performance iOS and Android mobile applications alongside custom responsive websites. Built with modern, robust frameworks optimized for conversion and seamless User Experience (UX).</p>
+          <!-- Capability 1: Production AI -->
+          <div class="service-card discipline-blue">
+            <div class="discipline-tag tag-blue">PRODUCTION AI</div>
+            <h3>Autonomous Agents & LLM Systems</h3>
+            <p>We build narrow vertical agents, retrieval-grounded pipelines, and automated tool harnesses engineered for high-concurrency deterministic execution.</p>
             <ul class="service-features">
-              <li>Native iOS & Android Apps</li>
-              <li>Responsive Performance Websites</li>
-              <li>Modern Interactive Layouts</li>
+              <li>Deterministic Autonomous Agent Engines</li>
+              <li>Retrieval Grounding & Vector Storage</li>
+              <li>Live Tool Calling & Safety Guardrails</li>
             </ul>
           </div>
 
-          <!-- Service Card 2 -->
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-            <h3>Web App Solutions</h3>
-            <p>Custom Web App solutions engineered to unify business resource management, legacy system integrations, and business processes into high-performance, single-panel operating environments.</p>
+          <!-- Capability 2: Cloud-Native Distributed Systems -->
+          <div class="service-card discipline-blue">
+            <div class="discipline-tag tag-blue">INFRASTRUCTURE</div>
+            <h3>Distributed Cloud Architecture</h3>
+            <p>Cloud-native backends engineered to withstand massive spikes with zero downtime, automated failovers, and sub-millisecond data synchronization.</p>
             <ul class="service-features">
-              <li>Cloud-Native Web Systems</li>
-              <li>Database & Application Programming Interface (API) Integrations</li>
-              <li>Tailored Workflow Automations</li>
+              <li>Zero-Trust API & Data Mesh</li>
+              <li>Microservices & Serverless Scaling</li>
+              <li>Low-Latency Spatial & Real-Time Routing</li>
             </ul>
           </div>
 
-          <!-- Service Card 3 -->
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2a10 10 0 0 1 7.54 16.59l-1.39-1.39A8 8 0 1 0 5 12h2a6 6 0 1 1 11.23 2.83l-1.42-1.42A4 4 0 1 0 9 12h2a2 2 0 1 1 3.46 1.41l-1.42-1.42A1 1 0 1 0 12 12"/>
-              </svg>
-            </div>
-            <h3>Artificial Intelligence (AI) Consultancy</h3>
-            <p>High-level consultancy assisting companies in designing automated workflows, custom neural networks, and deploying secure, private machine learning systems.</p>
+          <!-- Capability 3: Enterprise Web Platforms -->
+          <div class="service-card discipline-blue">
+            <div class="discipline-tag tag-blue">ENTERPRISE WEB</div>
+            <h3>Mission-Critical Platforms & Gateways</h3>
+            <p>High-conversion web platforms, merchant portals, and custom payment aggregation gateways that handle multi-territory banking clearing.</p>
             <ul class="service-features">
-              <li>AI Workflow Integration</li>
-              <li>IT System Roadmap Design</li>
-              <li>Database & Scale Architecture</li>
-            </ul>
-          </div>
-
-          <!-- Service Card 4 -->
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"/>
-                <line x1="12" y1="20" x2="12" y2="4"/>
-                <line x1="6" y1="20" x2="6" y2="14"/>
-              </svg>
-            </div>
-            <h3>Business Intelligence (BI) Consultancy</h3>
-            <p>High-level consulting helping businesses automate reports using PowerQuery, PowerBI, and Tableau, and engineering Jasper Reports integrations for Java 2 Platform Enterprise Edition (J2EE) Enterprise Java applications.</p>
-            <ul class="service-features">
-              <li>Report Automation (PowerQuery/BI/Tableau)</li>
-              <li>Jasper Reports for J2EE Java Apps</li>
-              <li>Data Analytics & Scaling Roadmaps</li>
+              <li>Multi-Currency Payment Gateways</li>
+              <li>Real-Time Dispatch & Logistics Portals</li>
+              <li>High-Density Operational Dashboards</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-      <div class="section-container">
-        <div class="about-grid">
-          <div class="about-content">
-            <span class="section-subtitle">THE PEDIGREE</span>
-            <h2 class="section-title">Robust Software Systems Built for Scale</h2>
-            <p class="about-para">
-              At Disrupt Solutions, we believe that modern websites, mobile apps, web solutions, and AI integrations should introduce operational efficiency and accelerate output. We provide expert AI and IT consultancy alongside robust tool and system development to streamline your operations at scale.
-            </p>
-            
-            <div class="advantage-box">
-              <h4>The Parent Company Proof</h4>
-              <p>
-                We do not test our software on our external clients. We test it on our own. As the core technology center for our parent conglomerate, **Disrupt Group**, we design and manage the operational infrastructure that processes millions of daily transactions and coordinates global business units. The exact same resilience, speed, and tooling we build for Disrupt Group is deployed directly into your custom solution.
-              </p>
-            </div>
-          </div>
-          
-          <div class="about-visual">
-            <div class="visual-card glass-card">
-              <div class="visual-header">
-                <span class="pulse-indicator green"></span>
-                <span class="title">Active Systems Topology</span>
-              </div>
-              <div class="visual-body">
-                <div class="system-stat">
-                  <span class="lbl">Consolidated Units</span>
-                  <span class="val">14 Business Systems</span>
-                </div>
-                <div class="system-stat">
-                  <span class="lbl">Daily Transaction Capacity</span>
-                  <span class="val">10M+ Queries</span>
-                </div>
-                <div class="system-stat">
-                  <span class="lbl">API System Speed</span>
-                  <span class="val">&lt; 120ms Latency</span>
-                </div>
-                <div class="system-stat">
-                  <span class="lbl">Active Database Sync</span>
-                  <span class="val">Multi-Region Real-time</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
+    <!-- Receipts & Benchmarks Section -->
+    <section id="receipts" class="receipts-section">
       <div class="section-container">
         <div class="section-header">
-          <span class="section-subtitle">SYSTEMS & PLATFORMS</span>
-          <h2 class="section-title">Our Featured Portfolio</h2>
-          <p class="section-description">Explore custom-built applications and regional systems designed for the Disrupt Group ecosystem and external partners.</p>
+          <span class="section-subtitle">VERIFIED BENCHMARKS</span>
+          <h2 class="section-title">The Numbers That <span class="gradient-text">Hold Up.</span></h2>
+          <p class="section-description">We don't lead with adjectives. Every figure here is a live benchmark from software running in production.</p>
+        </div>
+
+        <!-- Big Highlight Cards -->
+        <div class="receipts-big-grid">
+          <div class="receipt-big-card glass-card">
+            <span class="receipt-tag">RELIABILITY</span>
+            <div class="receipt-number">99.99%</div>
+            <div class="receipt-label">Verified Production Uptime</div>
+            <div class="receipt-desc">Across all live cloud nodes, payment gateways, and APIs.</div>
+          </div>
+
+          <div class="receipt-big-card glass-card accent-receipt">
+            <span class="receipt-tag">SPEED</span>
+            <div class="receipt-number">&lt; 15ms</div>
+            <div class="receipt-label">Execution & Routing Latency</div>
+            <div class="receipt-desc">Deterministic order routing and real-time event dispatch.</div>
+          </div>
+        </div>
+
+        <!-- Metric Cells Strip -->
+        <div class="receipts-strip glass-card">
+          <div class="receipt-cell">
+            <span class="cell-num">4+</span>
+            <span class="cell-title">AI Automations</span>
+            <span class="cell-sub">deployed, not demoed</span>
+          </div>
+          <div class="receipt-cell">
+            <span class="cell-num">50K+</span>
+            <span class="cell-title">Monthly Deliveries</span>
+            <span class="cell-sub">real-time spatial dispatch</span>
+          </div>
+          <div class="receipt-cell">
+            <span class="cell-num">8</span>
+            <span class="cell-title">Island States</span>
+            <span class="cell-sub">payment mesh coverage</span>
+          </div>
+          <div class="receipt-cell">
+            <span class="cell-num">100%</span>
+            <span class="cell-title">Deterministic Code</span>
+            <span class="cell-sub">runtime invariant safety</span>
+          </div>
+        </div>
+
+        <div class="receipts-close">
+          One engineering discipline. <strong>Evidence over instinct.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof / Systems Showcase Section -->
+    <section id="proof" class="portfolio-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">LIVE SYSTEMS</span>
+          <h2 class="section-title">Proof, Not a <span class="gradient-text">Portfolio.</span></h2>
+          <p class="section-description">Production-grade systems built and deployed by Disrupt Solutions.</p>
         </div>
 
         <div class="portfolio-grid">
-          <!-- Portfolio Card 1: SLU Eats -->
-          <div class="portfolio-card glass-card" onclick="openPortfolio('slu-eats')">
+          <!-- System 1: Hazel -->
+          <div class="portfolio-card glass-card" onclick="openPortfolio('hazel')">
             <div class="card-image-placeholder">
-              <span class="portfolio-badge">On-Demand Logistics</span>
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              <span class="portfolio-badge tag-blue">Autonomous Agent</span>
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5">
+                <path d="M12 2a10 10 0 0 1 7.54 16.59l-1.39-1.39A8 8 0 1 0 5 12h2a6 6 0 1 1 11.23 2.83l-1.42-1.42A4 4 0 1 0 9 12h2a2 2 0 1 1 3.46 1.41l-1.42-1.42A1 1 0 1 0 12 12"/>
               </svg>
             </div>
             <div class="card-content">
-              <h3>SLU Eats: On-Demand Food Delivery</h3>
-              <p>A high-performance logistics and delivery engine built to coordinate thousands of orders, drivers, and partners under the Disrupt Group umbrella.</p>
+              <h3>Hazel: Autonomous Trading Engine</h3>
+              <p>An autonomous trading agent running end-to-end deterministic quantitative strategies with zero human monitoring friction.</p>
+              <div class="card-metrics">
+                <div class="metric">
+                  <span class="metric-val">100%</span>
+                  <span class="metric-lbl">Deterministic</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">Live</span>
+                  <span class="metric-lbl">Production AI</span>
+                </div>
+              </div>
+              <span class="card-link">Inspect System Architecture &rarr;</span>
+            </div>
+          </div>
+
+          <!-- System 2: SLU Eats -->
+          <div class="portfolio-card glass-card" onclick="openPortfolio('slu-eats')">
+            <div class="card-image-placeholder">
+              <span class="portfolio-badge tag-blue">Logistics Platform</span>
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>SLU Eats: Real-Time Dispatch Engine</h3>
+              <p>High-throughput on-demand logistics system with spatial indexing, WebSockets order tracking, and multi-stop driver batching.</p>
               <div class="card-metrics">
                 <div class="metric">
                   <span class="metric-val">50K+</span>
-                  <span class="metric-lbl">Monthly Deliveries</span>
+                  <span class="metric-lbl">Monthly Orders</span>
                 </div>
                 <div class="metric">
                   <span class="metric-val">&lt; 1.2s</span>
-                  <span class="metric-lbl">Dispatch Coordination</span>
+                  <span class="metric-lbl">Dispatch Match</span>
                 </div>
               </div>
-              <span class="card-link">View Technical Summary &rarr;</span>
+              <span class="card-link">Inspect System Architecture &rarr;</span>
             </div>
           </div>
 
-          <!-- Portfolio Card 2: Disrupt Marketplace -->
+          <!-- System 3: Disrupt Marketplace -->
           <div class="portfolio-card glass-card" onclick="openPortfolio('disrupt-marketplace')">
             <div class="card-image-placeholder">
-              <span class="portfolio-badge">E-Commerce & Payments</span>
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <span class="portfolio-badge tag-blue">Payment Gateway</span>
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
               </svg>
             </div>
             <div class="card-content">
-              <h3>Disrupt Marketplace: Caribbean E-Commerce</h3>
-              <p>A regional multi-territory online marketplace integrated with our custom secure payment gateway for merchant checkouts.</p>
+              <h3>Disrupt Marketplace & Payment Mesh</h3>
+              <p>Unified Caribbean e-commerce engine with aggregated bank clearing APIs, multi-currency processing, and instant merchant settlement.</p>
               <div class="card-metrics">
                 <div class="metric">
                   <span class="metric-val">8 States</span>
-                  <span class="metric-lbl">Payment Coverage</span>
+                  <span class="metric-lbl">Banking Mesh</span>
                 </div>
                 <div class="metric">
                   <span class="metric-val">99.99%</span>
-                  <span class="metric-lbl">Gateway Uptime</span>
+                  <span class="metric-lbl">Uptime</span>
                 </div>
               </div>
-              <span class="card-link">View Technical Summary &rarr;</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Client Engagements by Sector -->
-        <div class="sectors-wrapper">
-          <h3 class="sectors-title">Proven Tool Solutions Across Key Sectors</h3>
-          <div class="sectors-grid">
-            <div class="sector-card glass-card">
-              <div class="sector-icon">🚗</div>
-              <h4>Automotive</h4>
-              <p>Custom parts databases, local dealer networks, and logistics tracking tools.</p>
-            </div>
-            <div class="sector-card glass-card">
-              <div class="sector-icon">📦</div>
-              <h4>Warehousing</h4>
-              <p>Stock coordinators, automated pick paths, and package fulfillment utilities.</p>
-            </div>
-            <div class="sector-card glass-card">
-              <div class="sector-icon">🏥</div>
-              <h4>Health Sector</h4>
-              <p>Staff schedule managers, patient booking panels, and record-keeping utilities.</p>
-            </div>
-            <div class="sector-card glass-card">
-              <div class="sector-icon">📈</div>
-              <h4>Marketing</h4>
-              <p>Analytics reporting dashboards, API lead trackers, and notification engines.</p>
+              <span class="card-link">Inspect System Architecture &rarr;</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Engineering Principles Section -->
+    <section id="principles" class="signals-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">THE METHOD</span>
+          <h2 class="section-title">How We <span class="gradient-text">Engineer.</span></h2>
+          <p class="section-description">Our non-negotiable architectural tenets for high-stakes technology deployments.</p>
+        </div>
 
+        <div class="signals-grid">
+          <!-- Principle 1 -->
+          <div class="signal-card glass-card">
+            <div class="signal-cat tag-blue">Principle 01</div>
+            <h3 class="signal-title">Evidence Over Instinct.</h3>
+            <p class="signal-excerpt">The budget for AI novelty is gone. We deploy narrow vertical agents grounded in structured data pipelines that deliver verified ROI from day one.</p>
+            <div class="signal-meta">
+              <span>Production AI Tenet · Verified</span>
+            </div>
+          </div>
 
-    <!-- Contact & Consultation Section -->
+          <!-- Principle 2 -->
+          <div class="signal-card glass-card">
+            <div class="signal-cat tag-blue">Principle 02</div>
+            <h3 class="signal-title">Deterministic Invariance.</h3>
+            <p class="signal-excerpt">Autonomous systems must never operate without strict boundary invariants. We implement formal verification harnesses so software cannot execute invalid state transitions.</p>
+            <div class="signal-meta">
+              <span>Zero-Drift Architecture · Strict</span>
+            </div>
+          </div>
+
+          <!-- Principle 3 -->
+          <div class="signal-card glass-card">
+            <div class="signal-cat tag-blue">Principle 03</div>
+            <h3 class="signal-title">Infrastructure That Compounds.</h3>
+            <p class="signal-excerpt">We reject disposable deliverables. Every data mesh, API layer, and software pipeline is architected to compound competitive advantage for years.</p>
+            <div class="signal-meta">
+              <span>Long-Horizon Engineering · Core</span>
+            </div>
+          </div>
+
+          <!-- Principle 4 -->
+          <div class="signal-card glass-card">
+            <div class="signal-cat tag-blue">Principle 04</div>
+            <h3 class="signal-title">Intelligence, Then Infrastructure.</h3>
+            <p class="signal-excerpt">In that order. Building infrastructure without intelligence creates legacy maintenance debt. Building intelligence without infrastructure creates fragile demos.</p>
+            <div class="signal-meta">
+              <span>Disrupt Solutions Thesis · Non-negotiable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Sell Parent Group Ecosystem Banner -->
+    <section class="cross-sell-banner">
+      <div class="section-container banner-inner">
+        <span class="banner-eye">PART OF DISRUPT GROUP</span>
+        <h3 class="banner-msg">Looking for Category Strategy or Brand Story BOS? Explore <strong><a href="https://www.disruptgrp.com" target="_blank" rel="noopener" style="color:#00f2fe; text-decoration: underline;">Disrupt Group</a></strong> &amp; <strong><a href="https://media.disruptgrp.com" target="_blank" rel="noopener" style="color:#f43f5e; text-decoration: underline;">Disrupt Media</a></strong>.</h3>
+        <a href="#contact" class="btn-primary">Book Solutions Consultation ➔</a>
+      </div>
+    </section>
+
+    <!-- Technical Consultation Intake Gateway -->
     <section id="contact" class="contact-section">
       <div class="section-container">
         <div class="contact-grid">
           <div class="contact-info">
-            <span class="section-subtitle">CONVERSION GATEWAY</span>
-            <h2 class="section-title">Request a Custom Solution Consultation</h2>
+            <span class="section-subtitle">ENGINEERING CONSULTATION</span>
+            <h2 class="section-title">Tell us what you're building.<br>We'll architect the <span class="gradient-text">engine.</span></h2>
             <p class="contact-para">
-              Get in touch with our team to discuss your website, mobile app, web solution, or consultancy requirements.
+              Book a direct technical session with our lead software architects and AI engineers. We reply with an actionable architectural assessment within one business day.
             </p>
+            
+            <div class="contact-email-box">
+              <span class="email-label">DIRECT ENGINEERING INQUIRIES:</span>
+              <a href="mailto:appointment@disruptgrp.com" class="direct-email">appointment@disruptgrp.com</a>
+            </div>
+
             <div class="contact-details">
               <div class="detail-item">
                 <span class="icon">✓</span>
-                <span>Expert Website & Mobile App consultation</span>
+                <div>
+                  <strong>Direct Principal Architect Access:</strong> Speak directly with senior systems engineers.
+                </div>
               </div>
               <div class="detail-item">
                 <span class="icon">✓</span>
-                <span>Robust Web App systems roadmap</span>
+                <div>
+                  <strong>Actionable POV:</strong> Complete architectural roadmap and feasibility assessment.
+                </div>
               </div>
               <div class="detail-item">
                 <span class="icon">✓</span>
-                <span>Professional AI & IT consultancy analysis</span>
+                <div>
+                  <strong>Confidentiality Assured:</strong> Strict mutual NDA protection for your proprietary thesis.
+                </div>
               </div>
             </div>
           </div>
 
           <div class="contact-form-container glass-card">
             <form id="contact-form">
+              <!-- Service Category Selector Pills -->
               <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
+                <label class="form-label-pills">Select Engineering Focus:</label>
+                <div class="service-pills">
+                  <button type="button" class="pill-btn active" data-service="Production AI &amp; Autonomous Agents">Production AI &amp; Agents</button>
+                  <button type="button" class="pill-btn" data-service="Distributed Cloud Infrastructure">Cloud Infrastructure</button>
+                  <button type="button" class="pill-btn" data-service="Enterprise Web &amp; Payment Platforms">Web &amp; Payment Gateway</button>
+                </div>
+                <input type="hidden" id="selected-service" name="service" value="Production AI &amp; Autonomous Agents">
+              </div>
+
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
               </div>
               
               <div class="form-row">
                 <div class="form-group">
                   <label for="email">Work Email *</label>
-                  <input type="email" id="email" name="email" required placeholder="john@company.com">
+                  <input type="email" id="email" name="email" required placeholder="you@company.com">
                 </div>
                 <div class="form-group">
-                  <label for="phone">Contact Number *</label>
-                  <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                  <label for="phone">Phone / WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="description">Project Description & Requirements *</label>
-                <textarea id="description" name="description" required placeholder="Describe your website, app, web systems, or consultancy objectives."></textarea>
+                <label for="description">System Requirements &amp; Scope *</label>
+                <textarea id="description" name="description" required placeholder="Tell us about the software, AI pipeline, or infrastructure you need to architect."></textarea>
               </div>
 
               <button type="submit" class="btn-submit">
-                <span>Submit Request</span>
+                <span>Book a Consultation ➔</span>
                 <span class="loader hidden"></span>
               </button>
+              <div class="form-note">We reply within one working day with an engineering point of view.</div>
             </form>
 
             <div id="form-feedback" class="form-feedback hidden"></div>
@@ -368,23 +560,47 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-brand">
-        <div class="footer-logo-wrapper">
-          <img src="logo.png" alt="Disrupt Solutions Logo" class="logo-img-footer">
-          <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrapper">
+            <img src="logo.png" alt="Disrupt Solutions Logo" class="logo-img-footer">
+            <span class="logo-text"><span class="logo-accent">DISRUPT</span> SOLUTIONS</span>
+          </div>
+          <p class="brand-desc">A Disrupt Group Company. Intelligence, then infrastructure. In that order. We build autonomous AI agents, enterprise web applications, and distributed software systems.</p>
         </div>
-        <p class="brand-desc">Premium Website & Mobile App development, robust Web App solutions, and secure AI & IT consultancy services.</p>
+        
+        <div class="footer-col">
+          <h4>Disrupt Ecosystem</h4>
+          <a href="https://www.disruptgrp.com" target="_blank" rel="noopener">Disrupt Group (Parent) ↗</a>
+          <a href="https://media.disruptgrp.com" target="_blank" rel="noopener">Disrupt Media ↗</a>
+          <a href="#hero">Disrupt Solutions</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Solutions Navigation</h4>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#receipts">Receipts</a>
+          <a href="#proof">Live Systems</a>
+          <a href="#principles">Method</a>
+          <a href="#contact">Consultation</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <a href="mailto:appointment@disruptgrp.com">appointment@disruptgrp.com</a>
+          <div class="footer-status">
+            <span class="pulse-indicator green"></span> Production Nodes: Online
+          </div>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2026 Disrupt Solutions. All rights reserved. Technology Center for Disrupt Group.</p>
-        <div class="footer-status">
-          <span class="pulse-indicator green"></span> Infrastructure Status: Online
-        </div>
+        <p>Disrupt Solutions Inc. · A Disrupt Group Company · 2024/C133 · Saint Lucia · Borderless Engineering · © 2026</p>
       </div>
     </div>
   </footer>
 
-  <!-- Portfolio Lightbox Modals -->
+  <!-- Lightbox Modal for System Architectural Deep Dives -->
   <div id="portfolio-modal" class="modal">
     <div class="modal-content glass-card">
       <button class="modal-close" onclick="closePortfolio()">&times;</button>
@@ -392,7 +608,7 @@
     </div>
   </div>
 
-  <!-- Custom Logic Script -->
+  <!-- Core JavaScript Logic -->
   <script src="app.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initNavigation();
   initContactForm();
+  initCinematicShowcase();
 });
 
 /* ==========================================================================
@@ -199,9 +200,69 @@ function initNavigation() {
    3. Portfolio Library & Modal Logic
    ========================================================================== */
 const PORTFOLIO_ITEMS = {
+  'hazel': {
+    title: 'Hazel: Autonomous Trading Engine',
+    subtitle: 'Disrupt Solutions · Production AI & Scalable Tech',
+    tags: ['Deterministic Trading Strategy', 'Autonomous Agent Engine', 'Zero-Latency Execution', 'Production AI'],
+    metrics: [
+      { val: '100%', lbl: 'Deterministic Engine' },
+      { val: 'Live', lbl: 'Production AI' },
+      { val: '&lt; 15ms', lbl: 'Order Routing Latency' }
+    ],
+    content: `
+      <h3>The Interception Thesis</h3>
+      <p>Financial trading infrastructure traditionally required sprawling developer headcounts and expensive manual monitoring shifts. The Disrupt Solutions thesis was simple: a completely deterministic, autonomous trading engine could execute and manage complex risk-bounded strategies without human friction or drift.</p>
+
+      <h3>System Architecture & Engineering</h3>
+      <p>Hazel was architected as an autonomous trading agent running end-to-end deterministic quantitative strategies. Built on a low-latency execution harness with strict invariant validation, Hazel manages automated risk calculations, tick data stream ingestion, and millisecond-grade execution without runtime human intervention.</p>
+
+      <h3>Proof in Production</h3>
+      <p>Hazel is live in production — serving as tangible evidence that Disrupt Solutions ships AI agents that operate reliably under live capital conditions rather than sandboxed prototypes.</p>
+    `
+  },
+  'disruptors': {
+    title: 'The Disruptors: Documentary Series',
+    subtitle: 'Disrupt Media · Story & Narrative Infrastructure',
+    tags: ['Faceless Documentary Series', 'Brand OS', 'Content Intelligence', 'Campaign Media'],
+    metrics: [
+      { val: 'Global', lbl: 'Audience Reach' },
+      { val: 'Series', lbl: 'Campaign Media' },
+      { val: '100%', lbl: 'Editorial Autonomy' }
+    ],
+    content: `
+      <h3>The Interception Thesis</h3>
+      <p>A brand is the story people tell when you're not in the room. Standard agency video production focuses on ephemeral corporate ads that leave zero lasting cultural footprint. Disrupt Media created <em>The Disruptors</em> as a cinematic documentary vehicle to dissect how category-defining operators intercept markets.</p>
+
+      <h3>Media & Narrative Architecture</h3>
+      <p>Engineered using Disrupt Media's proprietary Brand Operating System (BOS), the series combines faceless storytelling, high-contrast visual pacing, deep archival investigative research, and synchronized digital distribution across global streaming channels.</p>
+
+      <h3>Proof of Impact</h3>
+      <p><em>The Disruptors</em> proved that high-depth intellectual media builds deeper institutional trust and audience compounding than traditional paid advertising campaigns.</p>
+    `
+  },
+  'meta-research': {
+    title: "Meta's Legal Exposure: Market Interception Teardown",
+    subtitle: 'Disrupt Group · Market Signals & POV Research',
+    tags: ['Regulatory Exposure Teardown', 'Pre-Market Analysis', 'Market Signals', 'Category Repricing'],
+    metrics: [
+      { val: 'Pre-Market', lbl: 'Analysis Timing' },
+      { val: 'Published', lbl: 'Signal Whitepaper' },
+      { val: '100%', lbl: 'Original Research' }
+    ],
+    content: `
+      <h3>The Interception Thesis</h3>
+      <p>Disrupt Group publishes research before the market reprices. When antitrust, privacy, and regulatory litigations mounted against major social tech monopolies, we conducted a structural teardown of Meta's legal exposure and the fragility of ad-funded social data graphs.</p>
+
+      <h3>Research Methodology & Findings</h3>
+      <p>Our research revealed that systemic regulatory fines, app-tracking transparency constraints, and rising litigation risks would force an irreversible shift towards private federated infrastructure, decentralized monetization, and sovereign AI tooling.</p>
+
+      <h3>The Receipt</h3>
+      <p>This teardown serves as a published receipt of how Disrupt Group identifies tectonic market shifts months before they become mainstream consensus.</p>
+    `
+  },
   'slu-eats': {
     title: 'SLU Eats Delivery Engine',
-    subtitle: 'On-Demand Food Logistics System under Disrupt Group',
+    subtitle: 'Disrupt Solutions · Autonomous Logistics & Real-Time Dispatch',
     tags: ['Real-Time Dispatching', 'Interactive Drivers Map', 'Merchant Portals', 'Operational Logistics'],
     metrics: [
       { val: '50K+', lbl: 'Monthly Deliveries' },
@@ -210,21 +271,18 @@ const PORTFOLIO_ITEMS = {
     ],
     content: `
       <h3>The Challenge</h3>
-      <p>As a key subsidiary of the Disrupt Group, SLU Eats needed to coordinate on-demand food deliveries across a rapidly growing network of restaurants, drivers, and consumers. Fragmented scheduling, inaccurate driver tracking, and manual order dispatching caused high latency, resulting in cold deliveries and low driver utilization rates.</p>
+      <p>As a key logistics subsidiary within the Disrupt Group ecosystem, SLU Eats required an on-demand food logistics system capable of handling high-velocity concurrent delivery orders without human dispatch bottlenecks.</p>
 
       <h3>Our Solution & System Architecture</h3>
-      <p>We engineered a highly responsive, custom dispatching and delivery system. Built with real-time WebSockets and spatial indexing, the dispatcher matches orders to nearby active drivers within seconds. The system provides restaurants with dedicated tablets to confirm prep speeds and manages driver payouts automatically. Restaurants and delivery agents can sign up through our <a href="https://partners.slueats.com/" target="_blank" rel="noopener noreferrer">partner site</a>.</p>
+      <p>Disrupt Solutions engineered a real-time WebSockets dispatching engine backed by spatial indexing. The engine automatically matches orders to the nearest optimal drivers within 1.2 seconds and computes intelligent multi-stop route batching to reduce trip latency and fuel overhead.</p>
 
-      <h3>Workflow Tooling</h3>
-      <p>We designed an intelligent route-batching utility that groups nearby orders going to the same neighborhood. Drivers receive optimal multi-stop route suggestions, which reduces overall delivery trip times and saves fuel.</p>
-
-      <h3>Quantified Business Value</h3>
-      <p>Since launch, SLU Eats scales to over 50,000 monthly orders smoothly. Automated dispatch latency fell below 1.2 seconds, and active driver utilization improved by 94%, establishing SLU Eats as St. Lucia's leading food delivery application. You can follow their latest updates on their <a href="https://www.instagram.com/slueatsdelivery/" target="_blank" rel="noopener noreferrer">Instagram page</a>.</p>
+      <h3>Quantified Production Value</h3>
+      <p>In live production, SLU Eats scales past 50,000 monthly orders with automated dispatch coordination latency under 1.2 seconds and a 94% improvement in driver utilization.</p>
     `
   },
   'disrupt-marketplace': {
     title: 'Disrupt Marketplace Platform',
-    subtitle: 'Caribbean Multi-Territory Online Marketplace & Payment Gateway',
+    subtitle: 'Disrupt Solutions · Payment Mesh & Enterprise Infrastructure',
     tags: ['E-Commerce Engines', 'Payment Gateways', 'Multi-Currency Processing', 'Merchant Settlement'],
     metrics: [
       { val: '8 States', lbl: 'Payment Coverage' },
@@ -233,16 +291,13 @@ const PORTFOLIO_ITEMS = {
     ],
     content: `
       <h3>The Challenge</h3>
-      <p>Caribbean merchants face high barriers when setting up e-commerce stores due to fragmented national banking systems, complex multi-currency conversions, and high transaction processing fees from international gateways.</p>
+      <p>Regional merchants faced fragmented banking rails, complex multi-currency settlements, and high processing fees from international payment gateways.</p>
 
       <h3>Our Solution & System Architecture</h3>
-      <p>We designed and built Disrupt Marketplace: a unified e-commerce platform that enables regional vendors to set up custom storefronts instantly. Core to this platform is our custom-built payment gateway, which aggregates Caribbean bank clearing networks into a single API endpoint. The system supports multi-territory currency handling, local tax calculations, and merchant payouts.</p>
+      <p>Disrupt Solutions built a unified multi-territory e-commerce engine and custom payment aggregation gateway. The infrastructure connects Caribbean bank clearing networks into a single API endpoint with multi-currency handling, automatic tax calculation, and automated merchant settlements.</p>
 
-      <h3>Workflow Tooling</h3>
-      <p>The platform features an automated merchant onboarding wizard, drag-and-drop catalog managers, and a real-time order tracking dashboard that synchronizes with local regional shipping carriers.</p>
-
-      <h3>Quantified Business Value</h3>
-      <p>The payment gateway now provides transaction processing across 8 Caribbean island states with a verified 99.99% uptime benchmark. Local merchants reduced transaction processing overhead by 40% compared to international alternatives, accelerating regional digital trade.</p>
+      <h3>Quantified Production Value</h3>
+      <p>The gateway maintains 99.99% verified uptime across 8 Caribbean island states, reducing processing overhead by 40% for active vendors.</p>
     `
   }
 };
@@ -301,6 +356,16 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Close modal on Escape key press
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    const modal = document.getElementById('portfolio-modal');
+    if (modal && modal.classList.contains('active')) {
+      closePortfolio();
+    }
+  }
+});
+
 /* ==========================================================================
    4. Contact Form Submission (MySQL Integration)
    ========================================================================== */
@@ -328,11 +393,15 @@ function initContactForm() {
 
     // Build payload
     const formData = new FormData(form);
+    const selectedService = formData.get('service') || 'General Inquiry';
+    const descriptionText = formData.get('description');
+    const combinedDescription = `[Service Interest: ${selectedService}]\n${descriptionText}`;
+
     const payload = {
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      description: formData.get('description')
+      description: combinedDescription
     };
 
     try {
@@ -377,4 +446,207 @@ function initContactForm() {
       btnText.innerText = originalText;
     }
   });
+
+  // Service Selection Pills Handler
+  const pillButtons = document.querySelectorAll('.pill-btn');
+  const serviceInput = document.getElementById('selected-service');
+
+  pillButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pillButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (serviceInput) {
+        serviceInput.value = btn.getAttribute('data-service');
+      }
+    });
+  });
 }
+
+/* ==========================================================================
+   5. Cinematic Remotion Scroll Showcase Engine (Hero Integration)
+   ========================================================================== */
+function initCinematicShowcase() {
+  const section = document.getElementById('hero') || document.getElementById('cinematic-experience');
+  const video = document.getElementById('cinematic-video');
+  if (!section || !video) return;
+
+  const hudPhaseLabel = document.getElementById('hud-phase-label');
+  const hudProgressText = document.getElementById('hud-progress-text');
+  const hudFrameText = document.getElementById('hud-frame-text');
+  const timelineFill = document.getElementById('timeline-fill');
+  const timelineNodes = document.querySelectorAll('.timeline-node');
+  const storyCards = document.querySelectorAll('.narrative-layer, .story-card');
+  const playToggleBtn = document.getElementById('cinematic-play-toggle');
+  const playBtnText = document.getElementById('play-btn-text');
+
+  let isAutoplaying = false;
+  let targetProgress = 0;
+  let currentProgress = 0;
+  let videoDuration = 8.0; // 240 frames at 30 fps
+  let isSeeking = false;
+  let animationFrameId = null;
+
+  // Ensure video metadata is loaded
+  video.addEventListener('loadedmetadata', () => {
+    if (video.duration && !isNaN(video.duration)) {
+      videoDuration = video.duration;
+    }
+  });
+
+  // Prepare video element
+  video.muted = true;
+  video.playsInline = true;
+  video.currentTime = 0.001;
+
+  // Calculate target progress from scroll position
+  function calculateScrollProgress() {
+    if (isAutoplaying) return;
+
+    const rect = section.getBoundingClientRect();
+    const sectionTop = window.scrollY + rect.top;
+    const sectionHeight = section.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollableDistance = sectionHeight - windowHeight;
+
+    if (scrollableDistance <= 0) {
+      targetProgress = 0;
+      return;
+    }
+
+    const scrolled = window.scrollY - sectionTop;
+    const rawProgress = scrolled / scrollableDistance;
+    targetProgress = Math.max(0, Math.min(1, rawProgress));
+  }
+
+  // Phase Definitions for Disrupt Solutions
+  const phases = [
+    { name: 'PHASE 01: INTELLIGENCE FIRST', min: 0.0, max: 0.25, phaseIndex: 1, nodeIdx: 0 },
+    { name: 'PHASE 02: CAPABILITIES', min: 0.25, max: 0.60, phaseIndex: 2, nodeIdx: 1 },
+    { name: 'PHASE 03: RECEIPTS', min: 0.60, max: 0.85, phaseIndex: 3, nodeIdx: 2 },
+    { name: 'PHASE 04: DEPLOY & SCALE', min: 0.85, max: 1.01, phaseIndex: 4, nodeIdx: 3 }
+  ];
+
+  function updateHUDAndStory(progress) {
+    const percent = Math.round(progress * 100);
+    const frame = Math.min(240, Math.round(progress * 240));
+
+    if (hudProgressText) hudProgressText.innerText = `SCROLL: ${percent}%`;
+    if (hudFrameText) hudFrameText.innerText = `FRAME: ${frame} / 240`;
+    if (timelineFill) timelineFill.style.width = `${percent}%`;
+
+    // Find current active phase
+    const activePhase = phases.find(p => progress >= p.min && progress < p.max) || phases[0];
+
+    if (hudPhaseLabel && hudPhaseLabel.innerText !== activePhase.name) {
+      hudPhaseLabel.innerText = activePhase.name;
+    }
+
+    // Update story cards
+    storyCards.forEach(card => {
+      const cardPhase = parseInt(card.getAttribute('data-phase'), 10);
+      if (cardPhase === activePhase.phaseIndex) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // Update timeline node buttons
+    timelineNodes.forEach((node, idx) => {
+      if (idx === activePhase.nodeIdx) {
+        node.classList.add('active');
+      } else {
+        node.classList.remove('active');
+      }
+    });
+  }
+
+  // Smooth render loop using Linear Interpolation (lerp)
+  function renderLoop() {
+    if (isAutoplaying) {
+      // In autoplay mode, progress is driven by video playback
+      if (video.duration) {
+        currentProgress = video.currentTime / video.duration;
+        updateHUDAndStory(currentProgress);
+      }
+    } else {
+      if (!video.paused) {
+        video.pause();
+      }
+
+      const diff = targetProgress - currentProgress;
+      if (Math.abs(diff) > 0.0005) {
+        currentProgress += diff * 0.22;
+      } else {
+        currentProgress = targetProgress;
+      }
+
+      // Sync video currentTime
+      const targetTime = currentProgress * videoDuration;
+      if (Math.abs(video.currentTime - targetTime) > 0.03 && !isSeeking) {
+        isSeeking = true;
+        if ('fastSeek' in video) {
+          video.fastSeek(targetTime);
+          isSeeking = false;
+        } else {
+          video.currentTime = targetTime;
+          isSeeking = false;
+        }
+      }
+
+      updateHUDAndStory(currentProgress);
+    }
+
+    animationFrameId = requestAnimationFrame(renderLoop);
+  }
+
+  // Scroll listener
+  window.addEventListener('scroll', calculateScrollProgress, { passive: true });
+  window.addEventListener('resize', calculateScrollProgress, { passive: true });
+
+  // Initial calculation and start loop
+  calculateScrollProgress();
+  currentProgress = targetProgress;
+  renderLoop();
+
+  // Timeline node click navigation
+  timelineNodes.forEach(node => {
+    node.addEventListener('click', () => {
+      if (isAutoplaying) {
+        toggleAutoplay(false);
+      }
+      const targetNodeProgress = parseFloat(node.getAttribute('data-target-progress'));
+      const rect = section.getBoundingClientRect();
+      const sectionTop = window.scrollY + rect.top;
+      const scrollableDistance = section.offsetHeight - window.innerHeight;
+      const targetScrollY = sectionTop + targetNodeProgress * scrollableDistance;
+
+      window.scrollTo({
+        top: targetScrollY,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Autoplay / Scroll Scrub toggle
+  function toggleAutoplay(forceState) {
+    isAutoplaying = typeof forceState === 'boolean' ? forceState : !isAutoplaying;
+    
+    if (isAutoplaying) {
+      video.loop = true;
+      video.play().catch(err => console.log('Autoplay was prevented:', err));
+      if (playBtnText) playBtnText.innerText = 'Pause & Scrub';
+      if (playToggleBtn) playToggleBtn.classList.add('playing');
+    } else {
+      video.pause();
+      if (playBtnText) playBtnText.innerText = 'Autoplay Video';
+      if (playToggleBtn) playToggleBtn.classList.remove('playing');
+      calculateScrollProgress();
+    }
+  }
+
+  if (playToggleBtn) {
+    playToggleBtn.addEventListener('click', () => toggleAutoplay());
+  }
+}
+
