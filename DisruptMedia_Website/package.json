@@ -1,0 +1,26 @@
+{
+  "name": "disrupt-media-website",
+  "version": "1.0.0",
+  "description": "Disrupt Media — Narrative Architecture, Production & Cultural Interception. A Disrupt Group Company.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "disrupt-media",
+    "media-production",
+    "video-production",
+    "content-strategy",
+    "brand-story",
+    "distribution"
+  ],
+  "author": "Disrupt Group",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}
