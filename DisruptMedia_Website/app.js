@@ -1,118 +1,17 @@
 /* ==========================================================================
-   Disrupt Media - Frontend Core Application Script (Tailwind Architecture)
-   Contains: Media Particle Canvas, Navigation Routing, Lightbox Modals & Form
+   Disrupt Media — Core Application Script
+   Engineered under design-taste-frontend standards
+   Features: Active Nav Spy, Interactive Cinema Modals & Consultation API
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initMediaCanvas();
   initNavigation();
-  initContactForm();
   initServicePills();
+  initContactForm();
 });
 
 /* ==========================================================================
-   1. Cinematic Media Particle & Wave Canvas Background
-   ========================================================================== */
-function initMediaCanvas() {
-  const canvas = document.getElementById('media-canvas');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let width, height;
-
-  function resize() {
-    width = canvas.width = canvas.offsetWidth;
-    height = canvas.height = canvas.offsetHeight;
-    createParticles();
-  }
-
-  window.addEventListener('resize', resize);
-
-  class MediaParticle {
-    constructor() {
-      this.reset();
-    }
-
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 1;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.alpha = Math.random() * 0.6 + 0.2;
-      this.color = Math.random() > 0.4 ? '244, 63, 94' : '251, 113, 133';
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx = -this.vx;
-      if (this.y < 0 || this.y > height) this.vy = -this.vy;
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-      ctx.fill();
-    }
-  }
-
-  function createParticles() {
-    particles = [];
-    const count = Math.min(Math.floor((width * height) / 16000), 80);
-    for (let i = 0; i < count; i++) {
-      particles.push(new MediaParticle());
-    }
-  }
-
-  function render() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Draw ambient cinematic wave curves
-    const time = Date.now() * 0.001;
-    ctx.beginPath();
-    for (let x = 0; x < width; x += 10) {
-      const y = Math.sin(x * 0.005 + time) * 35 + Math.cos(x * 0.008 - time) * 20 + height * 0.5;
-      if (x === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = 'rgba(244, 63, 94, 0.08)';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    // Render particles and connecting energy vectors
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(244, 63, 94, ${(1 - dist / 120) * 0.12})`;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(render);
-  }
-
-  resize();
-  render();
-}
-
-/* ==========================================================================
-   2. Navigation & Mobile Menu Handler
+   1. Navigation & Mobile Menu Controller
    ========================================================================== */
 function initNavigation() {
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -133,13 +32,13 @@ function initNavigation() {
     });
   }
 
-  // Active section scroll tracking
+  // Active section scroll spy
   const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-item');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const scrollPosition = window.scrollY + 140;
+    const scrollPosition = window.scrollY + 120;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -149,20 +48,20 @@ function initNavigation() {
       }
     });
 
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === `#${current}`) {
-        item.classList.add('active');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
       }
     });
   }, { passive: true });
 }
 
 /* ==========================================================================
-   3. Service Pills Selector
+   2. Service Focus Pills Selector
    ========================================================================== */
 function initServicePills() {
-  const pills = document.querySelectorAll('.pill-btn');
+  const pills = document.querySelectorAll('.service-pill');
   const hiddenInput = document.getElementById('selected-service');
 
   pills.forEach(pill => {
@@ -177,36 +76,66 @@ function initServicePills() {
 }
 
 /* ==========================================================================
-   4. Production Modal / Lightbox Deep Dives (Tailwind Component Layout)
+   3. Production Modal / Blueprint Deep Dives
    ========================================================================== */
 const productionsData = {
   sovereign: {
     title: "The Sovereign Narrative Series",
-    badge: "Docu-Series · 8K Cine",
+    badge: "Docu-Series · 8K Cine Capture",
+    image: "assets/sovereign_doc_still.jpg",
     overview: "A flagship 4-part episodic documentary produced by Disrupt Media, profiling institutional modernization, sovereign digital identity, and technological autonomy in emerging economies.",
-    deliverables: ["4x 12-Minute 8K Master Films", "24x Vertical Syndicate Cuts", "Custom Orchestral & Electronic Score", "Global Press Media Kit"],
-    metrics: { views: "4.2M+", retention: "88%", channels: "14 Global Outlets" },
+    deliverables: [
+      "4x 12-Minute 8K Master Films",
+      "24x Vertical Syndication Cuts",
+      "Custom Orchestral & Electronic Score",
+      "Global Institutional Press Kit"
+    ],
+    metrics: [
+      { label: "Organic Reach", value: "4.2M+" },
+      { label: "Completion Rate", value: "88%" },
+      { label: "Syndication", value: "14 Global Outlets" }
+    ],
     directorNote: "Filmed over 60 shooting days with custom anamorphic optics. Engineered to reposition institutional perception with cinematic gravitas."
   },
   apex: {
     title: "Apex Velocity Launch Campaign",
-    badge: "Commercial Film · Broadcast",
-    overview: "High-octane commercial campaign combining high-speed tracking vehicle rigs, practical neon lighting installations, and sound design engineered for maximum sensory capture.",
-    deliverables: ["60s Cinema Broadcast Master", "30s TV Spot", "15s High-Frequency Social Cuts", "Dolby Atmos Audio Master"],
-    metrics: { views: "3.1M+", completion: "92%", roi: "4.8x Direct Conversion" },
+    badge: "Commercial Film · Broadcast 60s",
+    image: "assets/apex_velocity_still.jpg",
+    overview: "High-octane commercial campaign combining precision camera vehicle tracking rigs, practical neon lighting installations, and spatial sound design engineered for maximum sensory capture.",
+    deliverables: [
+      "60s Cinema Broadcast Master",
+      "30s TV Commercial Spot",
+      "15s High-Frequency Social Cuts",
+      "Dolby Atmos Audio Master"
+    ],
+    metrics: [
+      { label: "Total Views", value: "3.1M+" },
+      { label: "Completion Rate", value: "92%" },
+      { label: "Direct Lift", value: "4.8x Conversion" }
+    ],
     directorNote: "Paced to rhythm. Every cut, camera whip, and sound transient was synchronized to psychological engagement beats."
   },
   interception: {
     title: "Market Interception Manifesto",
-    badge: "Brand Story BOS · Flagship",
+    badge: "Brand Story BOS · Flagship Campaign",
+    image: "assets/manifesto_bos_still.jpg",
     overview: "A comprehensive brand narrative transformation for an established regional financial enterprise, replacing legacy corporate messaging with a fierce cultural manifesto.",
-    deliverables: ["Brand Manifesto Film (3m 30s)", "Executive Keynote Visual Package", "Brand Story BOS Book", "Cross-Platform Social Grid"],
-    metrics: { reach: "8 Island States", sentiment: "+74% Positive Lift", duration: "Compounds Over Years" },
-    directorNote: "Media designed to hold a market position. When an enterprise speaks with absolute clarity, market inertia shifts."
+    deliverables: [
+      "Brand Manifesto Film (3m 30s)",
+      "Executive Keynote Visual Package",
+      "Brand Story BOS Architectural Guide",
+      "Cross-Platform Social Grid Matrix"
+    ],
+    metrics: [
+      { label: "Territory Reach", value: "8 States" },
+      { label: "Positive Sentiment Lift", value: "+74%" },
+      { label: "Brand Equity Duration", value: "Multi-Year" }
+    ],
+    directorNote: "Media designed to hold a market position. When an enterprise speaks with absolute clarity, category inertia shifts."
   }
 };
 
-function openProductionModal(id) {
+window.openProductionModal = function(id) {
   const modal = document.getElementById('production-modal');
   const body = document.getElementById('modal-body-content');
   const data = productionsData[id];
@@ -215,10 +144,15 @@ function openProductionModal(id) {
 
   body.innerHTML = `
     <div class="mb-6">
-      <span class="inline-block font-mono text-[10px] font-bold text-rose-400 tracking-[0.16em] uppercase px-2.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 mb-2">
-        ${data.badge}
-      </span>
-      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mt-1 mb-3">
+      <div class="rounded-xl overflow-hidden mb-5 border border-white/10 relative max-h-60 bg-black">
+        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0e0c15] via-transparent to-transparent opacity-70"></div>
+        <span class="absolute top-3 left-3 font-mono text-[10px] font-bold text-rose-300 tracking-[0.14em] uppercase px-2.5 py-1 rounded bg-[#07070a]/90 border border-rose-500/40">
+          ${data.badge}
+        </span>
+      </div>
+      
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mb-3">
         ${data.title}
       </h2>
       <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
@@ -226,9 +160,19 @@ function openProductionModal(id) {
       </p>
     </div>
 
-    <div class="bg-[#120e1a]/80 border border-rose-500/20 rounded-xl p-5 mb-6 backdrop-blur-md">
-      <h3 class="font-mono text-xs font-bold text-rose-300 tracking-wider uppercase mb-3">
-        Key Production Deliverables
+    <!-- Metrics Ribbon -->
+    <div class="grid grid-cols-3 gap-3 p-4 rounded-xl bg-[#07070a] border border-white/10 mb-6 text-center font-mono">
+      ${data.metrics.map(m => `
+        <div>
+          <span class="font-display font-extrabold text-lg sm:text-xl text-rose-400 block">${m.value}</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider">${m.label}</span>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="bg-[#07070a] border border-white/10 rounded-xl p-5 mb-6">
+      <h3 class="font-mono text-xs font-bold text-slate-300 tracking-wider uppercase mb-3">
+        Production Deliverables
       </h3>
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300">
         ${data.deliverables.map(d => `<li class="flex items-center gap-2"><span class="text-rose-500 font-bold">▹</span> ${d}</li>`).join('')}
@@ -236,32 +180,32 @@ function openProductionModal(id) {
     </div>
 
     <div class="border-l-2 border-rose-500 pl-4 py-1 mb-6">
-      <span class="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Director's Point of View</span>
-      <p class="text-xs sm:text-sm text-white italic leading-relaxed">"${data.directorNote}"</p>
+      <span class="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Director's POV</span>
+      <p class="text-xs sm:text-sm text-slate-200 italic leading-relaxed">"${data.directorNote}"</p>
     </div>
 
-    <div class="flex items-center justify-end gap-3 pt-4 border-t border-white/5">
-      <a href="#contact" class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-rose-btn transition-all duration-200" onclick="closeProductionModal()">
-        Commission Similar Project ➔
+    <div class="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
+      <a href="#contact" class="tactile-btn inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-crimson-btn" onclick="closeProductionModal()">
+        Book Consultation ➔
       </a>
     </div>
   `;
 
   modal.classList.remove('hidden');
-  modal.classList.add('flex');
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
-}
+};
 
-function closeProductionModal() {
+window.closeProductionModal = function() {
   const modal = document.getElementById('production-modal');
   if (modal) {
     modal.classList.add('hidden');
-    modal.classList.remove('flex');
+    modal.classList.remove('active');
     document.body.style.overflow = '';
   }
-}
+};
 
-// Close on modal backdrop click
+// Close on backdrop click
 window.addEventListener('click', (e) => {
   const modal = document.getElementById('production-modal');
   if (e.target === modal) {
@@ -277,7 +221,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 /* ==========================================================================
-   5. Consultation Intake Form Submission Handler
+   4. Consultation Intake Form Handler
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -287,7 +231,7 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    feedback.className = 'hidden mt-4 p-3 rounded-lg text-sm text-center';
+    feedback.className = 'hidden mt-4 p-3.5 rounded-lg text-sm text-center';
     feedback.innerText = '';
 
     const submitBtn = form.querySelector('.btn-submit');
@@ -297,7 +241,7 @@ function initContactForm() {
     submitBtn.disabled = true;
     loader.classList.remove('hidden');
     const originalText = btnText.innerText;
-    btnText.innerText = 'Transmitting Brief...';
+    btnText.innerText = 'Transmitting Production Brief...';
 
     const formData = new FormData(form);
     const payload = {
@@ -305,7 +249,7 @@ function initContactForm() {
       email: formData.get('email'),
       phone: formData.get('phone'),
       service: formData.get('service') || 'Commercial Video Production',
-      budget: formData.get('budget') || 'Flexible',
+      budget: formData.get('budget') || '$25,000 – $50,000',
       description: formData.get('description')
     };
 
@@ -319,17 +263,17 @@ function initContactForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        feedback.innerText = result.message;
-        feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 block';
+        feedback.innerText = result.message || 'Thank you. Your inquiry has been received by our executive producers.';
+        feedback.className = 'feedback-box success mt-4 p-3.5 rounded-lg text-sm text-center block';
         form.reset();
       } else {
         feedback.innerText = result.message || 'Submission failed. Please verify your details.';
-        feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-red-500/15 border border-red-500/40 text-red-300 block';
+        feedback.className = 'feedback-box error mt-4 p-3.5 rounded-lg text-sm text-center block';
       }
     } catch (error) {
       console.error('[Disrupt Media Form Error]', error);
-      feedback.innerText = 'Network error: Connection to media server failed. Please check your connection.';
-      feedback.className = 'mt-4 p-3 rounded-lg text-sm text-center bg-red-500/15 border border-red-500/40 text-red-300 block';
+      feedback.innerText = 'Network connection failed. Please contact media@disruptgrp.com directly.';
+      feedback.className = 'feedback-box error mt-4 p-3.5 rounded-lg text-sm text-center block';
     } finally {
       submitBtn.disabled = false;
       loader.classList.add('hidden');
@@ -337,3 +281,4 @@ function initContactForm() {
     }
   });
 }
+

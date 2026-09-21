@@ -1,0 +1,26 @@
+{
+  "name": "disrupt-group-catalog",
+  "version": "1.0.0",
+  "description": "Disrupt Group — Product & Service Catalog Platform powered by Waterfall.UI. Parent company of Disrupt Solutions and Disrupt Media.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "disrupt-group",
+    "waterfall-ui",
+    "product-catalog",
+    "disrupt-solutions",
+    "disrupt-media",
+    "masonry-catalog"
+  ],
+  "author": "Disrupt Group",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}

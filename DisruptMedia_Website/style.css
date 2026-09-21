@@ -1,50 +1,104 @@
 /* ==========================================================================
-   Disrupt Media — Auxiliary Styles & Tailwind Extensions
-   Brand Accent: Electric Rose / Crimson (#F43F5E) & Obsidian Violet (#07070A)
+   Disrupt Media — Design System & Custom Auxiliary Styles
+   Engineered under design-taste-frontend standards
+   Base: Obsidian Carbon (#07070A) | Singular Accent: Electric Crimson (#F43F5E)
    ========================================================================== */
 
-/* Grid Overlay */
-.grid-overlay {
+/* Typography & Rendering Smoothing */
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cinema Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #07070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1b2b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f43f5e;
+}
+
+/* Italic Descender Clearance (Rule 4.1) */
+.descender-clear {
+  line-height: 1.15 !important;
+  padding-bottom: 0.15em;
+}
+
+/* Cinema Subtle Film Grain / Grid Mesh */
+.cinema-mesh-overlay {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 56px 56px;
+    radial-gradient(circle at 50% 0%, rgba(244, 63, 94, 0.08) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
 }
 
-/* Service Pills States */
-.pill-btn {
+/* Interactive Service Focus Pills */
+.service-pill {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(244, 63, 94, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #cbd5e1;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
 }
 
-.pill-btn:hover {
+.service-pill:hover {
   background: rgba(244, 63, 94, 0.12);
-  border-color: rgba(244, 63, 94, 0.5);
+  border-color: rgba(244, 63, 94, 0.4);
   color: #ffffff;
 }
 
-.pill-btn.active {
+.service-pill.active {
   background: #f43f5e;
   border-color: #f43f5e;
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(244, 63, 94, 0.45);
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.35);
 }
 
-/* Form Feedback States */
-.form-feedback.success {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #34d399;
+/* Tactile Active State (Rule 4.5) */
+.tactile-btn {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.tactile-btn:active {
+  transform: scale(0.98) translateY(1px);
 }
 
-.form-feedback.error {
-  background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #f87171;
+/* Navigation Indicator */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #f43f5e;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #f43f5e;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+.nav-link.active {
+  color: #ffffff;
 }
 
-/* Mobile Menu Toggle States */
+/* Mobile Navigation Drawer */
 .mobile-menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -59,25 +113,32 @@
   display: flex !important;
 }
 
-/* Lightbox Modal Active */
-.modal.active {
+/* Modal Smooth Display */
+.production-modal.active {
   display: flex !important;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Active Nav Item Underline */
-.nav-item.active {
-  color: #ffffff;
-  position: relative;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.nav-item.active::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #f43f5e;
-  border-radius: 2px;
-  box-shadow: 0 0 8px #f43f5e;
+/* Form Feedback States */
+.feedback-box.success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #6ee7b7;
+}
+
+.feedback-box.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #fca5a5;
 }

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#060608] text-slate-100 selection:bg-indigo-500 selection:text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disrupt Group — Product & Service Catalog | Architecture, Intelligence, Narrative</title>
+  <meta name="description" content="The unified capabilities and product catalog of Disrupt Group, powering enterprise intelligence via Disrupt Solutions and cinematic narrative via Disrupt Media.">
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="Disrupt Group — Product & Service Catalog">
+  <meta property="og:description" content="Discover frontier software engineering, autonomous AI workflows, and cinematic narrative production under one unified holding ecosystem.">
+  <meta property="og:url" content="https://www.disruptgrp.com">
+  <meta property="og:site_name" content="Disrupt Group">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              obsidian: '#060608',
+              surface: 'rgba(14, 14, 20, 0.85)',
+              card: 'rgba(18, 18, 26, 0.9)',
+              indigo: '#6366f1',
+              'indigo-light': '#818cf8',
+              cyan: '#00f0ff',
+              'cyan-dark': '#0891b2',
+              rose: '#f43f5e',
+              'rose-dark': '#be123c',
+              amber: '#fb923c',
+              violet: '#a855f7'
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'indigo-glow': '0 0 30px rgba(99, 102, 241, 0.35)',
+            'cyan-glow': '0 0 30px rgba(0, 240, 255, 0.35)',
+            'rose-glow': '0 0 30px rgba(244, 63, 94, 0.35)',
+            'glass-card': '0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.03)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet & Waterfall.UI Engine Layout -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#060608] text-slate-100 font-body relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient Dynamic Lighting & Grid -->
+  <div class="ambient-glow-mesh">
+    <div class="glow-orb orb-solutions"></div>
+    <div class="glow-orb orb-media"></div>
+    <div class="glow-orb orb-group"></div>
+  </div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Primary Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Group Brand Identity -->
+      <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-rose-500 flex items-center justify-center shadow-lg shadow-indigo-600/30 transition-transform duration-200 group-hover:scale-105">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-lg tracking-wider text-white">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-rose-400">DISRUPT</span> GROUP
+            </span>
+            <span class="hidden sm:inline-block px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-white/10 text-slate-300 border border-white/10">
+              Holdings
+            </span>
+          </div>
+          <span class="font-mono text-[9px] font-semibold tracking-[0.16em] text-slate-400">
+            SOLUTIONS // MEDIA // VENTURES
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="#catalog-section" class="text-xs font-mono tracking-wider uppercase text-slate-300 hover:text-white transition-colors">
+          Waterfall Catalog
+        </a>
+        <a href="#subsidiaries-section" class="text-xs font-mono tracking-wider uppercase text-slate-300 hover:text-white transition-colors">
+          Subsidiaries
+        </a>
+        <a href="#synergy-section" class="text-xs font-mono tracking-wider uppercase text-slate-300 hover:text-white transition-colors">
+          Ecosystem Synergy
+        </a>
+        <a href="#proof-section" class="text-xs font-mono tracking-wider uppercase text-slate-300 hover:text-white transition-colors">
+          Receipts
+        </a>
+      </nav>
+
+      <!-- Right Action Controls -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Blueprint Scope Builder Trigger Button -->
+        <button id="nav-blueprint-btn" class="relative px-3.5 py-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-white text-xs font-mono font-semibold flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+          </svg>
+          <span class="hidden sm:inline">Scope Blueprint</span>
+          <span id="nav-blueprint-count" class="w-5 h-5 rounded-full bg-indigo-600 text-white text-[10px] font-mono font-bold flex items-center justify-center">0</span>
+        </button>
+
+        <a href="#contact-section" class="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-95 text-white text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30">
+          Book Consultation
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300" aria-label="Toggle menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-[#0c0c12]/95 backdrop-blur-2xl border-b border-white/10 z-40 p-6 flex flex-col gap-4">
+    <a href="#catalog-section" class="text-sm font-mono uppercase text-slate-200 py-2 border-b border-white/5 mobile-link">Waterfall Catalog</a>
+    <a href="#subsidiaries-section" class="text-sm font-mono uppercase text-slate-200 py-2 border-b border-white/5 mobile-link">Subsidiaries Directory</a>
+    <a href="#synergy-section" class="text-sm font-mono uppercase text-slate-200 py-2 border-b border-white/5 mobile-link">Ecosystem Multipliers</a>
+    <a href="#proof-section" class="text-sm font-mono uppercase text-slate-200 py-2 border-b border-white/5 mobile-link">Receipts & Proof</a>
+    <a href="#contact-section" class="text-sm font-mono uppercase text-indigo-400 py-2 mobile-link">Book Consultation ↗</a>
+  </div>
+
+  <main class="relative z-10 pt-28 sm:pt-36">
+
+    <!-- ================================================================= -->
+    <!-- HERO SECTION: Disrupt Group Umbrella Thesis & HUD Telemetry     -->
+    <!-- ================================================================= -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-4">
+      
+      <!-- Telemetry Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-6 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-[11px] font-mono tracking-widest uppercase text-slate-300">
+          DISRUPT GROUP // HOLDINGS ECOSYSTEM PLATFORM
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08] max-w-5xl mb-6">
+        Architecture. Intelligence. Narrative. <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-rose-400">
+          Engineered to Hold a Position.
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-slate-300 text-base sm:text-xl font-normal max-w-3xl leading-relaxed mb-10">
+        Disrupt Group operates as an asymmetric holding umbrella uniting frontier software engineering, autonomous AI workflows, and broadcast-grade cinematic storytelling. Explore our unified product and capability catalog below.
+      </p>
+
+      <!-- Key Metrics Telemetry Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-xl mb-12">
+        <div class="p-4 border-r border-white/5">
+          <div class="text-[10px] font-mono tracking-wider uppercase text-cyan-400 font-bold mb-1">Disrupt Solutions</div>
+          <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">99.99%</div>
+          <div class="text-xs text-slate-400 font-mono mt-0.5">Uptime SLA Infrastructure</div>
+        </div>
+        <div class="p-4 sm:border-r border-white/5">
+          <div class="text-[10px] font-mono tracking-wider uppercase text-rose-400 font-bold mb-1">Disrupt Media</div>
+          <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">4.8M+</div>
+          <div class="text-xs text-slate-400 font-mono mt-0.5">Audience Cultural Reach</div>
+        </div>
+        <div class="p-4 border-r border-white/5">
+          <div class="text-[10px] font-mono tracking-wider uppercase text-indigo-400 font-bold mb-1">Ecosystem Synergy</div>
+          <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">15%</div>
+          <div class="text-xs text-slate-400 font-mono mt-0.5">Multi-Service Bundle Savings</div>
+        </div>
+        <div class="p-4">
+          <div class="text-[10px] font-mono tracking-wider uppercase text-emerald-400 font-bold mb-1">Active Deliveries</div>
+          <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">24 / 7</div>
+          <div class="text-xs text-slate-400 font-mono mt-0.5">Zero-Friction Global Sprints</div>
+        </div>
+      </div>
+
+      <!-- Subsidiary Quick Tabs Switcher -->
+      <div id="subsidiary-tabs" class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md max-w-fit">
+        <button class="sub-tab-btn active px-5 py-2.5 rounded-xl font-mono text-xs font-bold transition-all text-white bg-indigo-600 shadow-md shadow-indigo-600/30" data-sub="all">
+          All Group Offerings (13)
+        </button>
+        <button class="sub-tab-btn px-5 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all text-slate-400 hover:text-cyan-300 hover:bg-cyan-500/10" data-sub="solutions">
+          <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 mr-2"></span>
+          Disrupt Solutions (5)
+        </button>
+        <button class="sub-tab-btn px-5 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all text-slate-400 hover:text-rose-300 hover:bg-rose-500/10" data-sub="media">
+          <span class="inline-block w-2 h-2 rounded-full bg-rose-400 mr-2"></span>
+          Disrupt Media (5)
+        </button>
+        <button class="sub-tab-btn px-5 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all text-slate-400 hover:text-purple-300 hover:bg-purple-500/10" data-sub="group">
+          <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 mr-2"></span>
+          Joint Ecosystem Bundles (2)
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- WATERFALL.UI PRODUCT & SERVICE CATALOG ENGINE                     -->
+    <!-- ================================================================= -->
+    <section id="catalog-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Catalog Controls & Filter Header -->
+      <div class="glass-panel p-6 rounded-3xl mb-8 space-y-5">
+        
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div>
+            <h2 class="font-display font-extrabold text-2xl text-white flex items-center gap-3">
+              <span>Waterfall Capabilities Directory</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                waterfall.ui active
+              </span>
+            </h2>
+            <p class="text-xs text-slate-400 font-heading mt-1">
+              Dynamic masonry layout balancing specifications, deliverables, and investment tiers.
+            </p>
+          </div>
+
+          <!-- Search & View Toggle -->
+          <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+            
+            <!-- Live Search Bar -->
+            <div class="relative flex-1 sm:w-72">
+              <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input id="catalog-search" type="text" placeholder="Search AI, Web, Cinema, CGI, PR..." class="w-full pl-10 pr-4 py-2.5 rounded-xl form-input-custom text-xs font-mono placeholder-slate-500">
+            </div>
+
+            <!-- Sorting Dropdown -->
+            <select id="catalog-sort" class="px-3.5 py-2.5 rounded-xl form-input-custom text-xs font-mono cursor-pointer">
+              <option value="featured">Sort: Featured First</option>
+              <option value="popular">Sort: Most Popular</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+
+            <!-- View Switcher (Waterfall Masonry vs. Matrix Grid) -->
+            <div class="flex items-center p-1 rounded-xl bg-black/40 border border-white/10">
+              <button id="view-mode-waterfall" class="p-2 rounded-lg text-white bg-indigo-600 transition-all text-xs" title="Waterfall Masonry View">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 14a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zM11 4a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1V4zM11 11a1 1 0 011-1h4a1 1 0 011 1v5a1 1 0 01-1 1h-4a1 1 0 01-1-1v-5z"></path>
+                </svg>
+              </button>
+              <button id="view-mode-matrix" class="p-2 rounded-lg text-slate-400 hover:text-white transition-all text-xs" title="Matrix Grid View">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div id="category-pills" class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-white/5">
+          <!-- Dynamically populated or rendered -->
+        </div>
+
+      </div>
+
+      <!-- WATERFALL MASONRY CONTAINER -->
+      <div id="waterfall-grid" class="min-h-[400px]">
+        <!-- Rendered by WaterfallCatalogUI -->
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SUBSIDIARY PORTALS DEEP DIVE                                      -->
+    <!-- ================================================================= -->
+    <section id="subsidiaries-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-4">
+          Holding Companies
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4">
+          Two Specialized Subsidiaries. One Formidable Ecosystem.
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Each subsidiary operates as a specialized strike force in its domain, engineered with deep domain expertise and proprietary production toolchains.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Disrupt Solutions Card -->
+        <div class="relative rounded-3xl bg-[#090b14] border border-cyan-500/20 p-8 sm:p-10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-300 shadow-2xl">
+          <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-xl">
+                DS
+              </div>
+              <div>
+                <h3 class="font-display font-extrabold text-2xl text-white tracking-wide">
+                  <span class="text-cyan-400">DISRUPT</span> SOLUTIONS
+                </h3>
+                <span class="text-[10px] font-mono tracking-widest text-cyan-300 uppercase font-semibold">
+                  Engineering, Autonomous AI & Infrastructure
+                </span>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+              Tech Pillar
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+            "Intelligence, then infrastructure. In that order." Disrupt Solutions crafts deterministic multi-agent systems, high-concurrency web applications, and resilient cloud infrastructure designed for high scale.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              Autonomous Multi-Agent AI Swarms & Private RAG Pipelines
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              Ultra-Responsive WebGL & TypeScript SaaS Platforms
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              Real-Time Streaming Telemetry & Predictive Analytics Command
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/10">
+            <button class="filter-to-subsidiary-btn px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-bold transition-all" data-target-sub="solutions">
+              View Solutions Catalog (5)
+            </button>
+            <a href="../DisruptSolutions_Website/index.html" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono transition-all flex items-center gap-1.5">
+              Launch Platform ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Disrupt Media Card -->
+        <div class="relative rounded-3xl bg-[#120a10] border border-rose-500/20 p-8 sm:p-10 overflow-hidden group hover:border-rose-500/50 transition-all duration-300 shadow-2xl">
+          <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-bold text-xl">
+                DM
+              </div>
+              <div>
+                <h3 class="font-display font-extrabold text-2xl text-white tracking-wide">
+                  <span class="text-rose-500">DISRUPT</span> MEDIA
+                </h3>
+                <span class="text-[10px] font-mono tracking-widest text-rose-300 uppercase font-semibold">
+                  Cinema Production, Narrative & Distribution
+                </span>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-rose-500/10 text-rose-400 border border-rose-500/30">
+              Media Pillar
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+            "Narrative Architecture, Production & Cultural Interception." Disrupt Media produces Hollywood-grade commercial brand films, 3D motion reveals, and multi-channel content engines that command market attention.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+              4K/6K Anamorphic Cinema Commercials & Brand Documentaries
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+              Strategic Narrative Architecture & Category Creation Playbooks
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+              High-Velocity Monthly Video Sprints & Algorithmic PR Surges
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/10">
+            <button class="filter-to-subsidiary-btn px-4 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-mono font-bold transition-all" data-target-sub="media">
+              View Media Catalog (5)
+            </button>
+            <a href="../DisruptMedia_Website/index.html" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono transition-all flex items-center gap-1.5">
+              Launch Platform ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ECOSYSTEM SYNERGY & MULTIPLIERS                                   -->
+    <!-- ================================================================= -->
+    <section id="synergy-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/10">
+      
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 mb-3">
+            The Group Multiplier Effect
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-4">
+            Why Standalone Agencies Fail and Unified Ecosystems Win
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Building breakthrough technology without magnetic narrative leaves your product invisible. Producing world-class videos without high-performance software leaves your conversions stranded. Disrupt Group solves both under one unified execution team.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 flex items-center justify-center font-mono font-bold mb-4">
+              01
+            </div>
+            <h4 class="font-display font-bold text-white text-base mb-2">Zero Translation Loss</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Our filmmakers understand backend latency; our engineers understand visual pacing. Your messaging and software UX remain in 100% lockstep.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center justify-center font-mono font-bold mb-4">
+              02
+            </div>
+            <h4 class="font-display font-bold text-white text-base mb-2">Synchronized Launch Surge</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Launch days are timed to the second. Media distribution generates massive organic traffic at the exact millisecond the cloud servers are warmed up.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center font-mono font-bold mb-4">
+              03
+            </div>
+            <h4 class="font-display font-bold text-white text-base mb-2">15% Synergy Discount</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Combine any Disrupt Solutions software build with a Disrupt Media production sprint in your Scope Blueprint to unlock group bundle pricing.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PROOF & RECEIPTS SECTION                                          -->
+    <!-- ================================================================= -->
+    <section id="proof-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-4">
+          Verified Impact
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4">
+          Cross-Subsidiary Receipts
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Measurable technical throughput and cultural distribution engineered across our client portfolio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-[#0d0d14] border border-white/10">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Disrupt Solutions</span>
+            <span class="text-[10px] font-mono text-slate-500">Series A FinTech</span>
+          </div>
+          <div class="font-display font-extrabold text-3xl text-white mb-1">0.32s</div>
+          <div class="text-xs font-mono text-slate-300 font-medium mb-3">Time-to-Interactive Across 40K Daily Traders</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Architected real-time WebSocket order book and multi-agent compliance copilot resulting in 0% downtime during market volatility.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#120d14] border border-white/10">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-rose-500/10 text-rose-400 border border-rose-500/30">Disrupt Media</span>
+            <span class="text-[10px] font-mono text-slate-500">DeepTech Robotics</span>
+          </div>
+          <div class="font-display font-extrabold text-3xl text-white mb-1">3.1M</div>
+          <div class="text-xs font-mono text-slate-300 font-medium mb-3">Organic Views on Anamorphic Product Reveal</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Produced 4K cinema launch film and orchestrated Reddit/X distribution surge securing $18M in Series B inbound interest.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0f0e1c] border border-indigo-500/30 shadow-lg shadow-indigo-600/10">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">Joint Venture 360</span>
+            <span class="text-[10px] font-mono text-slate-500">Autonomous Logistics</span>
+          </div>
+          <div class="font-display font-extrabold text-3xl text-white mb-1">100%</div>
+          <div class="text-xs font-mono text-slate-300 font-medium mb-3">Unified Platform & Brand Launch in 7 Weeks</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Disrupt Solutions built the customer portal & IoT tracking API while Disrupt Media delivered the global launch commercial.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- CONSULTATION & LEAD INTAKE RFP FORM                              -->
+    <!-- ================================================================= -->
+    <section id="contact-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/10">
+      
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl max-w-4xl mx-auto relative">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-3">
+            Engagement Dispatch
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-3">
+            Book a Strategic Consultation
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Directly connect with Disrupt Group leadership to scope engineering builds, cinematic productions, or unified joint ecosystem sprints.
+          </p>
+        </div>
+
+        <form id="consultation-form" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Full Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Elena Rostova" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono placeholder-slate-600">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Work Email *</label>
+              <input type="email" name="email" required placeholder="elena@company.com" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono placeholder-slate-600">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Company / Venture</label>
+              <input type="text" name="company" placeholder="e.g. Apex Systems" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono placeholder-slate-600">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Phone / Signal (Optional)</label>
+              <input type="tel" name="phone" placeholder="+1 (555) 019-2834" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono placeholder-slate-600">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Primary Interest</label>
+              <select name="subsidiary_interest" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono cursor-pointer">
+                <option value="Disrupt Group (All Offerings)">Disrupt Group (Joint Ecosystem)</option>
+                <option value="Disrupt Solutions">Disrupt Solutions (Tech / AI)</option>
+                <option value="Disrupt Media">Disrupt Media (Film / Content)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Estimated Budget Tier</label>
+              <select name="budget_range" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono cursor-pointer">
+                <option value="$10k - $25k">$10,000 - $25,000</option>
+                <option value="$25k - $50k" selected>$25,000 - $50,000</option>
+                <option value="$50k - $100k">$50,000 - $100,000</option>
+                <option value="$100k+">$100,000+ (Enterprise SLA)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2">Desired Timeline</label>
+              <select name="timeline" class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono cursor-pointer">
+                <option value="Immediate (1-2 Weeks)">Immediate (1 - 2 Weeks)</option>
+                <option value="1 Month">Within 1 Month</option>
+                <option value="Quarterly Roadmap">Quarterly Roadmap</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-2">Project Scope & Objectives</label>
+            <textarea name="message" rows="4" placeholder="Tell us about the product vision, software requirements, or cinematic campaign objectives..." class="w-full px-4 py-3 rounded-xl form-input-custom text-sm font-mono placeholder-slate-600 resize-none"></textarea>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-[11px] font-mono text-slate-500">
+              🔒 Encrypted dispatch. Stored in enterprise SQL / local fallback.
+            </div>
+            <button type="submit" id="submit-consultation-btn" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-95 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-xl shadow-indigo-600/30">
+              Submit RFP & Request Dispatch →
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- FOOTER                                                            -->
+  <!-- ================================================================= -->
+  <footer class="border-t border-white/10 bg-[#040406] py-14 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-rose-500 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="font-display font-extrabold text-base text-white tracking-wider">
+              DISRUPT GROUP
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed mb-6 font-normal">
+            Holding umbrella bridging enterprise software architecture, autonomous AI agents, and high-impact cinematic narrative production.
+          </p>
+          <div class="flex items-center gap-2 text-[10px] font-mono text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="footer-server-status">ALL SYSTEMS OPERATIONAL // REST API ACTIVE</span>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-xs font-mono font-bold uppercase text-white tracking-wider mb-4">Subsidiaries</h5>
+          <ul class="space-y-2.5 text-xs font-mono text-slate-400">
+            <li><a href="../DisruptSolutions_Website/index.html" class="hover:text-cyan-400 transition-colors">Disrupt Solutions ↗</a></li>
+            <li><a href="../DisruptMedia_Website/index.html" class="hover:text-rose-400 transition-colors">Disrupt Media ↗</a></li>
+            <li><a href="#catalog-section" class="hover:text-indigo-400 transition-colors">Joint Ecosystem Bundles</a></li>
+            <li><a href="#synergy-section" class="hover:text-white transition-colors">Synergy Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-xs font-mono font-bold uppercase text-white tracking-wider mb-4">Catalog Stack</h5>
+          <ul class="space-y-2.5 text-xs font-mono text-slate-400">
+            <li><span class="text-slate-300">Engine:</span> Waterfall.UI v2.4</li>
+            <li><span class="text-slate-300">Backend:</span> Express & MySQL2</li>
+            <li><span class="text-slate-300">Storage:</span> SQL + JSON Fallback</li>
+            <li><span class="text-slate-300">Security:</span> Encrypted SSL Dispatch</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div>© 2026 Disrupt Group Holdings. All rights reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Security Architecture</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: PRODUCT & SERVICE DEEP DIVE                                -->
+  <!-- ================================================================= -->
+  <div id="product-detail-modal" class="modal-backdrop flex items-center justify-center p-4">
+    <div class="modal-content-box glass-panel rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
+      
+      <!-- Close Button -->
+      <button id="close-modal-btn" class="absolute top-6 right-6 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Modal Dynamic Body Content -->
+      <div id="modal-dynamic-body">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- DRAWER: INTERACTIVE SCOPE BLUEPRINT BUILDER                       -->
+  <!-- ================================================================= -->
+  <div id="blueprint-drawer-backdrop" class="modal-backdrop">
+    <div id="blueprint-drawer" class="blueprint-drawer fixed top-0 right-0 h-full w-full max-w-lg bg-[#09090f]/95 backdrop-blur-2xl border-l border-white/10 p-6 sm:p-8 flex flex-col z-50 shadow-2xl">
+      
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-white">Scope Blueprint Builder</h3>
+            <p class="text-[10px] font-mono text-slate-400">Configured Group Packages</p>
+          </div>
+        </div>
+        <button id="close-drawer-btn" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Selected Items List -->
+      <div id="blueprint-items-container" class="flex-1 overflow-y-auto space-y-3 pr-1 py-2">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Synergy Discount & Summary -->
+      <div id="blueprint-summary-container" class="pt-4 border-t border-white/10 mt-auto space-y-3">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Drawer Action Form / RFP button -->
+      <div class="pt-4 mt-2">
+        <button id="blueprint-rfp-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-95 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2">
+          <span>Submit Blueprint RFP Quote</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- FLOATING BOTTOM BAR: ACTIVE BLUEPRINT SUMMARY                     -->
+  <!-- ================================================================= -->
+  <div id="blueprint-floating-bar" class="blueprint-floating-bar fixed bottom-6 left-1/2 -translate-x-1/2 z-40 max-w-xl w-[92vw]">
+    <div class="glass-panel p-3.5 sm:p-4 rounded-2xl border border-indigo-500/40 bg-[#0c0c14]/95 backdrop-blur-2xl shadow-2xl flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-mono font-bold text-xs" id="floating-bar-count">
+          0
+        </div>
+        <div>
+          <div class="text-xs font-display font-bold text-white" id="floating-bar-title">Project Scope Configured</div>
+          <div class="text-[11px] font-mono text-indigo-300 font-semibold" id="floating-bar-total">Estimated Investment: $0</div>
+        </div>
+      </div>
+      <button id="floating-open-drawer-btn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-bold transition-all whitespace-nowrap shadow-md shadow-indigo-600/30">
+        Review Blueprint →
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Alert Notification -->
+  <div id="toast-alert" class="toast-alert glass-panel p-4 rounded-2xl border border-emerald-500/40 bg-[#0b1410]/95 max-w-sm flex items-start gap-3 shadow-2xl">
+    <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <div>
+      <h5 class="text-xs font-mono font-bold text-white" id="toast-title">Success</h5>
+      <p class="text-[11px] text-slate-300 mt-0.5 font-mono" id="toast-message">Submission successfully received.</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="catalog-data.js"></script>
+  <script src="waterfall.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

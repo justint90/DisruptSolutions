@@ -1,0 +1,436 @@
+/**
+ * Disrupt Group Product & Service Catalog Data
+ * Parent Holding: Disrupt Group
+ * Subsidiaries: Disrupt Solutions | Disrupt Media
+ */
+
+const CATALOG_DATA = [
+  // ==========================================
+  // DISRUPT SOLUTIONS (Cyan / Tech Engineering)
+  // ==========================================
+  {
+    id: "sol-ai-agents",
+    title: "Autonomous Enterprise AI Agents & Copilots",
+    subtitle: "Custom Multi-Agent Orchestration & LLM Workflows",
+    subsidiary: "solutions",
+    subsidiaryName: "Disrupt Solutions",
+    category: "AI & Intelligence",
+    badge: "Frontier Tech",
+    badgeColor: "cyan",
+    icon: "bot",
+    shortDescription: "Bespoke LLM reasoning loops, tool-calling autonomous agents, and enterprise RAG pipelines connected to your proprietary data lake.",
+    fullDescription: "We engineer fault-tolerant, deterministic AI agent systems that operate as digital workforces. From automated regulatory compliance checks to custom customer intelligence copilots, our architectures feature self-healing loops, strict guardrails, and real-time observability.",
+    deliverables: [
+      "Custom multi-agent orchestration architecture (LangGraph / AutoGen / CrewAI)",
+      "High-throughput vector search & enterprise RAG pipelines",
+      "Private self-hosted LLM inference or fine-tuned frontier models",
+      "Evaluation suite with hallucination guardrails & cost monitoring",
+      "Full API documentation & enterprise SLA support"
+    ],
+    techStackOrEquipment: ["Python", "FastAPI", "PostgreSQL/pgvector", "LangChain", "OpenAI / Claude 3.7", "Docker", "Qdrant"],
+    pricingModel: "Sprint / Custom Build",
+    basePrice: 18500,
+    priceFormatted: "Starting at $18,500",
+    turnaroundTime: "4 - 6 Weeks",
+    targetAudience: "B2B SaaS, FinTech, Logistics & Enterprise Operations",
+    metricsHighlight: "85% Manual Task Reduction • <350ms RAG Latency",
+    synergyPartner: "Pair with Disrupt Media's 'Product Demo CGI' for hyper-visual investor/client product walk-throughs.",
+    featured: true,
+    popularityScore: 98
+  },
+  {
+    id: "sol-custom-web",
+    title: "Cinematic Enterprise Web Applications",
+    subtitle: "High-Performance Distributed Platforms & Portals",
+    subsidiary: "solutions",
+    subsidiaryName: "Disrupt Solutions",
+    category: "Web & Platforms",
+    badge: "Flagship Build",
+    badgeColor: "cyan",
+    icon: "globe",
+    shortDescription: "Ultra-fast, responsive web applications with interactive WebGL/Canvas micro-interactions, SSR architecture, and battle-tested API backends.",
+    fullDescription: "We don't build generic templates. Disrupt Solutions crafts bespoke web platforms engineered for extreme conversion, sub-second load times, and fluid 60fps interactive experiences. Built with modern TypeScript frameworks and enterprise-grade cloud backends.",
+    deliverables: [
+      "Custom UI/UX interactive design system & Figma design tokens",
+      "High-performance frontend (React / Next.js / Tailwind CSS)",
+      "Secure REST / GraphQL backend APIs with database clustering",
+      "Automated CI/CD deployment pipeline on AWS / Cloudflare Edge",
+      "SEO architecture & Core Web Vitals optimization (100% score targets)"
+    ],
+    techStackOrEquipment: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js / Express", "PostgreSQL", "Redis", "Cloudflare"],
+    pricingModel: "Sprint / Milestone",
+    basePrice: 14500,
+    priceFormatted: "Starting at $14,500",
+    turnaroundTime: "3 - 5 Weeks",
+    targetAudience: "Tech Ventures, Premium Agencies, Enterprise Market Leaders",
+    metricsHighlight: "99+ Lighthouse Score • <0.4s Time-to-Interactive",
+    synergyPartner: "Integrate with Disrupt Media's 'Narrative Architecture' for unmatched brand positioning.",
+    featured: true,
+    popularityScore: 95
+  },
+  {
+    id: "sol-mobile-apps",
+    title: "Cross-Platform Mobile Ecosystems",
+    subtitle: "Native-Grade iOS & Android Application Suites",
+    subsidiary: "solutions",
+    subsidiaryName: "Disrupt Solutions",
+    category: "Mobile Systems",
+    badge: "High Velocity",
+    badgeColor: "cyan",
+    icon: "smartphone",
+    shortDescription: "High-performance React Native / Flutter mobile applications engineered for offline-first resilience, smooth haptics, and instant sync.",
+    fullDescription: "Native feel with cross-platform velocity. We deliver mobile experiences equipped with biometric authentication, push notification orchestration, in-app purchases, and local SQLite state caching.",
+    deliverables: [
+      "Single-codebase iOS & Android release ready for App Store & Google Play",
+      "Offline-first synchronization engine with optimistic UI updates",
+      "Push notification & deep-linking automation setup",
+      "Biometric security, Apple Pay / Google Pay integrations",
+      "Automated crash analytics & performance tracing"
+    ],
+    techStackOrEquipment: ["React Native", "Expo", "Flutter", "Swift/Kotlin Bridge", "Firebase / Supabase", "GraphQL"],
+    pricingModel: "Sprint / Fixed Scope",
+    basePrice: 16000,
+    priceFormatted: "Starting at $16,000",
+    turnaroundTime: "5 - 8 Weeks",
+    targetAudience: "Consumer Apps, On-Demand Marketplaces, Enterprise Field Teams",
+    metricsHighlight: "60 FPS Fluidity • 99.9% Crash-Free Sessions",
+    synergyPartner: "Combine with Disrupt Media's 'Viral Distribution Sprint' for App Store launch momentum.",
+    featured: false,
+    popularityScore: 88
+  },
+  {
+    id: "sol-bi-dashboards",
+    title: "Real-Time BI & Telemetry Command Centers",
+    subtitle: "Live Data Pipelines & Executive Dashboards",
+    subsidiary: "solutions",
+    subsidiaryName: "Disrupt Solutions",
+    category: "BI & Analytics",
+    badge: "Data Core",
+    badgeColor: "cyan",
+    icon: "bar-chart-3",
+    shortDescription: "Custom analytical command centers visualizing complex streaming telemetry, revenue metrics, and predictive forecasts in real time.",
+    fullDescription: "Transform dark enterprise data into actionable intelligence. We construct high-throughput streaming pipelines and interactive executive dashboards with millisecond query responses and automated anomaly alerts.",
+    deliverables: [
+      "ETL / ELT data pipeline connecting existing CRMs, ERPs, and databases",
+      "Custom interactive canvas charts & real-time telemetry gauges",
+      "Predictive forecasting models with automated Slack/email alerts",
+      "Role-based access control (RBAC) and data audit logging",
+      "Exportable executive reporting suites (PDF / CSV / Live Share)"
+    ],
+    techStackOrEquipment: ["ClickHouse", "Apache Kafka", "PostgreSQL", "D3.js / Chart.js", "Python Pandas", "FastAPI"],
+    pricingModel: "Custom Build",
+    basePrice: 12500,
+    priceFormatted: "Starting at $12,500",
+    turnaroundTime: "3 - 4 Weeks",
+    targetAudience: "Executive Teams, Operations Directors, High-Frequency E-Commerce",
+    metricsHighlight: "Sub-50ms Query Latency • Multi-Source Aggregation",
+    synergyPartner: "Use Disrupt Media's 'Executive Narrative' to present analytics findings to board members & investors.",
+    featured: false,
+    popularityScore: 82
+  },
+  {
+    id: "sol-cloud-devops",
+    title: "Cloud Infrastructure & Microservices Refactoring",
+    subtitle: "Kubernetes, Zero-Downtime CI/CD & Security Hardening",
+    subsidiary: "solutions",
+    subsidiaryName: "Disrupt Solutions",
+    category: "Cloud & DevOps",
+    badge: "Enterprise",
+    badgeColor: "cyan",
+    icon: "server",
+    shortDescription: "Hardened infrastructure as code (IaC), container orchestration, and auto-scaling cloud topologies designed for 99.99% uptime.",
+    fullDescription: "We migrate monolithic legacy applications to resilient microservices, configure automated zero-downtime rolling deployments, and enforce military-grade VPC isolation and IAM security policies.",
+    deliverables: [
+      "Terraform / OpenTofu Infrastructure as Code architecture",
+      "Auto-scaling Kubernetes (EKS/GKE) cluster deployment",
+      "Automated CI/CD pipeline (GitHub Actions / GitLab CI) with security scans",
+      "WAF, DDoS mitigation, SSL/TLS automation, and KMS secrets rotation",
+      "24/7 Datadog / Prometheus telemetry monitoring setup"
+    ],
+    techStackOrEquipment: ["AWS / GCP", "Terraform", "Kubernetes", "Docker", "Prometheus", "GitHub Actions", "Cloudflare WAF"],
+    pricingModel: "Architecture Sprint / Retainer",
+    basePrice: 11000,
+    priceFormatted: "Starting at $11,000",
+    turnaroundTime: "2 - 4 Weeks",
+    targetAudience: "Scaleups Preparing for Series A/B, Enterprise IT Teams",
+    metricsHighlight: "99.99% SLA Uptime • 60% Cloud Cost Optimization",
+    synergyPartner: "Pairs with Disrupt Media's 'Enterprise Trust Assets' to showcase security credentials to enterprise buyers.",
+    featured: false,
+    popularityScore: 79
+  },
+
+  // ==========================================
+  // DISRUPT MEDIA (Rose / Narrative Production)
+  // ==========================================
+  {
+    id: "med-cinema-films",
+    title: "Cinematic Commercial & Brand Films",
+    subtitle: "High-Impact 4K/6K Cinema Production & Color Grading",
+    subsidiary: "media",
+    subsidiaryName: "Disrupt Media",
+    category: "Film & Production",
+    badge: "Cinema Grade",
+    badgeColor: "rose",
+    icon: "video",
+    shortDescription: "Broadcast-quality cinematic commercials engineered with anamorphic optics, custom sound design, and Hollywood-level color grading.",
+    fullDescription: "Disrupt Media produces commanding brand films that capture human attention and cement industry authority. From conceptual scriptwriting and storyboard development to on-location cinema-rig filming and sound mixing.",
+    deliverables: [
+      "Concept treatment, director's storyboard & screenplay script",
+      "Full production crew with RED / ARRI Cinema Cameras & Anamorphic Glass",
+      "Master 4K/6K Delivery (16:9 Broadcast & 9:16 Mobile Cutdowns)",
+      "Bespoke DaVinci Resolve color grading & original foley sound design",
+      "Full perpetual commercial usage & licensing rights"
+    ],
+    techStackOrEquipment: ["RED V-Raptor / ARRI Alexa", "Anamorphic Lenses", "DaVinci Resolve Studio", "Pro Tools", "DJI Ronin 4D"],
+    pricingModel: "Production Package",
+    basePrice: 17500,
+    priceFormatted: "Starting at $17,500",
+    turnaroundTime: "3 - 5 Weeks",
+    targetAudience: "VC-Backed Startups, Global Brands, Product Launches",
+    metricsHighlight: "4.8x Higher Viewer Retention • Broadcast Spec Delivery",
+    synergyPartner: "Embed directly as the hero showcase on a Disrupt Solutions 'Cinematic Enterprise Web Application'.",
+    featured: true,
+    popularityScore: 97
+  },
+  {
+    id: "med-narrative-arch",
+    title: "Narrative Architecture & Brand Positioning",
+    subtitle: "Category Creation, Messaging Frameworks & Manifesto",
+    subsidiary: "media",
+    subsidiaryName: "Disrupt Media",
+    category: "Brand Strategy",
+    badge: "Strategy Core",
+    badgeColor: "rose",
+    icon: "compass",
+    shortDescription: "Strategic positioning frameworks that define category leadership, sharpen founder messaging, and establish an unassailable brand moat.",
+    fullDescription: "Positioning is leverage. We dissect your market competition, unearth your asymmetric advantage, and build an uncompromising messaging matrix, brand manifesto, and pitch narrative.",
+    deliverables: [
+      "Comprehensive Brand Positioning & Category Manifesto Document",
+      "Core Messaging Matrix (Founders, Sales Teams, Media Kit)",
+      "High-Stakes Pitch Deck & Executive Scripting",
+      "Tone of Voice & Linguistic Style Guidelines",
+      "Competitive Moat & Narrative Defense Playbook"
+    ],
+    techStackOrEquipment: ["Notion Brand Hub", "Figma Design Tokens", "Keynote / Pitch Master Systems"],
+    pricingModel: "Strategic Sprint",
+    basePrice: 9500,
+    priceFormatted: "Starting at $9,500",
+    turnaroundTime: "2 - 3 Weeks",
+    targetAudience: "Founders, C-Suite Leaders, Companies Undergoing Pivots",
+    metricsHighlight: "3.5x Pitch Conversion Lift • Unified Company Voice",
+    synergyPartner: "Feeds directly into Disrupt Solutions' copy & information architecture across all software platforms.",
+    featured: false,
+    popularityScore: 91
+  },
+  {
+    id: "med-content-sprints",
+    title: "High-Velocity Omnichannel Content Engine",
+    subtitle: "Monthly Video Batches & Multi-Platform Distribution",
+    subsidiary: "media",
+    subsidiaryName: "Disrupt Media",
+    category: "Content & Growth",
+    badge: "High Output",
+    badgeColor: "rose",
+    icon: "zap",
+    shortDescription: "Turnkey monthly production pipeline delivering 20-40 high-retention short-form and long-form video assets tailored for LinkedIn, X, and YouTube.",
+    fullDescription: "Consistent cultural presence without burning your internal team. We handle the entire editorial pipeline: monthly studio filming sessions, dynamic motion typography, sound design, hook optimization, and automated scheduling.",
+    deliverables: [
+      "20 - 40 edited vertical & horizontal video assets per month",
+      "Hook-tested scriptwriting & founder teleprompter coaching",
+      "Dynamic motion typography, meme interception & cinematic sound beds",
+      "Platform-specific captioning, hashtags & thumbnail packages",
+      "Monthly performance review & algorithm adaptation reports"
+    ],
+    techStackOrEquipment: ["Premiere Pro", "After Effects", "Descript", "CapCut Pro Studio", "Sony FX6 / FX3 Rigs"],
+    pricingModel: "Monthly Retainer",
+    basePrice: 8500,
+    priceFormatted: "Starting at $8,500 / mo",
+    turnaroundTime: "Monthly Recurring",
+    targetAudience: "Personal Brands, High-Growth SaaS, Executive Thought Leaders",
+    metricsHighlight: "250K+ Monthly Impressions • 100% Done-For-You",
+    synergyPartner: "Drive massive organic traffic into Disrupt Solutions-built landing pages and lead funnels.",
+    featured: true,
+    popularityScore: 93
+  },
+  {
+    id: "med-3d-cgi-motion",
+    title: "Product Reveal 3D Motion & CGI Visuals",
+    subtitle: "Photorealistic 3D Renders, Exploded Views & Visual Effects",
+    subsidiary: "media",
+    subsidiaryName: "Disrupt Media",
+    category: "3D & Motion",
+    badge: "Hyper-Real",
+    badgeColor: "rose",
+    icon: "layers",
+    shortDescription: "Ultra-detailed 3D product animations, exploded mechanical views, and holographic software visualizations that stun audiences.",
+    fullDescription: "Make intangible software and physical products feel magical. We craft photorealistic lighting, physics simulations, and futuristic HUD graphics that reveal the inner power of your technology.",
+    deliverables: [
+      "High-poly 3D modeling and texturing of product hardware/software interfaces",
+      "Dynamic camera flythroughs and exploded component animations",
+      "4K 60fps final video render passes (Alpha transparent files included)",
+      "Interactive 3D model exports (GLTF / Spline ready for web embed)",
+      "Full project source files and rendering assets"
+    ],
+    techStackOrEquipment: ["Blender", "Cinema 4D", "Octane / Redshift", "After Effects", "Spline 3D"],
+    pricingModel: "Asset Sprint",
+    basePrice: 11500,
+    priceFormatted: "Starting at $11,500",
+    turnaroundTime: "3 - 4 Weeks",
+    targetAudience: "Hardware Startups, FinTech Apps, DeepTech Ventures",
+    metricsHighlight: "Ray-Traced Fidelity • WebGL 3D Ready",
+    synergyPartner: "Can be natively loaded into Disrupt Solutions web apps via Three.js / Spline canvas controllers.",
+    featured: false,
+    popularityScore: 86
+  },
+  {
+    id: "med-viral-distribution",
+    title: "Cultural Interception & Viral Media Strategy",
+    subtitle: "Algorithmic Infiltration, PR Placement & Meme Engineering",
+    subsidiary: "media",
+    subsidiaryName: "Disrupt Media",
+    category: "Distribution & PR",
+    badge: "Attention Engine",
+    badgeColor: "rose",
+    icon: "trending-up",
+    shortDescription: "Targeted media dissemination designed to spark organic industry conversation, trending hashtags, and top-tier trade publication coverage.",
+    fullDescription: "Distribution is where great products win. We deploy tactical guerrilla campaigns, seed conversations across tech subreddits and founder communities, and coordinate launch day surges that dominate timelines.",
+    deliverables: [
+      "Launch day distribution battle plan & timing matrix",
+      "Network seeding across 50+ tech communities & creator syndicates",
+      "Trade PR press release creation & journalist direct pitching",
+      "Real-time sentiment tracking and viral thread amplification",
+      "Post-campaign analytics and attribution breakdown"
+    ],
+    techStackOrEquipment: ["Brand24", "MuckRack PR Suite", "X Pro", "Custom Webhook Trackers"],
+    pricingModel: "Campaign Sprint",
+    basePrice: 10000,
+    priceFormatted: "Starting at $10,000",
+    turnaroundTime: "2 - 4 Weeks",
+    targetAudience: "Product Launches, Funding Announcements, Rebrands",
+    metricsHighlight: "1.2M+ Targeted Reach • Top 5 Product Hunt Launch Support",
+    synergyPartner: "Combine with Disrupt Solutions' infrastructure to ensure servers scale seamlessly under massive viral traffic spikes.",
+    featured: false,
+    popularityScore: 84
+  },
+
+  // ==========================================
+  // DISRUPT GROUP JOINT ECOSYSTEM BUNDLES
+  // ==========================================
+  {
+    id: "grp-launchpad-360",
+    title: "Venture Launchpad 360™ Ecosystem Package",
+    subtitle: "Complete Software Platform + 4K Cinema Launch Campaign",
+    subsidiary: "group",
+    subsidiaryName: "Disrupt Group Joint",
+    category: "Full Ecosystem",
+    badge: "Maximum Impact",
+    badgeColor: "indigo",
+    icon: "rocket",
+    shortDescription: "The ultimate unified product launch: Disrupt Solutions builds your custom web platform while Disrupt Media produces your cinematic launch film and distribution engine.",
+    fullDescription: "Why hire fragmented agencies that don't talk to each other? The Venture Launchpad 360™ harnesses the combined forces of Disrupt Solutions and Disrupt Media under one synchronized timeline. We build your core digital infrastructure and craft your blockbuster media campaign in lockstep.",
+    deliverables: [
+      "Custom Enterprise Web Application & Interactive UI (Disrupt Solutions)",
+      "4K Cinematic Brand Film & Social Cutdowns (Disrupt Media)",
+      "Complete Narrative Architecture & Category Positioning Playbook",
+      "Autonomous Lead Capture & Analytics Command Center",
+      "Synchronized Launch Day Distribution & PR Campaign",
+      "Executive Project Director orchestrating cross-subsidiary milestones"
+    ],
+    techStackOrEquipment: ["Full Solutions Stack (Next.js/AWS/Postgres)", "Full Media Suite (RED Cinema/DaVinci/Cinema 4D)"],
+    pricingModel: "Unified Venture Sprint",
+    basePrice: 28000,
+    priceFormatted: "$28,000 (Saves $4,000 Bundle Value)",
+    turnaroundTime: "6 - 8 Weeks",
+    targetAudience: "Seed/Series A Startups, Corporate Spin-Outs, Breakthrough Products",
+    metricsHighlight: "100% Unified Execution • 15% Group Synergy Savings",
+    synergyPartner: "Native joint execution of Disrupt Solutions + Disrupt Media under Disrupt Group governance.",
+    featured: true,
+    popularityScore: 100
+  },
+  {
+    id: "grp-ai-media-synth",
+    title: "Enterprise AI & Media Transformation Suite",
+    subtitle: "Internal AI Copilot Infrastructure + Executive Culture Rollout",
+    subsidiary: "group",
+    subsidiaryName: "Disrupt Group Joint",
+    category: "Full Ecosystem",
+    badge: "Enterprise 360",
+    badgeColor: "indigo",
+    icon: "sparkles",
+    shortDescription: "Deploy proprietary AI workflow agents across your organization while Disrupt Media produces high-end internal and external documentary films celebrating the transformation.",
+    fullDescription: "Technology transformation fails when people aren't inspired. We solve both sides of the equation: Disrupt Solutions engineers the secure, autonomous AI toolchains, while Disrupt Media produces compelling visual training, executive broadcasts, and stakeholder films that drive 100% adoption.",
+    deliverables: [
+      "Private Enterprise AI Copilot & Multi-Agent Workflow Engine",
+      "Executive Transformation Documentary & Internal Keynote Videos",
+      "Staff Onboarding Interactive Portal & Micro-Learning Video Modules",
+      "Data Security, Compliance & Governance Telemetry Dashboard",
+      "Quarterly ROI and Adoption Verification Reporting"
+    ],
+    techStackOrEquipment: ["Enterprise LLM Systems", "Disrupt Solutions Cloud Security", "Disrupt Media Broadcast Studio"],
+    pricingModel: "Enterprise Milestone",
+    basePrice: 32000,
+    priceFormatted: "$32,000 (Saves $5,000 Bundle Value)",
+    turnaroundTime: "8 - 12 Weeks",
+    targetAudience: "Mid-to-Large Enterprises, Healthcare & Financial Institutions",
+    metricsHighlight: "100% Internal Adoption • Institutional Moat Creation",
+    synergyPartner: "Unified technological deployment and human narrative change management.",
+    featured: true,
+    popularityScore: 94
+  }
+];
+
+// Quick Categories List
+const CATALOG_CATEGORIES = [
+  "All Categories",
+  "AI & Intelligence",
+  "Web & Platforms",
+  "Mobile Systems",
+  "BI & Analytics",
+  "Cloud & DevOps",
+  "Film & Production",
+  "Brand Strategy",
+  "Content & Growth",
+  "3D & Motion",
+  "Distribution & PR",
+  "Full Ecosystem"
+];
+
+// Subsidiary definitions
+const SUBSIDIARIES_META = {
+  all: {
+    id: "all",
+    name: "Disrupt Group (All Offerings)",
+    tagline: "Architecture • Intelligence • Narrative",
+    accentColor: "indigo",
+    badgeText: "Ecosystem Full Catalog",
+    description: "The complete capabilities directory spanning both Disrupt Solutions and Disrupt Media under the Disrupt Group holding umbrella."
+  },
+  solutions: {
+    id: "solutions",
+    name: "Disrupt Solutions",
+    tagline: "Intelligence, then infrastructure. In that order.",
+    accentColor: "cyan",
+    badgeText: "Engineering & AI Subsidiary",
+    description: "Enterprise web platforms, autonomous AI multi-agent workflows, mobile systems, and resilient cloud architectures.",
+    websiteUrl: "https://solutions.disruptgrp.com",
+    localUrl: "../DisruptSolutions_Website/index.html"
+  },
+  media: {
+    id: "media",
+    name: "Disrupt Media",
+    tagline: "Narrative Architecture, Production & Cultural Interception.",
+    accentColor: "rose",
+    badgeText: "Cinema & Narrative Subsidiary",
+    description: "Broadcast 4K/6K cinema commercials, brand positioning manifestos, high-velocity video content engines, and viral distribution.",
+    websiteUrl: "https://media.disruptgrp.com",
+    localUrl: "../DisruptMedia_Website/index.html"
+  },
+  group: {
+    id: "group",
+    name: "Disrupt Group Joint Bundles",
+    tagline: "Synchronized Technological & Narrative Multipliers.",
+    accentColor: "indigo",
+    badgeText: "Combined Ecosystem Packages",
+    description: "Turnkey bundled solutions combining software platform engineering and cinematic narrative production with built-in synergy discounts."
+  }
+};
