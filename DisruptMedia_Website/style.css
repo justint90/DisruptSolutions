@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Disrupt Media — Design System & Custom Auxiliary Styles
+   Disrupt Media - Design System & Auxiliary Styles
    Engineered under design-taste-frontend standards
    Base: Obsidian Carbon (#07070A) | Singular Accent: Electric Crimson (#F43F5E)
    ========================================================================== */
@@ -32,13 +32,12 @@ html {
   padding-bottom: 0.15em;
 }
 
-/* Cinema Subtle Film Grain / Grid Mesh */
+/* Subtle Architectural Grid Texture - Clean, No Oversaturated Glow */
 .cinema-mesh-overlay {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(244, 63, 94, 0.08) 0%, transparent 60%),
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-size: 48px 48px, 48px 48px;
 }
 
 /* Interactive Service Focus Pills */
@@ -60,19 +59,18 @@ html {
   background: #f43f5e;
   border-color: #f43f5e;
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(244, 63, 94, 0.35);
 }
 
 /* Tactile Active State (Rule 4.5) */
 .tactile-btn {
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
 .tactile-btn:active {
   transform: scale(0.98) translateY(1px);
 }
 
-/* Navigation Indicator */
+/* Navigation Indicator - Crisp Line, No Neon Flare */
 .nav-link {
   position: relative;
   transition: color 0.2s ease;
@@ -86,7 +84,6 @@ html {
   height: 2px;
   background: #f43f5e;
   border-radius: 2px;
-  box-shadow: 0 0 8px #f43f5e;
   transition: width 0.2s ease, left 0.2s ease;
 }
 .nav-link:hover::after,
@@ -122,7 +119,7 @@ html {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
   to {
     opacity: 1;

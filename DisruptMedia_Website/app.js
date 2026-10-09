@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Disrupt Media — Core Application Script
+   Disrupt Media - Core Application Script
    Engineered under design-taste-frontend standards
    Features: Active Nav Spy, Interactive Cinema Modals & Consultation API
    ========================================================================== */
@@ -83,30 +83,30 @@ const productionsData = {
     title: "The Sovereign Narrative Series",
     badge: "Docu-Series · 8K Cine Capture",
     image: "assets/sovereign_doc_still.jpg",
-    overview: "A flagship 4-part episodic documentary produced by Disrupt Media, profiling institutional modernization, sovereign digital identity, and technological autonomy in emerging economies.",
+    overview: "A flagship 4-part episodic documentary produced by Disrupt Media, profiling institutional modernization, digital identity, and independent business autonomy.",
     deliverables: [
       "4x 12-Minute 8K Master Films",
       "24x Vertical Syndication Cuts",
-      "Custom Orchestral & Electronic Score",
-      "Global Institutional Press Kit"
+      "Custom Score & Sound Mix",
+      "Multi-Channel Digital Press Kit"
     ],
     metrics: [
       { label: "Organic Reach", value: "4.2M+" },
       { label: "Completion Rate", value: "88%" },
-      { label: "Syndication", value: "14 Global Outlets" }
+      { label: "Syndication", value: "14 Outlets" }
     ],
-    directorNote: "Filmed over 60 shooting days with custom anamorphic optics. Engineered to reposition institutional perception with cinematic gravitas."
+    directorNote: "Filmed with custom anamorphic optics. Engineered to reposition business perception with cinematic gravitas."
   },
   apex: {
     title: "Apex Velocity Launch Campaign",
     badge: "Commercial Film · Broadcast 60s",
     image: "assets/apex_velocity_still.jpg",
-    overview: "High-octane commercial campaign combining precision camera vehicle tracking rigs, practical neon lighting installations, and spatial sound design engineered for maximum sensory capture.",
+    overview: "High-octane commercial campaign combining precision camera vehicle tracking rigs, practical lighting installations, and spatial sound design engineered for maximum sensory capture.",
     deliverables: [
-      "60s Cinema Broadcast Master",
-      "30s TV Commercial Spot",
+      "60s Commercial Broadcast Master",
+      "30s Video Commercial Spot",
       "15s High-Frequency Social Cuts",
-      "Dolby Atmos Audio Master"
+      "Spatial Audio Master"
     ],
     metrics: [
       { label: "Total Views", value: "3.1M+" },
@@ -119,7 +119,7 @@ const productionsData = {
     title: "Market Interception Manifesto",
     badge: "Brand Story BOS · Flagship Campaign",
     image: "assets/manifesto_bos_still.jpg",
-    overview: "A comprehensive brand narrative transformation for an established regional financial enterprise, replacing legacy corporate messaging with a fierce cultural manifesto.",
+    overview: "A comprehensive brand narrative transformation for an established regional business, replacing outdated messaging with a clear, compelling market position.",
     deliverables: [
       "Brand Manifesto Film (3m 30s)",
       "Executive Keynote Visual Package",
@@ -127,11 +127,11 @@ const productionsData = {
       "Cross-Platform Social Grid Matrix"
     ],
     metrics: [
-      { label: "Territory Reach", value: "8 States" },
+      { label: "Territory Reach", value: "8 Regions" },
       { label: "Positive Sentiment Lift", value: "+74%" },
       { label: "Brand Equity Duration", value: "Multi-Year" }
     ],
-    directorNote: "Media designed to hold a market position. When an enterprise speaks with absolute clarity, category inertia shifts."
+    directorNote: "Media designed to hold a market position. When a business speaks with absolute clarity, category inertia shifts."
   }
 };
 
@@ -185,8 +185,8 @@ window.openProductionModal = function(id) {
     </div>
 
     <div class="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
-      <a href="#contact" class="tactile-btn inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-crimson-btn" onclick="closeProductionModal()">
-        Book Consultation ➔
+      <a href="#contact" class="tactile-btn inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-sm" onclick="closeProductionModal()">
+        Book Consultation
       </a>
     </div>
   `;
@@ -249,7 +249,7 @@ function initContactForm() {
       email: formData.get('email'),
       phone: formData.get('phone'),
       service: formData.get('service') || 'Commercial Video Production',
-      budget: formData.get('budget') || '$25,000 – $50,000',
+      budget: formData.get('budget') || '$5,000 - $10,000',
       description: formData.get('description')
     };
 
@@ -281,4 +281,3 @@ function initContactForm() {
     }
   });
 }
-
