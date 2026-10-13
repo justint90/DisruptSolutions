@@ -1,0 +1,93 @@
+/* Special FX, Shaders, and Animations */
+
+/* CRT Scanline Shader Overlay (Active when toggled) */
+body.crt-active::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 999;
+  background-size: 100% 3px, 4px 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+body.crt-active::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(18, 16, 16, 0.08);
+  opacity: 0;
+  z-index: 999;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.12; }
+  50% { opacity: 0.16; }
+  100% { opacity: 0.12; }
+}
+
+/* Radar Pulse Animations */
+.stat-vertex-pulse {
+  animation: radarVertexPulse 2.4s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes radarVertexPulse {
+  0% {
+    r: 4.5px;
+    opacity: 0.8;
+  }
+  100% {
+    r: 14px;
+    opacity: 0;
+  }
+}
+
+.radar-polygon {
+  animation: radarBreathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes radarBreathe {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 14px rgba(0, 242, 254, 0.75));
+  }
+}
+
+.radar-label {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--text-main);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.radar-node {
+  cursor: pointer;
+}
+
+.radar-node:hover .stat-vertex {
+  fill: #38ef7d;
+  r: 6px;
+}
+
+/* Reduced Motion Safeguard (Taste Skill Accessibility Compliance) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #bgCanvas {
+    display: none !important;
+  }
+}

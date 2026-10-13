@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XNDR // Elite High-Performance Athletic Engineering</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#506600",
+            "on-secondary-fixed-variant": "#004f54",
+            "outline-variant": "#444933",
+            "on-surface-variant": "#c4c9ac",
+            "surface-container": "#201f21",
+            "tertiary-fixed-dim": "#ffb2ba",
+            "on-tertiary-container": "#c90046",
+            "surface-bright": "#39393b",
+            "on-secondary-fixed": "#002022",
+            "surface-dim": "#131315",
+            "surface-variant": "#353437",
+            "secondary-fixed-dim": "#00dbe9",
+            "on-primary-fixed-variant": "#3c4d00",
+            "outline": "#8e9379",
+            "on-secondary-container": "#00686f",
+            "surface-container-highest": "#353437",
+            "primary": "#ffffff",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#910030",
+            "surface-container-high": "#2a2a2c",
+            "on-tertiary": "#670020",
+            "primary-container": "#c3f400",
+            "inverse-on-surface": "#313032",
+            "secondary-container": "#00eefc",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#abd600",
+            "on-primary-container": "#556d00",
+            "on-primary-fixed": "#161e00",
+            "surface-tint": "#abd600",
+            "on-background": "#e5e1e4",
+            "on-surface": "#e5e1e4",
+            "tertiary-fixed": "#ffd9dc",
+            "surface": "#131315",
+            "on-tertiary-fixed": "#400011",
+            "tertiary": "#ffffff",
+            "error-container": "#93000a",
+            "surface-container-lowest": "#0e0e10",
+            "tertiary-container": "#ffd9dc",
+            "primary-fixed": "#c3f400",
+            "on-error": "#690005",
+            "on-primary": "#283500",
+            "surface-container-low": "#1c1b1d",
+            "secondary": "#d3fbff",
+            "secondary-fixed": "#7df4ff",
+            "background": "#131315",
+            "on-secondary": "#00363a",
+            "inverse-surface": "#e5e1e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-2xs": "0.25rem",
+            "margin-tablet": "2rem",
+            "margin": "3rem",
+            "space-3xl": "6rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.75rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Space Grotesk"],
+            "caption": ["Hanken Grotesk"],
+            "display-hero-mobile": ["Space Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "label-telemetry": ["JetBrains Mono"],
+            "display-hero": ["Space Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Space Grotesk"],
+            "label-code": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "body-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-hero-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-telemetry": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "display-hero": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-code": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .kinetic-glow:hover {
+      box-shadow: 0 0 28px rgba(195, 244, 0, 0.45);
+    }
+    .cryo-glow:hover {
+      box-shadow: 0 0 20px rgba(125, 244, 255, 0.35);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 26s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    .hud-grid {
+      background-size: 32px 32px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-fixed selection:text-surface-container-lowest overflow-x-hidden">
+<!-- ================= TOP NAVIGATION ================= -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-2xl backdrop-saturate-180">
+<div class="flex justify-between items-center w-full px-6 lg:px-12 h-20 max-w-[1440px] mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-6">
+<a class="text-headline-sm font-headline-lg tracking-tighter uppercase font-bold text-primary dark:text-primary flex items-center gap-1 active:scale-[0.98] transition-transform duration-100 ease-out" href="#">
+<span>XNDR</span>
+<span class="inline-block w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+</a>
+<div class="hidden xl:flex items-center gap-2 pl-4 border-l border-surface-bright">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="text-label-telemetry font-label-telemetry text-on-surface-variant uppercase tracking-widest text-[10px]">BIO-LAB SYS // 04</span>
+</div>
+</div>
+<!-- Links Cluster (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-150 text-body-sm font-body-sm hover:text-primary-fixed hover:border-primary-fixed/40 transition-all duration-200" href="#footwear">Footwear</a>
+<a class="text-primary-fixed dark:text-primary-fixed border-b-2 border-primary-fixed pb-1 text-body-sm font-body-sm" href="#apparel">Apparel</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-150 text-body-sm font-body-sm hover:text-primary-fixed hover:border-primary-fixed/40 transition-all duration-200" href="#equipment">Equipment</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-150 text-body-sm font-body-sm hover:text-primary-fixed hover:border-primary-fixed/40 transition-all duration-200 flex items-center gap-1.5" href="#telemetry">
+<span>Telemetry Lab</span>
+<span class="px-1.5 py-0.5 rounded-[2px] bg-primary-fixed/10 text-primary-fixed text-[9px] font-label-telemetry">LIVE</span>
+</a>
+</nav>
+<!-- Trailing Controls Cluster -->
+<div class="flex items-center gap-5">
+<!-- VIP Access Badge -->
+<a class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-primary-fixed/30 bg-primary-fixed/5 text-primary-fixed hover:bg-primary-fixed hover:text-surface-container-lowest transition-all duration-150 text-caption font-label-telemetry" href="#terminal">
+<span class="material-symbols-outlined text-[15px]">electric_bolt</span>
+<span>VIP Access</span>
+</a>
+<!-- Currency Selector -->
+<button class="hidden sm:flex items-center gap-1 text-body-sm font-label-telemetry text-on-surface-variant hover:text-primary transition-colors">
+<span>USD ($)</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<!-- Search Bar Icon Action -->
+<button aria-label="Search" class="p-2 rounded-lg text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">search</span>
+</button>
+<!-- Person / Account Action -->
+<button aria-label="Account" class="p-2 rounded-lg text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">person</span>
+</button>
+<!-- Shopping Bag Action -->
+<button aria-label="Cart" class="relative p-2 rounded-lg text-primary hover:text-primary-fixed transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-0 flex items-center justify-center w-4 h-4 bg-primary-fixed text-on-primary-fixed text-[10px] font-label-telemetry font-bold rounded-full">02</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= HERO SECTION ================= -->
+<section class="relative min-h-[92vh] pt-24 pb-16 flex items-center justify-center overflow-hidden border-b border-outline-variant/20">
+<!-- Dynamic Background Canvas & Atmosphere -->
+<div class="absolute inset-0 z-0">
+<img alt="High-performance athletic silhouette moving at peak kinetic velocity" class="w-full h-full object-cover object-center filter brightness-90" src="https://lh3.googleusercontent.com/aida/AEtjO1VAYkwNUGjyFbQKai_O75PyHglu6352SKAqjAtyn7vd81MU84NYhFWEugw5ST7dvgANHvNOTiV0BspQGjuuLgnE6lsOBn9p8gcA1KkPzUb6FpSm3t3qDNnXxlW9j18GI03SUwMubnXpS7wpMDlAwDqlDWyElPnjz7GNVK2UabUc6iau0d3x2wCrGLyEBorw3JBC_nA-ClOQmDvr8G_dqsrNWIi6WYosfzyIXCTWMt1VNxIkblwczcFAKw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/80"></div>
+<div class="absolute inset-0 hud-grid opacity-60"></div>
+</div>
+<!-- Hero Content Cluster -->
+<div class="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-12 flex flex-col justify-end min-h-[76vh]">
+<!-- Telemetry Live Flag -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg border border-secondary-fixed/40 bg-surface-container-low/80 backdrop-blur-md mb-6 w-fit">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-fixed"></span>
+</span>
+<span class="text-caption font-label-telemetry text-secondary tracking-widest uppercase">SS26 TECHNICAL COLLECTION // NOW LIVE</span>
+</div>
+<!-- Main Headline Assembly -->
+<div class="max-w-4xl mb-6">
+<h1 class="text-display-hero-mobile md:text-display-hero font-display-hero text-primary uppercase tracking-tight leading-none mb-3">
+          OWN THE GRIND
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl text-balance">
+          ENGINEERED ACTIVEWEAR BUILT FOR UNCOMPROMISING ATHLETES. Calibrated for human potential in extreme threshold conditions.
+        </p>
+</div>
+<!-- Action Buttons & Direct Telemetry Readouts -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pt-4 pb-2">
+<div class="flex flex-wrap items-center gap-4">
+<!-- Primary CTA Button -->
+<a class="kinetic-glow flex items-center justify-center gap-3 px-8 py-4 bg-primary-fixed text-on-primary-fixed font-headline-lg font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-200 active:scale-[0.98]" href="#featured-drops">
+<span>SHOP DROP 01</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<!-- Secondary CTA Button -->
+<button class="cryo-glow group flex items-center justify-center gap-3 px-6 py-4 bg-surface-container-low/60 hover:bg-surface-container-high/80 text-secondary-fixed border border-secondary-fixed/40 font-headline-lg font-bold text-sm uppercase tracking-wider rounded-lg backdrop-blur-md transition-all duration-200 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed group-hover:scale-110 transition-transform">play_arrow</span>
+<span>WATCH BRAND FILM: OWN THE GRIND [4K]</span>
+<span class="text-[11px] font-label-telemetry text-on-surface-variant pl-1">[02:14 HD]</span>
+</button>
+</div>
+<!-- Floating Biometric Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full lg:w-auto">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl">
+<span class="text-primary-fixed font-label-telemetry text-lg">⚡</span>
+<div>
+<p class="text-caption font-label-telemetry text-primary font-bold">0.08s DRY-RATE</p>
+<p class="text-[10px] font-label-telemetry text-on-surface-variant">Capillary Vapor Flow</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl">
+<span class="text-secondary-fixed font-label-telemetry text-lg">🧬</span>
+<div>
+<p class="text-caption font-label-telemetry text-primary font-bold">MATRIX 4.0</p>
+<p class="text-[10px] font-label-telemetry text-on-surface-variant">Hyper-Stretch Poly</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl">
+<span class="text-primary-fixed font-label-telemetry text-lg">🛡️</span>
+<div>
+<p class="text-caption font-label-telemetry text-primary font-bold">ZERO FRICTION</p>
+<p class="text-[10px] font-label-telemetry text-on-surface-variant">Ultrasonic Seam Weld</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= LIVE DROP TICKER / MARQUEE ================= -->
+<aside aria-label="Drop Announcements" class="w-full bg-surface-container-lowest border-y border-outline-variant/30 py-3 overflow-hidden select-none">
+<div class="animate-marquee whitespace-nowrap text-caption font-label-telemetry uppercase text-on-surface-variant tracking-widest flex gap-12 items-center">
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> GLOBAL PRIORITY SHIPPING AVAILABLE</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> AERO-CARBON SERIES RESTOCK</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> PROPRIETARY KINETIC FABRIC LAB</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span> LIMITED EDITION RUN — 500 UNITS GLOBALLY</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> GLOBAL PRIORITY SHIPPING AVAILABLE</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> AERO-CARBON SERIES RESTOCK</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> PROPRIETARY KINETIC FABRIC LAB</span>
+<span class="text-outline-variant">//</span>
+<span class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span> LIMITED EDITION RUN — 500 UNITS GLOBALLY</span>
+</div>
+</aside>
+<!-- ================= FEATURED DROPS / COLLECTION GRID ================= -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12" id="featured-drops">
+<!-- Header Block & Category Filter -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-outline-variant/20">
+<div>
+<div class="flex items-center gap-2 text-label-telemetry font-label-telemetry text-primary-fixed uppercase tracking-wider mb-2">
+<span>// SPECIFICATION ARCHIVE</span>
+<span>[DROP 01]</span>
+</div>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-primary uppercase">FLAGSHIP DROP 01 / SS26</h2>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-4 py-2 rounded-lg text-caption font-label-telemetry uppercase bg-primary-fixed text-on-primary-fixed font-bold">All Items</button>
+<button class="px-4 py-2 rounded-lg text-caption font-label-telemetry uppercase bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-outline-variant border border-outline-variant/30 transition-colors">Compression</button>
+<button class="px-4 py-2 rounded-lg text-caption font-label-telemetry uppercase bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-outline-variant border border-outline-variant/30 transition-colors">Thermal Layers</button>
+<button class="px-4 py-2 rounded-lg text-caption font-label-telemetry uppercase bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-outline-variant border border-outline-variant/30 transition-colors">Aero Shorts</button>
+<button class="px-4 py-2 rounded-lg text-caption font-label-telemetry uppercase bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-outline-variant border border-outline-variant/30 transition-colors">Accessories</button>
+</div>
+</div>
+<!-- Product Grid: 4 Cards Bento Assembly -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<article class="group relative bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden hover:border-primary-fixed/50 transition-all duration-300 flex flex-col justify-between">
+<div class="relative bg-surface-container-lowest p-6 aspect-[4/5] flex items-center justify-center overflow-hidden">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/90 border border-primary-fixed/40 text-primary-fixed font-label-telemetry text-[10px] tracking-wider uppercase">LAB TESTED</span>
+</div>
+<span class="absolute top-4 right-4 z-10 text-on-surface-variant font-label-telemetry text-[11px]">SKU: X-01</span>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical compression tee garment shot against a clean dark obsidian void studio setting. Dynamic soft rim-light highlights the precise ergonomic carbon fiber weaves, cyan laser seam accents, and premium breathable micro-mesh textures. High performance minimalist luxury sports presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvLU7qd6_9PBJtHhoz6QiMDNW0ZG_it23wXZPdSxTYhzRD7Bu68WMHfgkFM-V4vfExerrDv6eXqIGIXNpQLMEC311oJbzvKKSg7eCn9M_Ubfx2ZOrrkDAbzcRl8Fd7P-tyudhnzW5-X_qLIDvEVba8xeSuYA-Xhk6W1tnSRAY1ZqXpiAWLkfewzVuCK94UvZe_X4Fol2Bh-lARys2gqpg0qT8FVpq0lVCHTUqUzv9u1ZyBwgw65VPx9m9n_5koi9mIdiW_--A7ByY"/>
+<!-- Quick Add Overlay Trigger -->
+<button class="absolute inset-x-4 bottom-4 py-3 bg-surface-container-high/95 hover:bg-primary-fixed hover:text-on-primary-fixed text-primary border border-outline-variant/40 rounded-lg font-headline-lg text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>QUICK ADD // $120</span>
+</button>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-sm font-headline-md text-primary group-hover:text-primary-fixed transition-colors">X-01 KINETIC COMPRESSION TEE</h3>
+<span class="text-title-sm font-label-telemetry text-primary font-bold">$120</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Obsidian Black &amp; Neon Line</p>
+</div>
+<!-- Sizes & Swatches -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-caption font-label-telemetry text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer">S</span>
+<span>·</span>
+<span class="text-primary font-bold">M</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">L</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">XL</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#0A0A0C] border border-outline"></span>
+<span class="w-3 h-3 rounded-full bg-[#202026] border border-outline-variant"></span>
+<span class="w-3 h-3 rounded-full bg-[#e5e1e4] border border-outline-variant"></span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden hover:border-secondary-fixed/50 transition-all duration-300 flex flex-col justify-between">
+<div class="relative bg-surface-container-lowest p-6 aspect-[4/5] flex items-center justify-center overflow-hidden">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
+<span class="px-2.5 py-1 rounded bg-secondary-fixed/10 border border-secondary-fixed/40 text-secondary-fixed font-label-telemetry text-[10px] tracking-wider uppercase">NEW DROP</span>
+</div>
+<span class="absolute top-4 right-4 z-10 text-on-surface-variant font-label-telemetry text-[11px]">SKU: ASH-22</span>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-end technical hydrophobic sports hoodie in deep matte charcoal fabric presented in a dark futuristic studio. The image captures water droplets rolling off the water-repellent nanotech surface, with delicate cryogenic cyan stitching along the articulated raglan sleeves and ergonomic hood contour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlKyMyaC-br3PG-m_HxqkNq3u3wFv4JxgG1FQxEmO9C0pimbUpchGuNBhh53i6SQO7FIw2zvX2R6kFTByiMGb6BTmxu6rhdT6GeMKSC_jUEFfQ6WAeEQBaawNi31nQe3F2JfewPcYaNUPepCfWxcC-VCW54snhvOIHxaRLY91CsiZrsjBF3vcbIOX5WxIYiZ4zWllm5EPaaBPVh6nlhvwFSZ-FYSsyOKLovtnh2sQ4YjwZVusG4oOOFvwuWTcvvZ7plPYaNvnxqrU"/>
+<button class="absolute inset-x-4 bottom-4 py-3 bg-surface-container-high/95 hover:bg-secondary-fixed hover:text-on-secondary-fixed text-primary border border-outline-variant/40 rounded-lg font-headline-lg text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>QUICK ADD // $210</span>
+</button>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-sm font-headline-md text-primary group-hover:text-secondary-fixed transition-colors">AERO-SHELL HYDROPHOBIC HOODIE</h3>
+<span class="text-title-sm font-label-telemetry text-primary font-bold">$210</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Matte Charcoal Finish</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-caption font-label-telemetry text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer">S</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">M</span>
+<span>·</span>
+<span class="text-primary font-bold">L</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">XL</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#1e1f24] border border-outline"></span>
+<span class="w-3 h-3 rounded-full bg-[#121316] border border-outline-variant"></span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden hover:border-primary-fixed/50 transition-all duration-300 flex flex-col justify-between">
+<div class="relative bg-surface-container-lowest p-6 aspect-[4/5] flex items-center justify-center overflow-hidden">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
+<span class="px-2.5 py-1 rounded bg-error-container/60 border border-error/40 text-error font-label-telemetry text-[10px] tracking-wider uppercase">SOLD OUT RISK</span>
+</div>
+<span class="absolute top-4 right-4 z-10 text-on-surface-variant font-label-telemetry text-[11px]">SKU: STX-99</span>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Full view of ultra-performance running compression tights laid out on a dark technical carbon pedestal. Vibrant cyan blue bonded seam welding along the calf with fine electric-lime accent dots, micro-perforated ventilation panels at the knee flexure, and sleek matte graphite reflective branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPIQ9Iy1wHCYJOknoPaimTHUEkHvd3ShDw_323fHrQ80UQ0OyUFX6y7qSjLqpM-PKziVJL3nsCOUQnJ1iozxdpDM6boRYPT4gkxkObD7LmF9TjECRIayKGWAYhj9Y3LUOAmMhx2URKj56AejdgTnKoAx7_vRDCDelNgblNQXtec34CQFZbAQVAfsD0cwOl-Jsl2xes8X47eWqXmNEU_sbvuTNZjrprn3sx4tG9fDU4YS2oPsYRUWVrTbQPUsC01CO1iWGLvwmlg_8"/>
+<button class="absolute inset-x-4 bottom-4 py-3 bg-surface-container-high/95 hover:bg-primary-fixed hover:text-on-primary-fixed text-primary border border-outline-variant/40 rounded-lg font-headline-lg text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>QUICK ADD // $145</span>
+</button>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-sm font-headline-md text-primary group-hover:text-primary-fixed transition-colors">STRIDE-X ULTRA-VENT PRO RUN TIGHT</h3>
+<span class="text-title-sm font-label-telemetry text-primary font-bold">$145</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Stealth Graphite with Tech Carbon</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-caption font-label-telemetry text-on-surface-variant">
+<span class="text-primary font-bold">S</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">M</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">L</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">XL</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#18181c] border border-outline"></span>
+<span class="w-3 h-3 rounded-full bg-[#0d0d10] border border-outline-variant"></span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group relative bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden hover:border-primary-fixed/50 transition-all duration-300 flex flex-col justify-between">
+<div class="relative bg-surface-container-lowest p-6 aspect-[4/5] flex items-center justify-center overflow-hidden">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/90 border border-primary-fixed/40 text-primary-fixed font-label-telemetry text-[10px] tracking-wider uppercase">LAB TESTED</span>
+</div>
+<span class="absolute top-4 right-4 z-10 text-on-surface-variant font-label-telemetry text-[11px]">SKU: TRC-04</span>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical recovery crewneck athletic pullover in deep eclipse black fabric, engineered with mineral-infused titanium recovery yarn. Clean architectural studio shot against dark graphite wall with sharp directional lighting casting subtle geometric shadows across the garment's textured weave." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIo0r3Hgr8-7juIzTCk2liQozadQCUcFvEXv-7catdFzYyUbByAxsCj9XQnkIkq9OST456Vw1Ph9XvflQ3hKej6PhtY2aZHw7Oqi90M_nenDD5B6lCfzBTXEPUN-bPpmN8ORWuAjfanI4b2x0JoUzrkdcuK0s6DxQX4zdXo8IXWoohDCPEo34op91KryKnPUB9AYaH16uiAxOWxQvWO-Qc9aheaprg9TVZHvPJPGmJLIq5D_7ILVyVWkiTxPVPKdj1kJfVlmz6V10"/>
+<button class="absolute inset-x-4 bottom-4 py-3 bg-surface-container-high/95 hover:bg-primary-fixed hover:text-on-primary-fixed text-primary border border-outline-variant/40 rounded-lg font-headline-lg text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>QUICK ADD // $160</span>
+</button>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-sm font-headline-md text-primary group-hover:text-primary-fixed transition-colors">TITANIUM RECOVERY CREW</h3>
+<span class="text-title-sm font-label-telemetry text-primary font-bold">$160</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Deep Eclipse</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-caption font-label-telemetry text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer">S</span>
+<span>·</span>
+<span class="text-primary font-bold">M</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">L</span>
+<span>·</span>
+<span class="hover:text-primary cursor-pointer">XL</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#131316] border border-outline"></span>
+<span class="w-3 h-3 rounded-full bg-[#2a292d] border border-outline-variant"></span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= TECHNICAL INNOVATION & FABRIC SCIENCE ================= -->
+<section class="py-24 bg-surface-container-lowest border-y border-outline-variant/30 relative overflow-hidden" id="telemetry">
+<!-- Atmospheric Ambient Light -->
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary-fixed/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+<div class="max-w-2xl mb-16">
+<div class="flex items-center gap-2 text-label-telemetry font-label-telemetry text-secondary-fixed uppercase tracking-wider mb-2">
+<span>// BIOMECHANICAL RESEARCH DIVISION</span>
+</div>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-primary uppercase leading-tight mb-4">
+          ENGINEERED ARCHITECTURE
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          We deconstructed athletic apparel down to the microscopic weave. Every single stitch is designed to regulate core thermal energy and eliminate kinetic drag.
+        </p>
+</div>
+<!-- Macro Fabric Showcase with Telemetry Overlays -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+<!-- Left: Image with Interactive Pin Annotations -->
+<div class="lg:col-span-7 relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-2xl">
+<div class="aspect-[4/3] w-full relative">
+<img alt="Macro close-up photograph of high-tech sportswear textile revealing porous air mesh, cyber cyan tension seam stitch, and lime thread details" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb5b4DfhrOXfBR0qq8I1Eke72kAnJNdQQolXgT3lrhac-u4gFNhof5-m6ShrDXaKnSoJjDFMFrekwjvYapVN7C20xAG3h3dxvdhEbVe61TrenuLV_m-0gcQM2ZOTHYQdBxTHsuJDb3j3XSsJzyyqgDJARD5BqnpAq1jLGKRtbzlNbeqQ-1LKl67G4hsvQMCt1EjXBV6NYw-mH_cwqNGILSohY_sN6rb4hzGui4JfCR0FGqh3cPS2wKRcV6d-N8zS01yMqw25nX5hI"/>
+<!-- Pin 1 Overlay -->
+<div class="absolute top-[28%] left-[38%] group">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-secondary-fixed opacity-75"></span>
+<span class="relative w-4 h-4 rounded-full bg-secondary-fixed text-surface-container-lowest flex items-center justify-center font-label-telemetry font-bold text-[9px] shadow-lg cursor-pointer">1</span>
+</div>
+<div class="absolute left-6 top-1/2 -translate-y-1/2 w-48 p-3 bg-surface-container-high/95 border border-secondary-fixed/50 rounded-lg backdrop-blur-xl shadow-2xl hidden md:block pointer-events-none">
+<span class="text-[10px] font-label-telemetry text-secondary-fixed block">01 / AIR-GRID</span>
+<span class="text-caption text-on-surface block leading-tight">Dynamic micro-pores activate with perspiration.</span>
+</div>
+</div>
+<!-- Pin 2 Overlay -->
+<div class="absolute top-[52%] right-[32%] group">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative w-4 h-4 rounded-full bg-primary-fixed text-surface-container-lowest flex items-center justify-center font-label-telemetry font-bold text-[9px] shadow-lg cursor-pointer">2</span>
+</div>
+<div class="absolute right-6 top-1/2 -translate-y-1/2 w-52 p-3 bg-surface-container-high/95 border border-primary-fixed/50 rounded-lg backdrop-blur-xl shadow-2xl hidden md:block pointer-events-none">
+<span class="text-[10px] font-label-telemetry text-primary-fixed block">02 / CARBON THREAD</span>
+<span class="text-caption text-on-surface block leading-tight">Antimicrobial ion thread inhibits bacteria.</span>
+</div>
+</div>
+<!-- Pin 3 Overlay -->
+<div class="absolute bottom-[24%] left-[45%] group">
+<div class="relative flex items-center justify-center">
+<span class="relative w-4 h-4 rounded-full bg-primary text-surface-container-lowest flex items-center justify-center font-label-telemetry font-bold text-[9px] shadow-lg cursor-pointer">3</span>
+</div>
+<div class="absolute left-6 top-1/2 -translate-y-1/2 w-48 p-3 bg-surface-container-high/95 border border-outline-variant/60 rounded-lg backdrop-blur-xl shadow-2xl hidden md:block pointer-events-none">
+<span class="text-[10px] font-label-telemetry text-primary block">03 / KINETIC TENSION</span>
+<span class="text-caption text-on-surface block leading-tight">360° unrestricted anatomical motion.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Telemetry Feature Stack -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary-fixed/50 transition-colors">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/10 text-secondary-fixed font-label-telemetry text-caption font-bold">01</span>
+<h3 class="text-title-sm font-headline-md text-primary">MICRO-POROUS AIR GRID</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Hexagonal mesh topology expands when exposed to latent core moisture, multiplying conductive heat dissipation by 340% over standard synthetic polymers.
+            </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-fixed/50 transition-colors">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary-fixed/10 text-primary-fixed font-label-telemetry text-caption font-bold">02</span>
+<h3 class="text-title-sm font-headline-md text-primary">ANTIMICROBIAL CARBON THREAD</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              99.4% odor suppression woven directly into molecular filaments. Will not degrade across consecutive high-intensity training sessions or repeated wash cycles.
+            </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline transition-colors">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-telemetry text-caption font-bold">03</span>
+<h3 class="text-title-sm font-headline-md text-primary">4-WAY KINETIC TENSION</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Bonded elastomeric memory bands follow musculoskeletal trajectories, returning kinetic rebound energy during explosive flexion and sprint mechanics.
+            </p>
+</div>
+</div>
+</div>
+<!-- Comparative Engineering Matrix Table -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface-container-low overflow-hidden">
+<div class="px-6 py-4 bg-surface-container border-b border-outline-variant/30 flex justify-between items-center">
+<span class="text-caption font-label-telemetry text-on-surface-variant uppercase tracking-wider">LAB BENCHMARK MATRIX // 100M SPRINT SIMULATION</span>
+<span class="text-caption font-label-telemetry text-primary-fixed font-bold">STATUS: VALIDATED</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 text-caption font-label-telemetry text-on-surface-variant">
+<th class="p-4 lg:px-6">SPECIFICATION PARAMETER</th>
+<th class="p-4 lg:px-6 text-primary-fixed">XNDR AERO-TECH (CALIBRATED)</th>
+<th class="p-4 lg:px-6">TRADITIONAL ATHLETIC WEAVE</th>
+<th class="p-4 lg:px-6 text-right">PERFORMANCE DELTA</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm divide-y divide-outline-variant/10 font-label-telemetry">
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-4 lg:px-6 text-primary font-body-sm">Evaporative Latency</td>
+<td class="p-4 lg:px-6 text-primary-fixed font-bold">0.08 sec / cm²</td>
+<td class="p-4 lg:px-6 text-on-surface-variant">0.42 sec / cm²</td>
+<td class="p-4 lg:px-6 text-right text-secondary-fixed">+81% Faster Dry</td>
+</tr>
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-4 lg:px-6 text-primary font-body-sm">Drag Resistance Coefficient (Cd)</td>
+<td class="p-4 lg:px-6 text-primary-fixed font-bold">0.14 Cd</td>
+<td class="p-4 lg:px-6 text-on-surface-variant">0.28 Cd</td>
+<td class="p-4 lg:px-6 text-right text-secondary-fixed">-50% Friction</td>
+</tr>
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-4 lg:px-6 text-primary font-body-sm">Tensile Rebound Recovery</td>
+<td class="p-4 lg:px-6 text-primary-fixed font-bold">99.8% (5,000 cycles)</td>
+<td class="p-4 lg:px-6 text-on-surface-variant">88.2% (1,000 cycles)</td>
+<td class="p-4 lg:px-6 text-right text-secondary-fixed">+11.6% Retention</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ATHLETE LOOKBOOK / EDITORIAL ================= -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-6 border-b border-outline-variant/20">
+<div>
+<span class="text-label-telemetry font-label-telemetry text-primary-fixed uppercase tracking-wider mb-2 block">// ATHLETE FIELD PROTOCOLS</span>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-primary uppercase">TESTED IN REALITY</h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-md">
+        Field tested across 14 Olympic training camps, sprint tracks, and alpine conditioning facilities.
+      </p>
+</div>
+<!-- Asymmetrical Bento Editorial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Big Feature Editorial Block (Span 7) -->
+<div class="md:col-span-7 relative rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/30 min-h-[460px] flex flex-col justify-end p-8 group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover filter brightness-75 group-hover:scale-105 transition-transform duration-700" data-alt="Athletic sprinter in full speed velocity stride wearing black technical XNDR compression gear on a futuristic wet track at dusk. Moody mist and dramatic low key lighting with neon green track perimeter lines reflecting on the surface. Cinematic high contrast photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdg7oJwDjgWB0OW9dEavL3FwHlHzHxe4l2CYJpI2wzEGb6dmWvpcbaD_a1TA43zC4KpuyK5Uwtrxkl0HvzShjtTxGObFIHAQHP3Vl80X6QGI2TMIUMczgRgwT4sWMImacXEuNkDI98JPVpfc-nS3L0AmwonxRdn0a1gy1CJ1NbglsybdeVK665p_ihvdO7IhY02y8CRvQJzvKbDnFIRyjLWmsYalzsz6vhlhhUgDaaDJzmXPl4jVIlK_EPHlurClQOJPyYTVxOu2E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-lg">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-highest/80 backdrop-blur-md mb-3 border border-outline-variant/40">
+<span class="text-primary-fixed font-label-telemetry text-[10px] uppercase tracking-wider">FIELD REPORT #08</span>
+</div>
+<blockquote class="text-headline-sm font-headline-sm text-primary uppercase leading-snug mb-4">
+            “The apparel completely disappears during maximum velocity. Zero drag. Zero seam chafing.”
+          </blockquote>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline flex items-center justify-center font-label-telemetry text-caption font-bold text-primary">
+              MK
+            </div>
+<div>
+<p class="text-title-sm font-headline-md text-primary">MARCUS KINCAID</p>
+<p class="text-caption font-label-telemetry text-on-surface-variant">World Class Track Athlete &amp; Test Pilot</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column Editorial Cards (Span 5) -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<!-- Small Editorial 1 -->
+<div class="relative rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/30 p-6 flex flex-col justify-between min-h-[220px]">
+<div class="flex justify-between items-start">
+<span class="text-label-telemetry font-label-telemetry text-secondary-fixed text-xs uppercase">BIOMETRICS LOG</span>
+<span class="text-on-surface-variant font-label-telemetry text-[11px]">OCT 24 // 06:00 HRS</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-headline-md font-headline-lg text-primary">38.4</span>
+<span class="text-caption font-label-telemetry text-primary-fixed">KM/H MAX VELOCITY</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Telemetry verified during high-cadence acceleration trials at Zurich High-Altitude Training Center.
+            </p>
+</div>
+</div>
+<!-- Small Editorial 2 with Image -->
+<div class="relative rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/30 min-h-[220px] flex items-end p-6 group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover filter brightness-70 group-hover:scale-105 transition-transform duration-700" data-alt="Muscular male athlete resting after extreme workout, sitting on minimalist carbon bench against dark studio background, wearing black moisture wicking sports apparel with electric cyan trim, sweat dripping, focused expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPXpQnVuIAtYw5iQcCeLBj-rpUXNrXvJHpdflu5zsv4zFg6uB-1xXWHh2AaEMb-GiWhvK8xNpzo4jjDd-HVK2jMOv76W9jfe56edxZ-uTrj8VsgeCtT7FGTVBlzUeogaBW-C_-H-toiSAXNyWEj_cnkTXCXuUFtAJJc-msHAAXiYQH8vpdfWS-OQilFA_5H2Ugri89sSVnogO-dBIDKoojvPUAmQktdkp5EmBpHMeX7UwYU2L1VAOlU2Wy9VGLzpwnOlIcRl4kOwQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 flex justify-between items-end w-full">
+<div>
+<span class="text-caption font-label-telemetry text-primary-fixed uppercase tracking-wider block mb-1">THERMAL RECOVERY</span>
+<h4 class="text-title-sm font-headline-md text-primary uppercase">ALPINE ALTITUDE ACCLIMATION</h4>
+</div>
+<a class="p-2.5 rounded-lg bg-surface-container-high/90 text-primary hover:text-primary-fixed border border-outline-variant/40 transition-colors" href="#featured-drops">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= INSTAGRAM LOOKBOOK INTEGRATION ================= -->
+<section class="py-24 bg-surface-container-low border-y border-outline-variant/30">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-6 border-b border-outline-variant/20">
+<div>
+<span class="text-label-telemetry font-label-telemetry text-primary-fixed uppercase tracking-wider mb-2 block">// COMMUNITY STREAM</span>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-primary uppercase">@XNDR.OFFICIAL // #OWNTHEGRIND</h2>
+</div>
+<a class="text-caption font-label-telemetry text-secondary-fixed hover:underline flex items-center gap-1.5 uppercase" href="https://www.instagram.com/xndr.official" target="_blank">
+<span>FOLLOW ON INSTAGRAM</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Grid Card 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 aspect-[4/5] flex items-end">
+<img alt="Intense gym athlete lifting weights wearing XNDR compression gear" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VAYkwNUGjyFbQKai_O75PyHglu6352SKAqjAtyn7vd81MU84NYhFWEugw5ST7dvgANHvNOTiV0BspQGjuuLgnE6lsOBn9p8gcA1KkPzUb6FpSm3t3qDNnXxlW9j18GI03SUwMubnXpS7wpMDlAwDqlDWyElPnjz7GNVK2UabUc6iau0d3x2wCrGLyEBorw3JBC_nA-ClOQmDvr8G_dqsrNWIi6WYosfzyIXCTWMt1VNxIkblwczcFAKw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10 p-5 w-full flex justify-between items-end">
+<div>
+<span class="text-[10px] font-label-telemetry text-primary-fixed uppercase">@XNDR_ATHLETE</span>
+<p class="text-caption font-label-telemetry text-on-surface">Heavy squat protocol at 220kg.</p>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-high/80 text-primary hover:text-primary-fixed border border-outline-variant/30 transition-colors" href="https://www.instagram.com/xndr.official" target="_blank">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+</div>
+</div>
+<!-- Grid Card 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 aspect-[4/5] flex items-end">
+<img alt="Macro fabric weave and athletic conditioning" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1U5QMCEWEmzAK-Mi4GNGFta68lrHgxs-_uOIqZIdMJWGGT-3orWogT4GKu3-5bkgX7pMM8dg3F3oBYz9wv_2Qxz2g8TxnxWB03q2_0CKad31hc-W-TlE83HFYxaWKde8hitRPGT4vWO6EbmJ3R7BLU8cfw1-iOzNnGDdI-TIVxbmJ49WiwG695RvgXZqxre5Jlg4NV-1VMvPkj3PPBQmqgsQIeX-2CdowYOtPS3ZGkrqCKkH0Tx6hCZCrc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10 p-5 w-full flex justify-between items-end">
+<div>
+<span class="text-[10px] font-label-telemetry text-secondary-fixed uppercase">@LAB_TESTED</span>
+<p class="text-caption font-label-telemetry text-on-surface">Carbon matrix flexibility test.</p>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-high/80 text-primary hover:text-secondary-fixed border border-outline-variant/30 transition-colors" href="https://www.instagram.com/xndr.official" target="_blank">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+</div>
+</div>
+<!-- Grid Card 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 aspect-[4/5] flex items-end">
+<img alt="Sprint training session at dawn" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VAYkwNUGjyFbQKai_O75PyHglu6352SKAqjAtyn7vd81MU84NYhFWEugw5ST7dvgANHvNOTiV0BspQGjuuLgnE6lsOBn9p8gcA1KkPzUb6FpSm3t3qDNnXxlW9j18GI03SUwMubnXpS7wpMDlAwDqlDWyElPnjz7GNVK2UabUc6iau0d3x2wCrGLyEBorw3JBC_nA-ClOQmDvr8G_dqsrNWIi6WYosfzyIXCTWMt1VNxIkblwczcFAKw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10 p-5 w-full flex justify-between items-end">
+<div>
+<span class="text-[10px] font-label-telemetry text-primary-fixed uppercase">@SPRINT_LAB</span>
+<p class="text-caption font-label-telemetry text-on-surface">Acceleration drills with X-01.</p>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-high/80 text-primary hover:text-primary-fixed border border-outline-variant/30 transition-colors" href="https://www.instagram.com/xndr.official" target="_blank">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+</div>
+</div>
+<!-- Grid Card 4 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 aspect-[4/5] flex items-end">
+<img alt="Technical apparel close-up texture" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1U5QMCEWEmzAK-Mi4GNGFta68lrHgxs-_uOIqZIdMJWGGT-3orWogT4GKu3-5bkgX7pMM8dg3F3oBYz9wv_2Qxz2g8TxnxWB03q2_0CKad31hc-W-TlE83HFYxaWKde8hitRPGT4vWO6EbmJ3R7BLU8cfw1-iOzNnGDdI-TIVxbmJ49WiwG695RvgXZqxre5Jlg4NV-1VMvPkj3PPBQmqgsQIeX-2CdowYOtPS3ZGkrqCKkH0Tx6hCZCrc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10 p-5 w-full flex justify-between items-end">
+<div>
+<span class="text-[10px] font-label-telemetry text-secondary-fixed uppercase">@COMMUNITY_X</span>
+<p class="text-caption font-label-telemetry text-on-surface">Uncompromising daily grind.</p>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-high/80 text-primary hover:text-secondary-fixed border border-outline-variant/30 transition-colors" href="https://www.instagram.com/xndr.official" target="_blank">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= VIP ACCESS TERMINAL / NEWSLETTER ================= -->
+<section class="py-20 bg-surface-container-low border-y border-outline-variant/30 relative" id="terminal">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="relative rounded-2xl bg-surface-container-lowest border border-primary-fixed/40 p-8 lg:p-14 overflow-hidden shadow-2xl">
+<!-- Decorative Cyber Circuit Backdrop -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary-fixed/10 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-fixed/10 blur-[80px] pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+<span class="text-caption font-label-telemetry text-primary-fixed uppercase tracking-widest font-bold">TERMINAL ACCESS PORTAL</span>
+</div>
+<h2 class="text-headline-md md:text-headline-lg font-display-hero text-primary uppercase mb-4 leading-tight">
+            GAIN TERMINAL ACCESS TO DROP 02
+          </h2>
+<p class="text-body-md md:text-body-lg font-body-md text-on-surface-variant mb-8 max-w-xl">
+            Members receive a 1-hour early access window, biometric sizing calibration, and invite-only allocation for unreleased prototype runs.
+          </p>
+<!-- Input Action Group -->
+<form class="flex flex-col sm:flex-row items-stretch gap-3 max-w-xl" onsubmit="event.preventDefault();">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">alternate_email</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-lg bg-surface-container-high border border-outline-variant/50 text-primary placeholder-on-surface-variant/60 font-label-telemetry text-caption focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed outline-none transition-all" placeholder="ENTER ATHLETE IDENTIFIER (EMAIL)" required="" type="email"/>
+</div>
+<button class="kinetic-glow px-8 py-4 bg-primary-fixed text-on-primary-fixed font-headline-lg font-bold text-caption uppercase tracking-widest rounded-lg transition-all duration-200 active:scale-[0.98] whitespace-nowrap" type="submit">
+              SECURE ACCESS
+            </button>
+</form>
+<div class="flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-outline-variant/20 text-caption font-label-telemetry text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary-fixed">verified</span> 256-BIT ENCRYPTED</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary-fixed">verified</span> ZERO SPAM TOLERANCE</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary-fixed">verified</span> DIRECT LAB TRANSMISSIONS ONLY</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="w-full border-t border-outline-variant/20 dark:border-outline-variant/20 bg-surface-container-lowest dark:bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col gap-12">
+<!-- Top Tier: Brand, Philosophy & Multi-Column Navigation -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
+<!-- Brand Summary (Span 2) -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<a class="text-headline-md font-headline-lg tracking-widest uppercase font-bold text-primary dark:text-primary flex items-center gap-1" href="#">
+<span>XNDR</span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+</a>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-sm leading-relaxed">
+            Pioneering athletic apparel engineered from biomimetic weaves, carbon-matrix textiles, and real-time biomechanical telemetry.
+          </p>
+<div class="flex items-center gap-4 text-on-surface-variant pt-2">
+<a class="hover:text-primary-fixed transition-colors flex items-center gap-1.5 text-caption font-label-telemetry" href="https://www.instagram.com/xndr.official" target="_blank" title="Instagram @xndr.official"><span class="material-symbols-outlined text-[20px]">share</span><span>@xndr.official</span></a>
+<a class="hover:text-primary-fixed transition-colors" href="#terminal"><span class="material-symbols-outlined text-[20px]">terminal</span></a>
+<a class="hover:text-primary-fixed transition-colors" href="#telemetry"><span class="material-symbols-outlined text-[20px]">sensors</span></a>
+</div>
+</div>
+<!-- Col 1: Collections -->
+<div class="flex flex-col gap-3">
+<h4 class="text-title-sm font-title-sm uppercase text-primary font-bold tracking-wider">Collections</h4>
+<ul class="flex flex-col gap-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Drop 01 / SS26</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Aero Compression</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Hydrophobic Shells</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Titanium Recovery</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">All Accessories</a></li>
+</ul>
+</div>
+<!-- Col 2: Innovation Lab -->
+<div class="flex flex-col gap-3">
+<h4 class="text-title-sm font-title-sm uppercase text-primary font-bold tracking-wider">Innovation Lab</h4>
+<ul class="flex flex-col gap-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Telemetry Systems</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Lab Protocols</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Archive Drops</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Thermal Modeling</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Carbon Matrix 4.0</a></li>
+</ul>
+</div>
+<!-- Col 3: Athletes -->
+<div class="flex flex-col gap-3">
+<h4 class="text-title-sm font-title-sm uppercase text-primary font-bold tracking-wider">Athletes</h4>
+<ul class="flex flex-col gap-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Test Pilots</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Field Logs</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Ambassador Roster</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Olympic Trials</a></li>
+</ul>
+</div>
+<!-- Col 4: Customer Care & Warranty -->
+<div class="flex flex-col gap-3">
+<h4 class="text-title-sm font-title-sm uppercase text-primary font-bold tracking-wider">Customer Care</h4>
+<ul class="flex flex-col gap-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Warranty &amp; Recalibration</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Biometric Sizing Help</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Global Priority Shipping</a></li>
+<li><a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Returns &amp; Swaps</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Tier: Links & Bio-Calibration Disclaimer -->
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-6 text-label-telemetry font-label-telemetry text-on-surface-variant text-[11px]">
+<p>© 2025 XNDR PERFORMANCE ENGINEERING. ALL SPECIFICATIONS SUBJECT TO BIO-CALIBRATION.</p>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Telemetry Systems</a>
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Lab Protocols</a>
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Archive Drops</a>
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Warranty &amp; Recalibration</a>
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Privacy Policy</a>
+<a class="hover:text-secondary-fixed dark:hover:text-secondary-fixed transition-colors duration-150" href="#">Terms of Velocity</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

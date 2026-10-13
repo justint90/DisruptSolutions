@@ -1,0 +1,181 @@
+/* Core Design System & Global Styling - AAA Gaming Menu */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-void: #04060a;
+  --bg-surface: #0a0e17;
+  --bg-card: rgba(14, 21, 35, 0.75);
+  --bg-card-hover: rgba(20, 32, 54, 0.88);
+  --border-dim: rgba(0, 242, 254, 0.16);
+  --border-bright: #00f2fe;
+  --border-purple: #a855f7;
+  
+  --cyan: #00f2fe;
+  --blue: #3b82f6;
+  --purple: #a855f7;
+  --green: #38ef7d;
+  --amber: #f59e0b;
+  --red: #ef4444;
+
+  --text-main: #f1f5f9;
+  --text-dim: #94a3b8;
+  --text-muted: #8496ad;
+  --text-bright: #ffffff;
+
+  --font-display: 'Orbitron', -apple-system, sans-serif;
+  --font-tech: 'Rajdhani', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  --hud-radius: 4px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-void);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Canvas & Ambient Wallpaper */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ambient-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets/gaming_hub_bg.jpg') no-repeat center center/cover;
+  opacity: 0.18;
+  filter: saturate(1.2) contrast(1.1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ambient-vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, transparent 35%, rgba(4, 6, 10, 0.85) 85%, #04060a 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Game Interface Grid Container */
+.game-interface-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 23, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyan);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38ef7d;
+}
+
+/* Glassmorphism Tactical Card */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-dim);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--border-bright);
+  border-left: 2px solid var(--border-bright);
+  pointer-events: none;
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--border-bright);
+  border-right: 2px solid var(--border-bright);
+  pointer-events: none;
+}
+
+/* HUD Buttons */
+.hud-button {
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--border-bright);
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-button:hover {
+  background: var(--cyan);
+  color: #04060a;
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.5);
+  transform: translateY(-1px);
+}
+
+.hud-button:active {
+  transform: translateY(1px);
+}

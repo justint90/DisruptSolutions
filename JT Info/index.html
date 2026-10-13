@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JUSTIN TAYLOR // NEURAL COMMAND INTERFACE</title>
+  <meta name="description" content="Personal portfolio and systems dossier for Justin Taylor. Principal AI Systems Architect, Lead Developer for National Platforms (GOV.JM, JSWIFT), and Founder of Disrupt Group.">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="JUSTIN TAYLOR // NEURAL COMMAND INTERFACE">
+  <meta property="og:description" content="Principal AI Systems Architect, Lead Developer for National Platforms (GOV.JM, JSWIFT), and Founder of Disrupt Group.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/operator_avatar.jpg">
+
+  <!-- Core Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/hud.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Background Cybernetic Canvas & Ambience -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="ambient-backdrop"></div>
+  <div class="ambient-vignette"></div>
+
+  <!-- Main Game Interface Root -->
+  <div class="game-interface-root">
+    
+    <!-- Top Gaming HUD Telemetry Bar -->
+    <header class="top-hud-bar">
+      <!-- Operator ID -->
+      <div class="hud-operator-badge">
+        <span class="hud-status-beacon" title="System Online"></span>
+        <div class="operator-id-tag">
+          <div class="operator-callsign">
+            <span class="accent-callsign">JUSTIN TAYLOR</span>
+          </div>
+          <span class="operator-class-sub">PRINCIPAL SYSTEMS ARCHITECT</span>
+        </div>
+      </div>
+
+      <!-- Center Telemetry Data (Streamlined & Clean) -->
+      <div class="hud-telemetry-center">
+        <div class="hud-data-item">
+          <span class="hud-tag">NODE:</span>
+          <span>KINGSTON, JM</span>
+        </div>
+        <div class="hud-data-item">
+          <span class="hud-tag">TIME:</span>
+          <span id="hudTime">--:--:-- UTC</span>
+        </div>
+      </div>
+
+      <!-- Right HUD Controls -->
+      <div class="hud-controls-right">
+        <button class="hud-ctrl-btn active" id="toggleAudioBtn" title="Toggle Sound FX (Hotkey: M)">
+          <span>🔊</span>
+          <span class="hud-ctrl-text">SFX: ON</span>
+        </button>
+        <button class="hud-ctrl-btn" id="toggleCrtBtn" title="Toggle CRT Holo Scanlines (Hotkey: C)">
+          <span>📺</span>
+          <span class="hud-ctrl-text">CRT: OFF</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle Mobile Navigation">
+          <span class="toggle-icon">☰</span>
+          <span class="toggle-text">MENU</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Center Menu Body Wrapper -->
+    <div class="menu-body-wrapper">
+      
+      <!-- Left Tactical Nav Rail -->
+      <aside class="side-nav-rail">
+        <div class="nav-header-label">TACTICAL MENU SELECTION</div>
+        
+        <button class="menu-nav-btn active" data-tab="0">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">👤</span>
+            <span>PROFILE</span>
+          </div>
+          <span class="nav-btn-idx">[1]</span>
+        </button>
+
+        <button class="menu-nav-btn" data-tab="1">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">⚡</span>
+            <span>SKILL MATRIX</span>
+          </div>
+          <span class="nav-btn-idx">[2]</span>
+        </button>
+
+        <button class="menu-nav-btn" data-tab="2">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">📜</span>
+            <span>MISSION LOG</span>
+          </div>
+          <span class="nav-btn-idx">[3]</span>
+        </button>
+
+        <button class="menu-nav-btn" data-tab="3">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">🤖</span>
+            <span>AI CO-PILOT</span>
+          </div>
+          <span class="nav-btn-idx">[4]</span>
+        </button>
+
+        <button class="menu-nav-btn" data-tab="4">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">🎒</span>
+            <span>ARSENAL</span>
+          </div>
+          <span class="nav-btn-idx">[5]</span>
+        </button>
+
+        <button class="menu-nav-btn" data-tab="5">
+          <div class="nav-btn-content">
+            <span class="nav-btn-icon">📡</span>
+            <span>COMMS &amp; CO-OP</span>
+          </div>
+          <span class="nav-btn-idx">[6]</span>
+        </button>
+
+        <!-- Nav Footer Widget -->
+        <div class="nav-footer-widget">
+          <div class="widget-title">
+            <span>🎮</span>
+            <span>GAMEPAD / KBD LINK</span>
+          </div>
+          <div class="widget-desc">
+            Use keys <strong>[1-6]</strong> to switch, <strong>[Q/E]</strong> or Gamepad Bumpers <strong>[LB/RB]</strong> to cycle tabs, <strong>[M]</strong> mute, <strong>[C]</strong> CRT mode.
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Viewport -->
+      <main class="main-viewport">
+        
+        <!-- ============================================== -->
+        <!-- TAB 0: CHARACTER PROFILE                       -->
+        <!-- ============================================== -->
+        <section class="menu-panel active" id="tab-profile">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> OPERATOR IDENTIFICATION</div>
+            <h1 class="panel-title">TACTICAL DOSSIER: <span>JUSTIN TAYLOR</span></h1>
+          </div>
+
+          <div class="profile-grid-layout">
+            <!-- Left Character Card -->
+            <div class="character-card glass-card">
+              <div class="avatar-wrapper">
+                <div class="avatar-holo-ring"></div>
+                <img src="assets/operator_avatar.jpg" alt="Justin Taylor Avatar" class="avatar-img">
+              </div>
+              <h2>JUSTIN TAYLOR</h2>
+              <div class="character-role-tag">FOUNDER &bull; PRINCIPAL ARCHITECT</div>
+              
+              <div class="character-meta-list">
+                <div class="meta-row">
+                  <span class="meta-label">AFFILIATION:</span>
+                  <span class="meta-val">DISRUPT GROUP</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">GOVTECH PILLAR:</span>
+                  <span class="meta-val">JSWIFT &bull; GOV.JM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">BASE COORDINATES:</span>
+                  <span class="meta-val">KINGSTON, JAMAICA</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">COMBAT RATING:</span>
+                  <span class="meta-val" style="color: #38ef7d;">S+ PRINCIPAL ARCHITECT</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">VERIFIED UPTIME:</span>
+                  <span class="meta-val" style="color: #00f2fe;">99.99%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Bio, Radar, Perks -->
+            <div class="profile-right-column">
+              
+              <!-- Bio Manifesto -->
+              <div class="bio-card glass-card">
+                <h3><span>💠</span> ARCHITECTURAL MANIFESTO</h3>
+                <p>
+                  Experienced Systems Architect &amp; Senior IT Professional with a proven track record of architecting digital platforms of national importance for the <strong>Government of Jamaica</strong>, and founding <strong>Disrupt Group</strong> to deploy autonomous enterprise AI agents, multi-agent swarms, and resilient full-stack platforms. Specializing in bridging the frontier of generative AI, high-throughput web engineering, and enterprise Business Intelligence.
+                </p>
+              </div>
+
+              <!-- Radar Section Card -->
+              <div class="radar-section-card glass-card">
+                <div class="radar-chart-container" id="radarChartContainer">
+                  <!-- SVG Polygon injected here -->
+                </div>
+                <div class="radar-stats-legend">
+                  <h4>RPG ATTRIBUTE MATRIX</h4>
+                  <div class="radar-stats-list">
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>SYSTEM ARCHITECTURE (ARC)</span>
+                        <span style="color: #00f2fe;">98 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>AI &amp; AUTONOMOUS SWARMS (AGI)</span>
+                        <span style="color: #00f2fe;">97 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 97%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>BUSINESS INTELLIGENCE &amp; DATA (DAT)</span>
+                        <span style="color: #38ef7d;">95 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>FULL-STACK WEB DEV (ENG)</span>
+                        <span style="color: #a855f7;">94 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 94%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>UI/UX DESIGN STANDARDS (DES)</span>
+                        <span style="color: #38ef7d;">93 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 93%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                      <div class="stat-item-header">
+                        <span>CLOUD &amp; CYBER DEVOPS (OPS)</span>
+                        <span style="color: #f59e0b;">92 / 100</span>
+                      </div>
+                      <div class="stat-item-bar"><div class="stat-bar-fill" style="width: 92%;"></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Passive Perks Grid -->
+              <div class="perks-grid">
+                <div class="perk-card glass-card">
+                  <div class="perk-icon-wrap">🏛️</div>
+                  <div class="perk-content">
+                    <h4>NATIONAL PILLAR</h4>
+                    <span class="perk-tier">[LEGENDARY PASSIVE]</span>
+                    <p>Authored official Web Design Standards for the Government of Jamaica (GOV.JM) &amp; architected national trade clearance modules.</p>
+                  </div>
+                </div>
+                <div class="perk-card glass-card">
+                  <div class="perk-icon-wrap">🧠</div>
+                  <div class="perk-content">
+                    <h4>AGENTIC OVERMIND</h4>
+                    <span class="perk-tier">[MYTHIC PASSIVE]</span>
+                    <p>Engineers autonomous multi-agent swarms, voice agents (Bland.ai), tool-use pipelines, and self-closing digital agencies.</p>
+                  </div>
+                </div>
+                <div class="perk-card glass-card">
+                  <div class="perk-icon-wrap">📊</div>
+                  <div class="perk-content">
+                    <h4>TELEMETRY ORACLE</h4>
+                    <span class="perk-tier">[ELITE PASSIVE]</span>
+                    <p>Tableau Desktop, Jasper Reports, and Crystal Reports mastery delivering executive command center clarity.</p>
+                  </div>
+                </div>
+                <div class="perk-card glass-card">
+                  <div class="perk-icon-wrap">⚡</div>
+                  <div class="perk-content">
+                    <h4>BARE-METAL DISCIPLINE</h4>
+                    <span class="perk-tier">[MASTER PASSIVE]</span>
+                    <p>Linux/Windows Server Administration, Nginx hardening, enterprise Java EE, and automated CI/CD DevOps workflows.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 1: SKILL MATRIX                            -->
+        <!-- ============================================== -->
+        <section class="menu-panel" id="tab-skills">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> OPERATIONAL CAPABILITIES</div>
+            <h1 class="panel-title">NEURAL TECH &amp; <span>SKILL MATRIX</span></h1>
+          </div>
+
+          <div class="skills-container" id="skillsContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 2: MISSION LOG                             -->
+        <!-- ============================================== -->
+        <section class="menu-panel" id="tab-missions">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> PRODUCTION DISPATCH</div>
+            <h1 class="panel-title">CAMPAIGN RAIDS &amp; <span>MISSION ARCHIVES</span></h1>
+          </div>
+
+          <div class="missions-container" id="missionsContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 3: NEURAL AI CO-PILOT                      -->
+        <!-- ============================================== -->
+        <section class="menu-panel" id="tab-terminal">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> CO-PILOT SUBSYSTEM</div>
+            <h1 class="panel-title">JT-CO-PILOT // <span>NEURAL RUNTIME v4.2</span></h1>
+          </div>
+
+          <div class="terminal-container" id="terminalContainer">
+            <!-- Terminal UI injected here -->
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 4: ARSENAL & ACHIEVEMENTS                  -->
+        <!-- ============================================== -->
+        <section class="menu-panel" id="tab-arsenal">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> GEAR &amp; TOOLCHAINS</div>
+            <h1 class="panel-title">TECHNICAL ARSENAL &amp; <span>INVENTORY</span></h1>
+          </div>
+
+          <div class="arsenal-container" id="arsenalContainer">
+            <!-- Injected here -->
+          </div>
+
+          <h3 class="achievements-section-title">TROPHY &amp; ACHIEVEMENT VAULT</h3>
+          <div class="achievements-container" id="achievementsContainer">
+            <!-- Injected here -->
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 5: COMMS & CO-OP                           -->
+        <!-- ============================================== -->
+        <section class="menu-panel" id="tab-comms">
+          <div class="panel-header-section">
+            <div class="panel-subtitle"><span>//</span> DIRECT SECURE CHANNEL</div>
+            <h1 class="panel-title">COMMUNICATIONS &amp; <span>CO-OP CONTRACTS</span></h1>
+          </div>
+
+          <div class="comms-layout">
+            <!-- Channels Info Card -->
+            <div class="comms-info-card glass-card">
+              <h3>DIRECT TRANSMISSION CHANNELS</h3>
+
+              <div class="comms-channel-item">
+                <span class="comms-channel-icon">📧</span>
+                <div>
+                  <div class="comms-channel-title">PRIMARY EMAIL DISPATCH</div>
+                  <div class="comms-channel-val"><a href="mailto:justin.jaytaylor@gmail.com">justin.jaytaylor@gmail.com</a></div>
+                </div>
+              </div>
+
+              <div class="comms-channel-item">
+                <span class="comms-channel-icon">📞</span>
+                <div>
+                  <div class="comms-channel-title">SECURE VOICE LINE</div>
+                  <div class="comms-channel-val"><a href="tel:+18764044543">+1 (876) 404-4543</a></div>
+                </div>
+              </div>
+
+              <div class="comms-channel-item">
+                <span class="comms-channel-icon">📍</span>
+                <div>
+                  <div class="comms-channel-title">PHYSICAL BASE</div>
+                  <div class="comms-channel-val">Kingston, Jamaica</div>
+                </div>
+              </div>
+
+              <div class="comms-channel-item">
+                <span class="comms-channel-icon">💼</span>
+                <div>
+                  <div class="comms-channel-title">LINKEDIN VERIFIED DOSSIER</div>
+                  <div class="comms-channel-val"><a href="https://jm.linkedin.com/in/justin-taylor-061b6a224" target="_blank" rel="noopener">linkedin.com/in/justin-taylor-061b6a224 &rarr;</a></div>
+                </div>
+              </div>
+
+              <div class="comms-channel-item">
+                <span class="comms-channel-icon">🏢</span>
+                <div>
+                  <div class="comms-channel-title">HOLDING ENTITY</div>
+                  <div class="comms-channel-val"><a href="https://disruptgrp.com" target="_blank" rel="noopener">Disrupt Group Parent Site (disruptgrp.com) &rarr;</a></div>
+                </div>
+              </div>
+
+              <div style="margin-top: 10px;">
+                <button class="hud-button" id="copyEmailBtn">
+                  <span>📋</span>
+                  <span>COPY DISPATCH EMAIL</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Transmission Form -->
+            <div class="comms-form-card glass-card">
+              <h3>INITIATE CONTRACT TRANSMISSION</h3>
+              <form id="commsForm">
+                <div class="form-group">
+                  <label for="commName">Callsign / Name</label>
+                  <input type="text" id="commName" class="form-control" placeholder="e.g. Director Alex Chen" required>
+                </div>
+                <div class="form-group">
+                  <label for="commEmail">Return Signal (Email)</label>
+                  <input type="email" id="commEmail" class="form-control" placeholder="alex@enterprise.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="commSubject">Mission Directive / Scope</label>
+                  <input type="text" id="commSubject" class="form-control" placeholder="Autonomous AI Swarm Architecture / Enterprise Platform" required>
+                </div>
+                <div class="form-group">
+                  <label for="commMessage">Encrypted Packet (Message)</label>
+                  <textarea id="commMessage" class="form-control" rows="4" placeholder="Outline your project scope, timeline, and technical objectives..." required></textarea>
+                </div>
+                <button type="submit" class="hud-button" style="width: 100%; justify-content: center;">
+                  <span>🚀</span>
+                  <span>DISPATCH TRANSMISSION</span>
+                </button>
+                <div class="comms-status-msg" id="commsStatus"></div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Mobile Bottom Tactical Quick Bar (Mobile screens) -->
+    <nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile Navigation">
+      <button class="m-bottom-btn active" data-tab="0" aria-label="Profile">
+        <span class="m-btn-icon">👤</span>
+        <span class="m-btn-txt">Profile</span>
+      </button>
+      <button class="m-bottom-btn" data-tab="1" aria-label="Skills">
+        <span class="m-btn-icon">⚡</span>
+        <span class="m-btn-txt">Skills</span>
+      </button>
+      <button class="m-bottom-btn" data-tab="2" aria-label="Missions">
+        <span class="m-btn-icon">📜</span>
+        <span class="m-btn-txt">Quests</span>
+      </button>
+      <button class="m-bottom-btn" data-tab="3" aria-label="AI Co-Pilot">
+        <span class="m-btn-icon">🤖</span>
+        <span class="m-btn-txt">AI Co-Pilot</span>
+      </button>
+      <button class="m-bottom-btn" data-tab="4" aria-label="Arsenal">
+        <span class="m-btn-icon">🎒</span>
+        <span class="m-btn-txt">Arsenal</span>
+      </button>
+      <button class="m-bottom-btn" data-tab="5" aria-label="Comms">
+        <span class="m-btn-icon">📡</span>
+        <span class="m-btn-txt">Comms</span>
+      </button>
+    </nav>
+
+    <!-- Bottom HUD Telemetry Footer (Desktop) -->
+    <footer class="bottom-hud-footer">
+      <div class="hotkey-hints">
+        <span><span class="key-badge">1-6</span> TABS</span>
+        <span><span class="key-badge">Q/E</span> CYCLE</span>
+        <span><span class="key-badge">M</span> MUTE</span>
+        <span><span class="key-badge">C</span> CRT</span>
+        <span><span class="key-badge">ESC</span> CLOSE</span>
+      </div>
+      <div class="hud-node-location">
+        <span>NODE: KINGSTON JM HUB &bull; DISRUPT GROUP &bull; ALL SYSTEMS GO</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-modal="true" role="dialog">
+    <div class="mobile-nav-drawer glass-card">
+      <div class="mobile-nav-top">
+        <div class="mobile-nav-title">
+          <span class="hud-status-beacon"></span>
+          <span>TACTICAL NAVIGATION</span>
+        </div>
+        <button class="mobile-nav-close-btn" id="mobileNavClose" aria-label="Close Mobile Navigation">&times;</button>
+      </div>
+      
+      <div class="mobile-nav-list">
+        <button class="mobile-drawer-btn active" data-tab="0">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">👤</span>
+            <span class="m-label">OPERATOR PROFILE</span>
+          </div>
+          <span class="m-num">[1]</span>
+        </button>
+        <button class="mobile-drawer-btn" data-tab="1">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">⚡</span>
+            <span class="m-label">SKILL MATRIX</span>
+          </div>
+          <span class="m-num">[2]</span>
+        </button>
+        <button class="mobile-drawer-btn" data-tab="2">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">📜</span>
+            <span class="m-label">MISSION LOG</span>
+          </div>
+          <span class="m-num">[3]</span>
+        </button>
+        <button class="mobile-drawer-btn" data-tab="3">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">🤖</span>
+            <span class="m-label">AI CO-PILOT TERMINAL</span>
+          </div>
+          <span class="m-num">[4]</span>
+        </button>
+        <button class="mobile-drawer-btn" data-tab="4">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">🎒</span>
+            <span class="m-label">TECH ARSENAL</span>
+          </div>
+          <span class="m-num">[5]</span>
+        </button>
+        <button class="mobile-drawer-btn" data-tab="5">
+          <div class="m-drawer-btn-left">
+            <span class="m-icon">📡</span>
+            <span class="m-label">COMMS &amp; CO-OP</span>
+          </div>
+          <span class="m-num">[6]</span>
+        </button>
+      </div>
+
+      <div class="mobile-nav-bottom-panel">
+        <div class="mobile-audio-toggles">
+          <button class="hud-ctrl-btn active" id="mAudioBtn">
+            <span>🔊</span>
+            <span class="hud-ctrl-text">SFX: ON</span>
+          </button>
+          <button class="hud-ctrl-btn" id="mCrtBtn">
+            <span>📺</span>
+            <span class="hud-ctrl-text">CRT: OFF</span>
+          </button>
+        </div>
+        <div class="mobile-drawer-status">
+          <span>OPERATOR: JUSTIN TAYLOR</span>
+          <span style="color: var(--green);">● SYSTEM READY</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievement Notification Banner -->
+  <div class="achievement-banner" id="achievementBanner">
+    <div class="ach-banner-icon">🏆</div>
+    <div class="ach-banner-text">
+      <h4>ACHIEVEMENT UNLOCKED!</h4>
+      <p>GOD MODE: VIBE CODER SUPREME</p>
+    </div>
+  </div>
+
+  <!-- Gamepad Notification Banner -->
+  <div class="gamepad-banner" id="gamepadBanner">
+    GAMEPAD CONNECTED
+  </div>
+
+  <!-- Inspect Architecture Modal -->
+  <div class="inspect-modal-backdrop" id="inspectModal">
+    <div class="inspect-modal-box glass-card">
+      <button class="modal-close-btn" onclick="closeInspectModal()" aria-label="Close modal">&times;</button>
+      <div id="inspectModalBody">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/radar.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/gamepad.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

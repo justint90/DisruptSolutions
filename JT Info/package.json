@@ -1,0 +1,22 @@
+{
+  "name": "jt-gaming-hud-portfolio",
+  "version": "1.0.0",
+  "description": "Justin Taylor - Gaming Menu Personal Portfolio & Systems Dossier",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js"
+  },
+  "keywords": [
+    "portfolio",
+    "gaming-hud",
+    "cyberpunk",
+    "ai-architect",
+    "web-audio",
+    "webgl",
+    "canvas",
+    "disrupt-group"
+  ],
+  "author": "Justin Taylor <justin.jaytaylor@gmail.com>",
+  "license": "MIT"
+}
